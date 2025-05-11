@@ -19,7 +19,7 @@ namespace cantinaPainel
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtBoxUsuario.Text == "pedido" && txtBoxSenha.Text == "pedido")
+            if (txtBoxUsuario.Text == "pedido" && txtBoxSenha.Text == "p3213edido")
             {
                 formsPedido formpedido = new formsPedido();
                 formpedido.Show();
