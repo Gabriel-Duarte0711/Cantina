@@ -52,7 +52,7 @@ namespace cantinaPainel
             {
                 double quant = (double)numericQuantidade.Value;
                 Cardapio produtoSelecionado = (Cardapio)listAdicionar.SelectedItem;
-                listPedido.Items.Add("1 " + produtoSelecionado);
+                listPedido.Items.Add("2 " + produtoSelecionado);
                 extrato.Add(produtoSelecionado);
                 totalPedido += produtoSelecionado.Preco * quant;
 
