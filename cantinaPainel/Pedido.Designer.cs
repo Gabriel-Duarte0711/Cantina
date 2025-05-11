@@ -1,6 +1,6 @@
 ﻿namespace cantinaPainel
 {
-    partial class Form1
+    partial class formsPedido
     {
         /// <summary>
         ///  Required designer variable.
@@ -36,6 +36,15 @@
             label2 = new Label();
             total = new Label();
             btnFinalizar = new Button();
+            btnSair = new Button();
+            numericUpDown1 = new NumericUpDown();
+            numericQuantidade = new NumericUpDown();
+            label3 = new Label();
+            btnVoltar = new Button();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericQuantidade).BeginInit();
             SuspendLayout();
             // 
             // listAdicionar
@@ -56,6 +65,7 @@
             listPedido.Name = "listPedido";
             listPedido.Size = new Size(173, 79);
             listPedido.TabIndex = 1;
+            listPedido.SelectedIndexChanged += listPedido_SelectedIndexChanged;
             // 
             // btnAdicionar
             // 
@@ -104,11 +114,10 @@
             total.Size = new Size(82, 31);
             total.TabIndex = 6;
             total.Text = "TOTAL:";
-            total.Click += total_Click;
             // 
             // btnFinalizar
             // 
-            btnFinalizar.Location = new Point(518, 273);
+            btnFinalizar.Location = new Point(518, 274);
             btnFinalizar.Name = "btnFinalizar";
             btnFinalizar.Size = new Size(173, 23);
             btnFinalizar.TabIndex = 7;
@@ -116,11 +125,79 @@
             btnFinalizar.UseVisualStyleBackColor = true;
             btnFinalizar.Click += btnFinalizar_Click;
             // 
-            // Form1
+            // btnSair
+            // 
+            btnSair.Location = new Point(616, 550);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(75, 23);
+            btnSair.TabIndex = 9;
+            btnSair.Text = "Sair";
+            btnSair.UseVisualStyleBackColor = true;
+            btnSair.Click += btnSair_Click;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(0, 0);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(120, 23);
+            numericUpDown1.TabIndex = 0;
+            // 
+            // numericQuantidade
+            // 
+            numericQuantidade.Location = new Point(183, 277);
+            numericQuantidade.Name = "numericQuantidade";
+            numericQuantidade.Size = new Size(68, 23);
+            numericQuantidade.TabIndex = 10;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F);
+            label3.Location = new Point(83, 274);
+            label3.Name = "label3";
+            label3.Size = new Size(94, 21);
+            label3.TabIndex = 11;
+            label3.Text = "Quantidade:";
+            // 
+            // btnVoltar
+            // 
+            btnVoltar.Location = new Point(12, 12);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Size = new Size(37, 40);
+            btnVoltar.TabIndex = 12;
+            btnVoltar.Text = "<";
+            btnVoltar.UseVisualStyleBackColor = true;
+            btnVoltar.Click += btnVoltar_Click_1;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(396, 569);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.ShowUpDown = true;
+            dateTimePicker1.Size = new Size(80, 23);
+            dateTimePicker1.TabIndex = 13;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.Location = new Point(396, 540);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.ShowUpDown = true;
+            dateTimePicker2.Size = new Size(80, 23);
+            dateTimePicker2.TabIndex = 14;
+            // 
+            // formsPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(864, 411);
+            ClientSize = new Size(1618, 604);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(btnVoltar);
+            Controls.Add(label3);
+            Controls.Add(numericQuantidade);
+            Controls.Add(btnSair);
             Controls.Add(btnFinalizar);
             Controls.Add(total);
             Controls.Add(label2);
@@ -129,9 +206,11 @@
             Controls.Add(btnAdicionar);
             Controls.Add(listPedido);
             Controls.Add(listAdicionar);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "formsPedido";
+            Text = "Pedido";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericQuantidade).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -146,5 +225,12 @@
         private Label label2;
         private Label total;
         private Button btnFinalizar;
+        private Button btnSair;
+        private NumericUpDown numericUpDown1;
+        private NumericUpDown numericQuantidade;
+        private Label label3;
+        private Button btnVoltar;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
     }
 }

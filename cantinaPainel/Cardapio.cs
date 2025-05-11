@@ -29,7 +29,7 @@ namespace cantinaPainel
 
         public override string ToString()
         {
-            return$"{produto} - R$ {preco:f2}";
+            return$"{produto}- R$ {preco:f2}";
         }
     }
 }
