@@ -10,6 +10,7 @@ namespace cantinaPainel
     {
         private string produto;
         private double preco;
+        private int quantidade=1;
 
         public Cardapio(string produto, double preco)
         {

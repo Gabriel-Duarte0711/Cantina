@@ -11,8 +11,6 @@ namespace cantinaPainel
         {
             InitializeComponent();
         }
-
-
         List<Cardapio> extrato = new();
         private double totalPedido = 0;
 
@@ -54,7 +52,7 @@ namespace cantinaPainel
             {
                 double quant = (double)numericQuantidade.Value;
                 Cardapio produtoSelecionado = (Cardapio)listAdicionar.SelectedItem;
-                listPedido.Items.Add(produtoSelecionado);
+                listPedido.Items.Add("1 " + produtoSelecionado);
                 extrato.Add(produtoSelecionado);
                 totalPedido += produtoSelecionado.Preco * quant;
 
@@ -94,6 +92,7 @@ namespace cantinaPainel
             string Extrato = string.Join("\n", extrato);
             MessageBox.Show($"Extrato:\n{Extrato}\n\no total e: {totalPedido:f2}");
             total.Text = $"O total e: R${totalPedido = 0}";
+            extrato.Clear();
         }
 
 
