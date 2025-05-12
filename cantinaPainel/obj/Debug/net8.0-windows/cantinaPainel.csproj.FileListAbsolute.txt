@@ -59,3 +59,4 @@ C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net
 C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.genruntimeconfig.cache
 C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\ref\cantinaPainel.dll
 C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.tela.resources
+D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.tela.resources

@@ -12,6 +12,7 @@ namespace cantinaPainel
         private double preco;
         private int quantidade;
 
+
         public Cardapio(string produto, double preco)
         {
             this.produto = produto;
@@ -32,10 +33,9 @@ namespace cantinaPainel
         {
             get { return quantidade;}
         }
-
         public override string ToString()
         {
-            return$"{produto}- R$ {preco:f2}";
+            return$"{produto} - R$ {preco:f2}";
         }
     }
 }

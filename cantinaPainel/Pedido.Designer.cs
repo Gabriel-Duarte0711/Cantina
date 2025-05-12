@@ -44,8 +44,18 @@
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
             txtBoxNome = new TextBox();
+            listBoxTeste = new ListBox();
+            label4 = new Label();
+            comboBoxPagamento = new ComboBox();
+            label5 = new Label();
+            numericTroco = new NumericUpDown();
+            label6 = new Label();
+            txtBoxTroco = new TextBox();
+            label7 = new Label();
+            btnTroco = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericTroco).BeginInit();
             SuspendLayout();
             // 
             // listAdicionar
@@ -145,7 +155,7 @@
             // 
             // numericQuantidade
             // 
-            numericQuantidade.Location = new Point(183, 277);
+            numericQuantidade.Location = new Point(178, 275);
             numericQuantidade.Name = "numericQuantidade";
             numericQuantidade.Size = new Size(68, 23);
             numericQuantidade.TabIndex = 10;
@@ -154,7 +164,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(83, 274);
+            label3.Location = new Point(78, 275);
             label3.Name = "label3";
             label3.Size = new Size(94, 21);
             label3.TabIndex = 11;
@@ -190,18 +200,109 @@
             // 
             // txtBoxNome
             // 
-            txtBoxNome.Location = new Point(518, 277);
+            txtBoxNome.Location = new Point(580, 273);
             txtBoxNome.Name = "txtBoxNome";
-            txtBoxNome.Size = new Size(173, 23);
+            txtBoxNome.Size = new Size(111, 23);
             txtBoxNome.TabIndex = 15;
-            txtBoxNome.Text = "Nome:";
+            txtBoxNome.Tag = "";
             txtBoxNome.TextChanged += txtBoxNome_TextChanged;
+            // 
+            // listBoxTeste
+            // 
+            listBoxTeste.FormattingEnabled = true;
+            listBoxTeste.ItemHeight = 15;
+            listBoxTeste.Location = new Point(1191, 152);
+            listBoxTeste.Name = "listBoxTeste";
+            listBoxTeste.Size = new Size(120, 94);
+            listBoxTeste.TabIndex = 16;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.Location = new Point(518, 275);
+            label4.Name = "label4";
+            label4.Size = new Size(56, 21);
+            label4.TabIndex = 17;
+            label4.Text = "Nome:";
+            // 
+            // comboBoxPagamento
+            // 
+            comboBoxPagamento.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxPagamento.FormattingEnabled = true;
+            comboBoxPagamento.Location = new Point(615, 314);
+            comboBoxPagamento.Name = "comboBoxPagamento";
+            comboBoxPagamento.Size = new Size(76, 23);
+            comboBoxPagamento.TabIndex = 18;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F);
+            label5.Location = new Point(518, 316);
+            label5.Name = "label5";
+            label5.Size = new Size(91, 21);
+            label5.TabIndex = 19;
+            label5.Text = "Pagamento:";
+            // 
+            // numericTroco
+            // 
+            numericTroco.Location = new Point(573, 348);
+            numericTroco.Name = "numericTroco";
+            numericTroco.Size = new Size(118, 23);
+            numericTroco.TabIndex = 20;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F);
+            label6.Location = new Point(518, 345);
+            label6.Name = "label6";
+            label6.Size = new Size(49, 21);
+            label6.TabIndex = 21;
+            label6.Text = "Valor:";
+            // 
+            // txtBoxTroco
+            // 
+            txtBoxTroco.Location = new Point(573, 377);
+            txtBoxTroco.Name = "txtBoxTroco";
+            txtBoxTroco.Size = new Size(118, 23);
+            txtBoxTroco.TabIndex = 22;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F);
+            label7.Location = new Point(518, 379);
+            label7.Name = "label7";
+            label7.Size = new Size(51, 21);
+            label7.TabIndex = 23;
+            label7.Text = "Troco:";
+            // 
+            // btnTroco
+            // 
+            btnTroco.Location = new Point(710, 348);
+            btnTroco.Name = "btnTroco";
+            btnTroco.Size = new Size(94, 23);
+            btnTroco.TabIndex = 24;
+            btnTroco.Text = "Troco";
+            btnTroco.UseVisualStyleBackColor = true;
+            btnTroco.Click += btnTroco_Click;
             // 
             // formsPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1618, 604);
+            Controls.Add(btnTroco);
+            Controls.Add(label7);
+            Controls.Add(txtBoxTroco);
+            Controls.Add(label6);
+            Controls.Add(numericTroco);
+            Controls.Add(label5);
+            Controls.Add(comboBoxPagamento);
+            Controls.Add(label4);
+            Controls.Add(listBoxTeste);
             Controls.Add(txtBoxNome);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
@@ -222,6 +323,7 @@
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericTroco).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -244,5 +346,14 @@
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private TextBox txtBoxNome;
+        private ListBox listBoxTeste;
+        private Label label4;
+        private ComboBox comboBoxPagamento;
+        private Label label5;
+        private NumericUpDown numericTroco;
+        private Label label6;
+        private TextBox txtBoxTroco;
+        private Label label7;
+        private Button btnTroco;
     }
 }
