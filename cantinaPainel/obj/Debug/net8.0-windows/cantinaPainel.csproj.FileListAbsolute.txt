@@ -36,3 +36,26 @@ D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaP
 D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsBalcao.resources
 D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsCozinha.resources
 D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsAdm.resources
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsAdm.resources
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsBalcao.resources
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsCozinha.resources
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsLogin.resources
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsPedido.resources
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.UserControl1.resources
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.csproj.GenerateResource.cache
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.AssemblyInfoInputs.cache
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.AssemblyInfo.cs
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.csproj.CoreCompileInputs.cache
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.sourcelink.json
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\bin\Debug\net8.0-windows\cantinaPainel.exe
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\bin\Debug\net8.0-windows\cantinaPainel.deps.json
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\bin\Debug\net8.0-windows\cantinaPainel.runtimeconfig.json
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\bin\Debug\net8.0-windows\cantinaPainel.dll
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\bin\Debug\net8.0-windows\cantinaPainel.pdb
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.dll
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\refint\cantinaPainel.dll
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.pdb
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.genruntimeconfig.cache
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\ref\cantinaPainel.dll
+C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.tela.resources

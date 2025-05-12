@@ -10,7 +10,7 @@ namespace cantinaPainel
     {
         private string produto;
         private double preco;
-        private int quantidade=1;
+        private int quantidade;
 
         public Cardapio(string produto, double preco)
         {
@@ -28,9 +28,14 @@ namespace cantinaPainel
             get { return preco; }  
         }
 
+        public int Quantidade
+        {
+            get { return quantidade;}
+        }
+
         public override string ToString()
         {
-            return$" {produto}- R$ {preco:f2}";
+            return$"{produto}- R$ {preco:f2}";
         }
     }
 }

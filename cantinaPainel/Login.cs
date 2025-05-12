@@ -37,6 +37,12 @@ namespace cantinaPainel
                 formcozinha.Show();
                 this.Hide();
             }
+            else if (txtBoxUsuario.Text == "adm" && txtBoxSenha.Text == "adm")
+            {
+                formsAdm formadm = new formsAdm();
+                formadm.Show();
+                this.Hide();
+            }
 
         }
 

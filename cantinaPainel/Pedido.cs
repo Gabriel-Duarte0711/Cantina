@@ -13,7 +13,6 @@ namespace cantinaPainel
         }
         List<Cardapio> extrato = new();
         private double totalPedido = 0;
-
         private void listAdicionar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listAdicionar.SelectedIndex != -1)
@@ -32,6 +31,7 @@ namespace cantinaPainel
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            double quant = (double)numericQuantidade.Value;
             listAdicionar.Items.Add(new Cardapio("Coxinha ", 5.00));
 
             listAdicionar.Items.Add(new Cardapio("Pastel ", 6.00));
@@ -48,14 +48,14 @@ namespace cantinaPainel
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
 
-            if (listAdicionar.SelectedIndex != -1 && numericQuantidade.Value > 0)
+            if (listAdicionar.SelectedIndex != -1 && numericQuantidade.Value > 0 && txtBoxNome.Text != null)
             {
                 double quant = (double)numericQuantidade.Value;
                 Cardapio produtoSelecionado = (Cardapio)listAdicionar.SelectedItem;
-                listPedido.Items.Add($"{quant} -" + produtoSelecionado);
+                listPedido.Items.Add(produtoSelecionado);
                 extrato.Add(produtoSelecionado);
                 totalPedido += produtoSelecionado.Preco * quant;
-
+                
                 total.Text = $"O total e: R${totalPedido:f2}";
                 listAdicionar.SelectedIndex = -1;
                 numericQuantidade.Value = 0;
@@ -73,10 +73,9 @@ namespace cantinaPainel
             {
                 double quant = (double)numericQuantidade.Value;
                 Cardapio produtoSelecionado = (Cardapio)listPedido.SelectedItem;
-                listPedido.Items.Remove($"{quant} -" + produtoSelecionado);
+                listPedido.Items.Remove(produtoSelecionado);
                 extrato.Remove(produtoSelecionado);
                 totalPedido -= produtoSelecionado.Preco * quant;
-                listPedido.SelectedIndex = -1;
                 total.Text = $"O total e: R${totalPedido:f2}";
                 numericQuantidade.Value = 0;
             }
@@ -112,6 +111,11 @@ namespace cantinaPainel
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtBoxNome_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

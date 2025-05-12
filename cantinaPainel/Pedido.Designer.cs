@@ -43,6 +43,7 @@
             btnVoltar = new Button();
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
+            txtBoxNome = new TextBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).BeginInit();
             SuspendLayout();
@@ -109,7 +110,7 @@
             // 
             total.AutoSize = true;
             total.Font = new Font("Segoe UI", 17F);
-            total.Location = new Point(421, 307);
+            total.Location = new Point(396, 495);
             total.Name = "total";
             total.Size = new Size(82, 31);
             total.TabIndex = 6;
@@ -117,7 +118,7 @@
             // 
             // btnFinalizar
             // 
-            btnFinalizar.Location = new Point(518, 274);
+            btnFinalizar.Location = new Point(734, 233);
             btnFinalizar.Name = "btnFinalizar";
             btnFinalizar.Size = new Size(173, 23);
             btnFinalizar.TabIndex = 7;
@@ -127,7 +128,7 @@
             // 
             // btnSair
             // 
-            btnSair.Location = new Point(616, 550);
+            btnSair.Location = new Point(639, 569);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(75, 23);
             btnSair.TabIndex = 9;
@@ -181,17 +182,27 @@
             // dateTimePicker2
             // 
             dateTimePicker2.Format = DateTimePickerFormat.Time;
-            dateTimePicker2.Location = new Point(396, 540);
+            dateTimePicker2.Location = new Point(482, 569);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.ShowUpDown = true;
             dateTimePicker2.Size = new Size(80, 23);
             dateTimePicker2.TabIndex = 14;
+            // 
+            // txtBoxNome
+            // 
+            txtBoxNome.Location = new Point(518, 277);
+            txtBoxNome.Name = "txtBoxNome";
+            txtBoxNome.Size = new Size(173, 23);
+            txtBoxNome.TabIndex = 15;
+            txtBoxNome.Text = "Nome:";
+            txtBoxNome.TextChanged += txtBoxNome_TextChanged;
             // 
             // formsPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1618, 604);
+            Controls.Add(txtBoxNome);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
             Controls.Add(btnVoltar);
@@ -232,5 +243,6 @@
         private Button btnVoltar;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
+        private TextBox txtBoxNome;
     }
 }
