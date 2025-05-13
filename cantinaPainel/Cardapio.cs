@@ -17,6 +17,7 @@ namespace cantinaPainel
         {
             this.produto = produto;
             this.preco = preco;
+            this.quantidade = 0;
         }
 
         public string Produto
@@ -32,9 +33,14 @@ namespace cantinaPainel
         public int Quantidade
         {
             get { return quantidade;}
+            set { quantidade = value;}
         }
         public override string ToString()
         {
+
+            if (quantidade > 0)
+                return$"{quantidade}x - {produto} - R$ {preco:f2}";
+            else
             return$"{produto} - R$ {preco:f2}";
         }
     }

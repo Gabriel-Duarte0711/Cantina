@@ -200,7 +200,7 @@
             // 
             // txtBoxNome
             // 
-            txtBoxNome.Location = new Point(580, 273);
+            txtBoxNome.Location = new Point(580, 274);
             txtBoxNome.Name = "txtBoxNome";
             txtBoxNome.Size = new Size(111, 23);
             txtBoxNome.TabIndex = 15;
@@ -230,20 +230,21 @@
             // 
             comboBoxPagamento.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPagamento.FormattingEnabled = true;
-            comboBoxPagamento.Location = new Point(615, 314);
+            comboBoxPagamento.Location = new Point(580, 312);
             comboBoxPagamento.Name = "comboBoxPagamento";
-            comboBoxPagamento.Size = new Size(76, 23);
+            comboBoxPagamento.Size = new Size(111, 23);
             comboBoxPagamento.TabIndex = 18;
+            comboBoxPagamento.SelectedIndexChanged += comboBoxPagamento_SelectedIndexChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F);
-            label5.Location = new Point(518, 316);
+            label5.Location = new Point(518, 314);
             label5.Name = "label5";
-            label5.Size = new Size(91, 21);
+            label5.Size = new Size(67, 21);
             label5.TabIndex = 19;
-            label5.Text = "Pagamento:";
+            label5.Text = "Método:";
             // 
             // numericTroco
             // 

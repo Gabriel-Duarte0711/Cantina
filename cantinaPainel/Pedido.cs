@@ -24,10 +24,11 @@ namespace cantinaPainel
         }
 
         private void listPedido_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {        
             if (listPedido.SelectedIndex != -1)
             {
-                numericQuantidade.Value = 1;
+                Cardapio produtoSelecionado = (Cardapio)listPedido.SelectedItem;
+                numericQuantidade.Value = produtoSelecionado.Quantidade;
             }
         }
 
@@ -53,14 +54,16 @@ namespace cantinaPainel
 
             listAdicionar.Items.Add(new Cardapio("Água Mineral (500ml)", 2.50));
 
-            comboBoxPagamento.Items.Add("Dinheiro");
+
+            
             comboBoxPagamento.Items.Add("Pix");
+            comboBoxPagamento.Items.Add("Dinheiro");
             comboBoxPagamento.Items.Add("Crédito");
             comboBoxPagamento.Items.Add("Débito");
             comboBoxPagamento.Items.Add("Vr");
             comboBoxPagamento.SelectedIndex = 0;
 
-            
+            txtBoxTroco.ReadOnly = true;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -68,10 +71,15 @@ namespace cantinaPainel
 
             if (listAdicionar.SelectedIndex != -1 && numericQuantidade.Value > 0)
             {
+                
+
+
                 double quant = (double)numericQuantidade.Value;
                 Cardapio produtoSelecionado = (Cardapio)listAdicionar.SelectedItem;
-                listPedido.Items.Add(produtoSelecionado);
-                extrato.Add(produtoSelecionado);
+                Cardapio novoItem = new Cardapio(produtoSelecionado.Produto, produtoSelecionado.Preco);
+                novoItem.Quantidade = (int)numericQuantidade.Value;
+                listPedido.Items.Add(novoItem);
+                extrato.Add(novoItem);
                 totalPedido += produtoSelecionado.Preco * quant;
 
                 total.Text = $"O total e: R${totalPedido:f2}";
@@ -91,6 +99,10 @@ namespace cantinaPainel
             {
                 double quant = (double)numericQuantidade.Value;
                 Cardapio produtoSelecionado = (Cardapio)listPedido.SelectedItem;
+                if(listPedido.SelectedIndex != -1)
+                {        
+                    numericQuantidade.Value = produtoSelecionado.Quantidade;
+                }
                 listPedido.Items.Remove(produtoSelecionado);
                 extrato.Remove(produtoSelecionado);
                 totalPedido -= produtoSelecionado.Preco * quant;
@@ -109,7 +121,7 @@ namespace cantinaPainel
         {
             if (txtBoxNome.Text.Length > 0 && listPedido.Items.Count != 0)
             {
-                
+
                 listBoxTeste.Items.Add(txtBoxNome.Text);
                 listPedido.Items.Clear();
                 string Extrato = string.Join("\n", extrato);
@@ -158,7 +170,18 @@ namespace cantinaPainel
         {
             double troco = (double)numericTroco.Value;
             totalTroco = troco - totalPedido;
-            txtBoxTroco.Text = totalTroco.ToString();
+            txtBoxTroco.Text = $"R$: {totalTroco.ToString():f3}";
+        }
+
+        private void comboBoxPagamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool mostrarTroco = comboBoxPagamento.SelectedIndex == 1;
+
+            numericTroco.Visible = mostrarTroco;
+            txtBoxTroco.Visible = mostrarTroco;
+            btnTroco.Visible = mostrarTroco;
+            label6.Visible = mostrarTroco;
+            label7.Visible = mostrarTroco;
         }
     }
 }
