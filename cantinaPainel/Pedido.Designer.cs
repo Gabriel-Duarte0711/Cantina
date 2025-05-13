@@ -53,6 +53,7 @@
             txtBoxTroco = new TextBox();
             label7 = new Label();
             btnTroco = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTroco).BeginInit();
@@ -290,11 +291,22 @@
             btnTroco.UseVisualStyleBackColor = true;
             btnTroco.Click += btnTroco_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(1111, 413);
+            button1.Name = "button1";
+            button1.Size = new Size(85, 31);
+            button1.TabIndex = 25;
+            button1.Text = "balcao";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // formsPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1618, 604);
+            Controls.Add(button1);
             Controls.Add(btnTroco);
             Controls.Add(label7);
             Controls.Add(txtBoxTroco);
@@ -356,5 +368,6 @@
         private TextBox txtBoxTroco;
         private Label label7;
         private Button btnTroco;
+        private Button button1;
     }
 }
