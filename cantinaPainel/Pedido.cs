@@ -73,16 +73,13 @@ namespace cantinaPainel
 
             if (listAdicionar.SelectedIndex != -1 && numericQuantidade.Value > 0)
             {
-
-
-
                 double quant = (double)numericQuantidade.Value;
                 Cardapio produtoSelecionado = (Cardapio)listAdicionar.SelectedItem;
                 Cardapio novoItem = new Cardapio(produtoSelecionado.Produto, produtoSelecionado.Preco);
                 novoItem.Quantidade = (int)numericQuantidade.Value;
                 listPedido.Items.Add(novoItem);
                 Globais.extrato.Add(novoItem);
-                totalPedido += produtoSelecionado.Preco * quant;
+                totalPedido += novoItem.Preco * quant;
 
                 total.Text = $"O total e: R${totalPedido:f2}";
                 listAdicionar.SelectedIndex = -1;
@@ -99,12 +96,15 @@ namespace cantinaPainel
         {
             if (listPedido.SelectedIndex != -1 & numericQuantidade.Value > 0)
             {
+
                 double quant = (double)numericQuantidade.Value;
                 Cardapio produtoSelecionado = (Cardapio)listPedido.SelectedItem;
+  
                 if (listPedido.SelectedIndex != -1)
                 {
                     numericQuantidade.Value = produtoSelecionado.Quantidade;
                 }
+                listPedido.Items.Remove(produtoSelecionado);
                 listPedido.Items.Remove(produtoSelecionado);
                 Globais.extrato.Remove(produtoSelecionado);
                 totalPedido -= produtoSelecionado.Preco * quant;

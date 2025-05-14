@@ -51,6 +51,7 @@
             btnEntregar.TabIndex = 1;
             btnEntregar.Text = "Entregar";
             btnEntregar.UseVisualStyleBackColor = true;
+            btnEntregar.Click += btnEntregar_Click;
             // 
             // listBox1
             // 

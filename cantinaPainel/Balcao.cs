@@ -24,6 +24,9 @@ namespace cantinaPainel
 
         }
 
-        
+        private void btnEntregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
