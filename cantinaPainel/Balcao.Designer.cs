@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             btnEntregar = new Button();
+            listView1 = new ListView();
             listBox1 = new ListBox();
             SuspendLayout();
             // 
@@ -53,14 +54,22 @@
             btnEntregar.UseVisualStyleBackColor = true;
             btnEntregar.Click += btnEntregar_Click;
             // 
+            // listView1
+            // 
+            listView1.Location = new Point(45, 94);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(333, 291);
+            listView1.TabIndex = 3;
+            listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(248, 112);
+            listBox1.Location = new Point(438, 73);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(450, 244);
-            listBox1.TabIndex = 2;
+            listBox1.Size = new Size(286, 274);
+            listBox1.TabIndex = 4;
             // 
             // formsBalcao
             // 
@@ -68,6 +77,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(listBox1);
+            Controls.Add(listView1);
             Controls.Add(btnEntregar);
             Controls.Add(label1);
             Name = "formsBalcao";
@@ -81,6 +91,7 @@
 
         private Label label1;
         private Button btnEntregar;
+        private ListView listView1;
         private ListBox listBox1;
     }
 }

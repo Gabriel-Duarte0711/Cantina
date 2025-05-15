@@ -18,15 +18,19 @@ namespace cantinaPainel
         {
             InitializeComponent();
         }
-
         private void formsBalcao_Load(object sender, EventArgs e)
         {
+
+            foreach (var item in Globais.extrato)
+            {
+                listBox1.Items.Add(item);
+            }
 
         }
 
         private void btnEntregar_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
