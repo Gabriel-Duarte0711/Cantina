@@ -30,15 +30,15 @@
         {
             label1 = new Label();
             btnEntregar = new Button();
-            listView1 = new ListView();
             listBox1 = new ListBox();
+            btnVoltar = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F);
-            label1.Location = new Point(45, 25);
+            label1.Location = new Point(110, 9);
             label1.Name = "label1";
             label1.Size = new Size(70, 28);
             label1.TabIndex = 0;
@@ -54,14 +54,6 @@
             btnEntregar.UseVisualStyleBackColor = true;
             btnEntregar.Click += btnEntregar_Click;
             // 
-            // listView1
-            // 
-            listView1.Location = new Point(45, 94);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(333, 291);
-            listView1.TabIndex = 3;
-            listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
@@ -71,13 +63,23 @@
             listBox1.Size = new Size(286, 274);
             listBox1.TabIndex = 4;
             // 
+            // btnVoltar
+            // 
+            btnVoltar.Location = new Point(12, 9);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Size = new Size(39, 40);
+            btnVoltar.TabIndex = 5;
+            btnVoltar.Text = "<";
+            btnVoltar.UseVisualStyleBackColor = true;
+            btnVoltar.Click += btnVoltar_Click;
+            // 
             // formsBalcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnVoltar);
             Controls.Add(listBox1);
-            Controls.Add(listView1);
             Controls.Add(btnEntregar);
             Controls.Add(label1);
             Name = "formsBalcao";
@@ -91,7 +93,7 @@
 
         private Label label1;
         private Button btnEntregar;
-        private ListView listView1;
         private ListBox listBox1;
+        private Button btnVoltar;
     }
 }

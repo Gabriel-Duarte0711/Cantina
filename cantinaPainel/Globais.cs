@@ -9,7 +9,6 @@ namespace cantinaPainel
     internal class Globais
     {
         public static List<Cardapio> extrato = new();
-
-       
+        public static List<String> nomes = new();
     }
 }

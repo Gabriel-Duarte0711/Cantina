@@ -127,10 +127,13 @@ namespace cantinaPainel
             {
 
                 listPedido.Items.Clear();
-                string Extrato = string.Join("\n", Globais.extrato);
-                MessageBox.Show($"Extrato:\n{Extrato}\n\no total e: {totalPedido:f2}");
-                total.Text = $"O total e: R${totalPedido = 0}";
+                Globais.nomes.Add(txtBoxNome.Text);
                 txtBoxNome.Clear();
+                string Extrato = string.Join("\n", Globais.extrato);
+                string Nomes = string.Join("\n", Globais.nomes);
+                MessageBox.Show($"Cliente: {Nomes} \n{Extrato}\n \no total é: {totalPedido:f2}");
+                total.Text = $"O total e: R${totalPedido = 0}";
+
                 txtBoxTroco.Clear();
                 numericTroco.Value = 0;
             }
@@ -153,26 +156,24 @@ namespace cantinaPainel
             formlogin.Show();
         }
 
-        private void btnExtrato_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void txtBoxNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnTroco_Click(object sender, EventArgs e)
         {
             double troco = (double)numericTroco.Value;
-            totalTroco = troco - totalPedido;
-            txtBoxTroco.Text = $"R$: {totalTroco:f2}";
+            if (troco >= totalPedido)
+            {
+                totalTroco = troco - totalPedido;
+                txtBoxTroco.Text = $"R$: {totalTroco:f2}";
+            }
+            else
+            {
+                MessageBox.Show("troco insuficiente");
+            }
+
         }
 
         private void comboBoxPagamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -191,16 +192,6 @@ namespace cantinaPainel
             formsBalcao formbalcao = new formsBalcao();
             formbalcao.Show();
             this.Hide();
-        }
-
-        private void numericTroco_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
