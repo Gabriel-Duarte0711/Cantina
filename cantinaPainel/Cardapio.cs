@@ -11,12 +11,14 @@ namespace cantinaPainel
         private string produto;
         private double preco;
         private int quantidade;
+        private string nome;
 
         public Cardapio(string produto, double preco)
         {
             this.produto = produto;
             this.preco = preco;
             this.quantidade = 0;
+            this.nome=null;
         }
 
         public string Produto
@@ -34,6 +36,11 @@ namespace cantinaPainel
         {
             get { return quantidade;}
             set { quantidade = value; }
+        }
+        public string Nome
+        {
+            get { return nome;}
+            set { nome = value; }
         }
         public override string ToString()
         {

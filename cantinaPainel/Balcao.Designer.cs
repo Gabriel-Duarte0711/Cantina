@@ -32,6 +32,8 @@
             btnEntregar = new Button();
             listBox1 = new ListBox();
             btnVoltar = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -73,11 +75,20 @@
             btnVoltar.UseVisualStyleBackColor = true;
             btnVoltar.Click += btnVoltar_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(98, 107);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(240, 150);
+            dataGridView1.TabIndex = 6;
+            // 
             // formsBalcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dataGridView1);
             Controls.Add(btnVoltar);
             Controls.Add(listBox1);
             Controls.Add(btnEntregar);
@@ -85,6 +96,7 @@
             Name = "formsBalcao";
             Text = "formsBalcao";
             Load += formsBalcao_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -95,5 +107,6 @@
         private Button btnEntregar;
         private ListBox listBox1;
         private Button btnVoltar;
+        private DataGridView dataGridView1;
     }
 }

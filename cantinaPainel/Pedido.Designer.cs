@@ -372,7 +372,7 @@
             Controls.Add(listPedido);
             Controls.Add(listAdicionar);
             Name = "formsPedido";
-            Text = "Pedido";
+            Text = "v bc";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).EndInit();

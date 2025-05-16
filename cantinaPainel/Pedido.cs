@@ -15,6 +15,7 @@ namespace cantinaPainel
 
         private double totalPedido = 0;
         private double totalTroco = 0;
+        private string nome;
         private void listAdicionar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listAdicionar.SelectedIndex != -1)
