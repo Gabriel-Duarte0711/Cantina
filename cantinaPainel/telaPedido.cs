@@ -40,6 +40,9 @@ namespace cantinaPainel
 
 
             listAdicionar.Items.Add(new Cardapio("Pão de Queijo", 3.50));
+            //Cardapio p1 = new Cardapio("Pão de Queijo", 3.50);
+            //Pedido p1exi = new Pedido(p1);
+            //listAdicionar.Items.Add(p1exi);
 
             listAdicionar.Items.Add(new Cardapio("Coxinha ", 5.00));
 
@@ -65,6 +68,7 @@ namespace cantinaPainel
             comboBoxPagamento.Items.Add("Dinheiro");
             comboBoxPagamento.Items.Add("Crédito");
             comboBoxPagamento.Items.Add("Débito");
+            comboBoxPagamento.Items.Add("Va");
             comboBoxPagamento.Items.Add("Vr");
             comboBoxPagamento.SelectedIndex = 0;
 

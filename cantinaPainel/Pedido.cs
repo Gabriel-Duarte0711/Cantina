@@ -6,21 +6,18 @@ using System.Threading.Tasks;
 
 namespace cantinaPainel
 {
-    internal class Pedido
+    class Pedido
     {
-        private string nomes;
-        private int quantidade;
+        public Cardapio pedidos { get; set; }
 
-        public string Nome
+        public Pedido(Cardapio Produto)
         {
-            get { return nomes; }
-            set { nomes = value; }
+            pedidos = Produto;
+        }
+        public override string ToString()
+        {
+                return $"{pedidos.Produto} - R$ {pedidos.Preco:f2}";
         }
 
-        public int Quantidade
-        {
-            get { return quantidade; }
-            set { quantidade = value; }
-        }
     }
 }

@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             btnEntregar = new Button();
-            listBox1 = new ListBox();
             btnVoltar = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F);
-            label1.Location = new Point(110, 9);
+            label1.Location = new Point(108, 11);
             label1.Name = "label1";
             label1.Size = new Size(70, 28);
             label1.TabIndex = 0;
@@ -56,15 +56,6 @@
             btnEntregar.UseVisualStyleBackColor = true;
             btnEntregar.Click += btnEntregar_Click;
             // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(438, 73);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(286, 274);
-            listBox1.TabIndex = 4;
-            // 
             // btnVoltar
             // 
             btnVoltar.Location = new Point(12, 9);
@@ -75,28 +66,31 @@
             btnVoltar.UseVisualStyleBackColor = true;
             btnVoltar.Click += btnVoltar_Click;
             // 
-            // dataGridView1
+            // contextMenuStrip1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(98, 107);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(240, 150);
-            dataGridView1.TabIndex = 6;
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(38, 73);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(394, 327);
+            flowLayoutPanel1.TabIndex = 7;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // formsBalcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(btnVoltar);
-            Controls.Add(listBox1);
             Controls.Add(btnEntregar);
             Controls.Add(label1);
             Name = "formsBalcao";
             Text = "formsBalcao";
             Load += formsBalcao_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -105,8 +99,8 @@
 
         private Label label1;
         private Button btnEntregar;
-        private ListBox listBox1;
         private Button btnVoltar;
-        private DataGridView dataGridView1;
+        private ContextMenuStrip contextMenuStrip1;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

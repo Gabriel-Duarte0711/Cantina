@@ -24,6 +24,7 @@ namespace cantinaPainel
         public string Produto
         {
             get { return produto;}
+            set { produto = value; }
         }
 
         public double Preco
@@ -37,11 +38,11 @@ namespace cantinaPainel
             get { return quantidade;}
             set { quantidade = value; }
         }
-        public string Nome
-        {
-            get { return nome;}
-            set { nome = value; }
-        }
+        //public string Nome
+        //{
+        //    get { return nome;}
+        //    set { nome = value; }
+        //}
         public override string ToString()
         {
 

@@ -25,18 +25,6 @@ namespace cantinaPainel
             string Extrato = string.Join("\n", Globais.extrato);
             string Nomes = string.Join("\n", Globais.nomes);
 
-
-            foreach (var nomes in Globais.nomes)
-            {
-                listBox1.Items.Add(nomes);
-            }
-
-
-            foreach (var extrato in Globais.extrato)
-            {
-                listBox1.Items.Add(extrato);
-            }
-
         }
 
         private void btnEntregar_Click(object sender, EventArgs e)
@@ -49,6 +37,30 @@ namespace cantinaPainel
             this.Hide();
             formsPedido formpedido = new formsPedido();
             formpedido.Show();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            FlowLayoutPanel flow = new FlowLayoutPanel();
+            flow.Dock = DockStyle.Fill;
+            flow.FlowDirection = FlowDirection.LeftToRight;
+            flow.WrapContents = true;
+            flow.AutoScroll = true;
+            flow.Padding = new Padding(10);
+
+            // Cria 3 ListBox e adiciona itens
+            for (int i = 1; i <= 5; i++)
+            {
+                ListBox listBox = new ListBox();
+                listBox.Width = 150;
+                listBox.Height = 100;
+
+                listBox.Items.Add($"{Globais.extrato}{i}");
+
+                flow.Controls.Add(listBox);
+            }
+
+            this.Controls.Add(flow);
         }
     }
 }

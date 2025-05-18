@@ -1,6 +1,6 @@
 ﻿namespace cantinaPainel
 {
-    partial class tela
+    partial class formsTela
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBoxPreparando = new ListBox();
+            listView1 = new ListView();
+            listView2 = new ListView();
             SuspendLayout();
             // 
-            // listBoxPreparando
+            // listView1
             // 
-            listBoxPreparando.FormattingEnabled = true;
-            listBoxPreparando.ItemHeight = 15;
-            listBoxPreparando.Location = new Point(115, 70);
-            listBoxPreparando.Name = "listBoxPreparando";
-            listBoxPreparando.Size = new Size(139, 304);
-            listBoxPreparando.TabIndex = 0;
+            listView1.Location = new Point(445, 31);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(158, 379);
+            listView1.TabIndex = 1;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
-            // tela
+            // listView2
+            // 
+            listView2.Location = new Point(153, 31);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(158, 379);
+            listView2.TabIndex = 2;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.SelectedIndexChanged += listView2_SelectedIndexChanged;
+            // 
+            // formsTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(listBoxPreparando);
-            Name = "tela";
+            Controls.Add(listView2);
+            Controls.Add(listView1);
+            Name = "formsTela";
             Text = "tela";
+            Load += formsTela_Load;
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ListBox listBoxPreparando;
+        private ListView listView1;
+        private ListView listView2;
     }
 }

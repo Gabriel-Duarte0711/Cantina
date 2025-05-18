@@ -59,8 +59,6 @@ C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net
 C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.genruntimeconfig.cache
 C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\ref\cantinaPainel.dll
 C:\Users\25163093\source\repos\cantinaPainel\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.tela.resources
-D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.tela.resources
-D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsTroco.resources
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\bin\Debug\net8.0-windows\cantinaPainel.exe
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\bin\Debug\net8.0-windows\cantinaPainel.deps.json
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\bin\Debug\net8.0-windows\cantinaPainel.runtimeconfig.json
@@ -87,3 +85,4 @@ C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\ref\cantinaPainel.dll
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.Properties.Resources.resources
 D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.Properties.Resources.resources
+D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsTela.resources
