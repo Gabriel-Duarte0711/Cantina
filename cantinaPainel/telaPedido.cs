@@ -86,7 +86,7 @@ namespace cantinaPainel
                 Cardapio novoItem = new Cardapio(produtoSelecionado.Produto, produtoSelecionado.Preco);
                 novoItem.Quantidade = (int)numericQuantidade.Value;
                 listPedido.Items.Add(novoItem);
-                Globais.extrato.Add(novoItem);
+                Pedido.extrato.Add(novoItem);
                 totalPedido += novoItem.Preco * quant;
 
                 total.Text = $"O total e: R${totalPedido:f2}";
@@ -113,7 +113,7 @@ namespace cantinaPainel
                     numericQuantidade.Value = produtoSelecionado.Quantidade;
                 }
                 listPedido.Items.Remove(produtoSelecionado);
-                Globais.extrato.Remove(produtoSelecionado);
+                Pedido.extrato.Remove(produtoSelecionado);
                 totalPedido -= produtoSelecionado.Preco * quant;
                 total.Text = $"O total e: R${totalPedido:f2}";
 
@@ -132,10 +132,10 @@ namespace cantinaPainel
             {
 
                 listPedido.Items.Clear();
-                Globais.nomes.Add(txtBoxNome.Text);
+                Pedido.nomes.Add(txtBoxNome.Text);
                 txtBoxNome.Clear();
-                string Extrato = string.Join("\n", Globais.extrato);
-                string Nomes = string.Join("\n", Globais.nomes);
+                string Extrato = string.Join("\n", Pedido.extrato);
+                string Nomes = string.Join("\n", Pedido.nomes);
                 MessageBox.Show($"Cliente: {Nomes} \n{Extrato}\n \no total é: {totalPedido:f2}");
                 total.Text = $"O total e: R${totalPedido = 0}";
 

@@ -6,14 +6,21 @@ using System.Threading.Tasks;
 
 namespace cantinaPainel
 {
+    
     class Pedido
     {
+
+
+        public static List<Cardapio> extrato = new();
+        public static List<String> nomes = new();
         public Cardapio pedidos { get; set; }
 
         public Pedido(Cardapio Produto)
         {
             pedidos = Produto;
         }
+
+   
         public override string ToString()
         {
                 return $"{pedidos.Produto} - R$ {pedidos.Preco:f2}";

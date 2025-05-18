@@ -33,7 +33,6 @@
             btnEntregar = new Button();
             btnVoltar = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // label1
@@ -48,9 +47,9 @@
             // 
             // btnEntregar
             // 
-            btnEntregar.Location = new Point(542, 362);
+            btnEntregar.Location = new Point(556, 343);
             btnEntregar.Name = "btnEntregar";
-            btnEntregar.Size = new Size(75, 23);
+            btnEntregar.Size = new Size(74, 31);
             btnEntregar.TabIndex = 1;
             btnEntregar.Text = "Entregar";
             btnEntregar.UseVisualStyleBackColor = true;
@@ -71,20 +70,11 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Location = new Point(38, 73);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(394, 327);
-            flowLayoutPanel1.TabIndex = 7;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
-            // 
             // formsBalcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(flowLayoutPanel1);
             Controls.Add(btnVoltar);
             Controls.Add(btnEntregar);
             Controls.Add(label1);
@@ -101,6 +91,5 @@
         private Button btnEntregar;
         private Button btnVoltar;
         private ContextMenuStrip contextMenuStrip1;
-        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
