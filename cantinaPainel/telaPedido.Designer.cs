@@ -54,6 +54,7 @@
             btnTroco = new Button();
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTroco).BeginInit();
@@ -146,9 +147,9 @@
             btnFinalizar.BackColor = Color.FromArgb(17, 25, 12);
             btnFinalizar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFinalizar.ForeColor = Color.FromArgb(230, 255, 0);
-            btnFinalizar.Location = new Point(734, 233);
+            btnFinalizar.Location = new Point(596, 436);
             btnFinalizar.Name = "btnFinalizar";
-            btnFinalizar.Size = new Size(173, 23);
+            btnFinalizar.Size = new Size(118, 28);
             btnFinalizar.TabIndex = 7;
             btnFinalizar.Text = "Finalizar";
             btnFinalizar.UseVisualStyleBackColor = false;
@@ -181,6 +182,7 @@
             numericQuantidade.Name = "numericQuantidade";
             numericQuantidade.Size = new Size(68, 21);
             numericQuantidade.TabIndex = 10;
+            numericQuantidade.ValueChanged += numericQuantidade_ValueChanged;
             // 
             // label3
             // 
@@ -273,6 +275,7 @@
             numericTroco.Name = "numericTroco";
             numericTroco.Size = new Size(118, 21);
             numericTroco.TabIndex = 20;
+            numericTroco.ValueChanged += numericTroco_ValueChanged;
             // 
             // label6
             // 
@@ -288,7 +291,7 @@
             // txtBoxTroco
             // 
             txtBoxTroco.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBoxTroco.Location = new Point(596, 379);
+            txtBoxTroco.Location = new Point(596, 409);
             txtBoxTroco.Name = "txtBoxTroco";
             txtBoxTroco.Size = new Size(118, 21);
             txtBoxTroco.TabIndex = 22;
@@ -298,7 +301,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(518, 377);
+            label7.Location = new Point(518, 409);
             label7.Name = "label7";
             label7.Size = new Size(59, 20);
             label7.TabIndex = 23;
@@ -309,9 +312,9 @@
             btnTroco.BackColor = Color.FromArgb(17, 25, 12);
             btnTroco.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTroco.ForeColor = Color.FromArgb(230, 255, 0);
-            btnTroco.Location = new Point(743, 346);
+            btnTroco.Location = new Point(596, 380);
             btnTroco.Name = "btnTroco";
-            btnTroco.Size = new Size(94, 23);
+            btnTroco.Size = new Size(118, 23);
             btnTroco.TabIndex = 24;
             btnTroco.Text = "Troco";
             btnTroco.UseVisualStyleBackColor = false;
@@ -340,12 +343,25 @@
             pictureBox1.TabIndex = 26;
             pictureBox1.TabStop = false;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.ForeColor = Color.White;
+            checkBox1.Location = new Point(596, 479);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(66, 19);
+            checkBox1.TabIndex = 27;
+            checkBox1.Text = "Viagem";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // formsPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1496, 604);
+            Controls.Add(checkBox1);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(btnTroco);
@@ -410,5 +426,6 @@
         private Button btnTroco;
         private Button button1;
         private PictureBox pictureBox1;
+        private CheckBox checkBox1;
     }
 }

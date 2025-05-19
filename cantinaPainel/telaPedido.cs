@@ -16,6 +16,7 @@ namespace cantinaPainel
         private double totalPedido = 0;
         private double totalTroco = 0;
         private string nome;
+        string check = "Local";
         private void listAdicionar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listAdicionar.SelectedIndex != -1)
@@ -72,6 +73,7 @@ namespace cantinaPainel
             comboBoxPagamento.Items.Add("Vr");
             comboBoxPagamento.SelectedIndex = 0;
 
+            
             //txtBoxTroco.ReadOnly = true;
             txtBoxTroco.Enabled = false;
         }
@@ -136,11 +138,12 @@ namespace cantinaPainel
                 txtBoxNome.Clear();
                 string Extrato = string.Join("\n", Pedido.extrato);
                 string Nomes = string.Join("\n", Pedido.nomes);
-                MessageBox.Show($"Cliente: {Nomes} \n{Extrato}\n \no total é: {totalPedido:f2}");
+                MessageBox.Show($"Cliente: {Nomes} \n{Extrato}\n \no total é: {totalPedido:f2}\n {check}");
                 total.Text = $"O total e: R${totalPedido = 0}";
 
                 txtBoxTroco.Clear();
                 numericTroco.Value = 0;
+                checkBox1.Checked = false;
             }
             else if (txtBoxNome.Text.Length == 0)
             {
@@ -197,6 +200,28 @@ namespace cantinaPainel
             formsBalcao formbalcao = new formsBalcao();
             formbalcao.Show();
             this.Hide();
+        }
+
+        private void numericQuantidade_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericTroco_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                check = "Viagem";
+            }
+            else 
+            {
+                check = "Local";
+            }
         }
     }
 }

@@ -69,8 +69,6 @@ C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsCozinha.resources
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsLogin.resources
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsPedido.resources
-C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.tela.resources
-C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsTroco.resources
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.UserControl1.resources
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.csproj.GenerateResource.cache
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.GeneratedMSBuildEditorConfig.editorconfig
@@ -86,3 +84,4 @@ C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.Properties.Resources.resources
 D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.Properties.Resources.resources
 D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsTela.resources
+C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsTela.resources
