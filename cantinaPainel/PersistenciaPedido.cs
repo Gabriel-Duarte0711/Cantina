@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace cantinaPainel
 {
-    internal class Globais
+    class PersistenciaPedido
     {
-        
+        public static List<Pedido> pedidos = new List<Pedido>();
     }
 }

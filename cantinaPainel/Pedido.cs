@@ -11,19 +11,26 @@ namespace cantinaPainel
     {
 
 
-        public static List<Cardapio> extrato = new();
-        public static List<String> nomes = new();
-        public Cardapio pedidos { get; set; }
+        public static List<Produto> extrato = new();
+        private string nome_cliente;
+        private string metodo_pgmt;
+        private bool isViagem;
+        private string status;
 
-        public Pedido(Cardapio Produto)
+        public string Nome_Cliente
         {
-            pedidos = Produto;
+            get { return nome_cliente; }
+            set { nome_cliente = value; }
+        }
+        public void Add (Produto produto)
+        {
+            extrato.Add (produto);
         }
 
-   
+
         public override string ToString()
         {
-                return $"{pedidos.Produto} - R$ {pedidos.Preco:f2}";
+            foreach (Produto produto in extrato) {
         }
 
     }

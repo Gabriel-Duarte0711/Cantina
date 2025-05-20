@@ -33,6 +33,7 @@
             btnEntregar = new Button();
             btnVoltar = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
             // label1
@@ -70,11 +71,21 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(108, 78);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(405, 244);
+            listBox1.TabIndex = 6;
+            // 
             // formsBalcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(listBox1);
             Controls.Add(btnVoltar);
             Controls.Add(btnEntregar);
             Controls.Add(label1);
@@ -91,5 +102,6 @@
         private Button btnEntregar;
         private Button btnVoltar;
         private ContextMenuStrip contextMenuStrip1;
+        private ListBox listBox1;
     }
 }

@@ -68,7 +68,7 @@
             listAdicionar.ItemHeight = 15;
             listAdicionar.Location = new Point(78, 177);
             listAdicionar.Name = "listAdicionar";
-            listAdicionar.Size = new Size(173, 64);
+            listAdicionar.Size = new Size(214, 94);
             listAdicionar.TabIndex = 0;
             listAdicionar.SelectedIndexChanged += listAdicionar_SelectedIndexChanged;
             // 
@@ -77,9 +77,9 @@
             listPedido.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listPedido.FormattingEnabled = true;
             listPedido.ItemHeight = 15;
-            listPedido.Location = new Point(518, 177);
+            listPedido.Location = new Point(518, 174);
             listPedido.Name = "listPedido";
-            listPedido.Size = new Size(179, 64);
+            listPedido.Size = new Size(214, 94);
             listPedido.TabIndex = 1;
             listPedido.SelectedIndexChanged += listPedido_SelectedIndexChanged;
             // 
@@ -147,9 +147,9 @@
             btnFinalizar.BackColor = Color.FromArgb(17, 25, 12);
             btnFinalizar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFinalizar.ForeColor = Color.FromArgb(230, 255, 0);
-            btnFinalizar.Location = new Point(596, 436);
+            btnFinalizar.Location = new Point(596, 435);
             btnFinalizar.Name = "btnFinalizar";
-            btnFinalizar.Size = new Size(118, 28);
+            btnFinalizar.Size = new Size(136, 28);
             btnFinalizar.TabIndex = 7;
             btnFinalizar.Text = "Finalizar";
             btnFinalizar.UseVisualStyleBackColor = false;
@@ -178,9 +178,9 @@
             // numericQuantidade
             // 
             numericQuantidade.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numericQuantidade.Location = new Point(183, 276);
+            numericQuantidade.Location = new Point(191, 277);
             numericQuantidade.Name = "numericQuantidade";
-            numericQuantidade.Size = new Size(68, 21);
+            numericQuantidade.Size = new Size(101, 21);
             numericQuantidade.TabIndex = 10;
             numericQuantidade.ValueChanged += numericQuantidade_ValueChanged;
             // 
@@ -190,7 +190,7 @@
             label3.BackColor = Color.FromArgb(17, 25, 12);
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(243, 241, 238);
-            label3.Location = new Point(72, 276);
+            label3.Location = new Point(78, 278);
             label3.Name = "label3";
             label3.Size = new Size(107, 20);
             label3.TabIndex = 11;
@@ -231,7 +231,7 @@
             txtBoxNome.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBoxNome.Location = new Point(596, 274);
             txtBoxNome.Name = "txtBoxNome";
-            txtBoxNome.Size = new Size(118, 21);
+            txtBoxNome.Size = new Size(136, 21);
             txtBoxNome.TabIndex = 15;
             txtBoxNome.Tag = "";
             // 
@@ -251,9 +251,9 @@
             comboBoxPagamento.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPagamento.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxPagamento.FormattingEnabled = true;
-            comboBoxPagamento.Location = new Point(596, 314);
+            comboBoxPagamento.Location = new Point(596, 312);
             comboBoxPagamento.Name = "comboBoxPagamento";
-            comboBoxPagamento.Size = new Size(118, 23);
+            comboBoxPagamento.Size = new Size(136, 23);
             comboBoxPagamento.TabIndex = 18;
             comboBoxPagamento.SelectedIndexChanged += comboBoxPagamento_SelectedIndexChanged;
             // 
@@ -271,9 +271,9 @@
             // numericTroco
             // 
             numericTroco.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numericTroco.Location = new Point(596, 348);
+            numericTroco.Location = new Point(596, 345);
             numericTroco.Name = "numericTroco";
-            numericTroco.Size = new Size(118, 21);
+            numericTroco.Size = new Size(136, 21);
             numericTroco.TabIndex = 20;
             numericTroco.ValueChanged += numericTroco_ValueChanged;
             // 
@@ -291,9 +291,9 @@
             // txtBoxTroco
             // 
             txtBoxTroco.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBoxTroco.Location = new Point(596, 409);
+            txtBoxTroco.Location = new Point(596, 408);
             txtBoxTroco.Name = "txtBoxTroco";
-            txtBoxTroco.Size = new Size(118, 21);
+            txtBoxTroco.Size = new Size(136, 21);
             txtBoxTroco.TabIndex = 22;
             // 
             // label7
@@ -312,9 +312,9 @@
             btnTroco.BackColor = Color.FromArgb(17, 25, 12);
             btnTroco.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTroco.ForeColor = Color.FromArgb(230, 255, 0);
-            btnTroco.Location = new Point(596, 380);
+            btnTroco.Location = new Point(596, 379);
             btnTroco.Name = "btnTroco";
-            btnTroco.Size = new Size(118, 23);
+            btnTroco.Size = new Size(136, 23);
             btnTroco.TabIndex = 24;
             btnTroco.Text = "Troco";
             btnTroco.UseVisualStyleBackColor = false;

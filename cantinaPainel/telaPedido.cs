@@ -30,7 +30,7 @@ namespace cantinaPainel
         {
             if (listPedido.SelectedIndex != -1)
             {
-                Cardapio produtoSelecionado = (Cardapio)listPedido.SelectedItem;
+                Produto produtoSelecionado = (Produto)listPedido.SelectedItem;
                 numericQuantidade.Value = produtoSelecionado.Quantidade;
                 numericQuantidade.Enabled = false;
             }
@@ -40,30 +40,25 @@ namespace cantinaPainel
         {
 
 
-            listAdicionar.Items.Add(new Cardapio("Pão de Queijo", 3.50));
-            //Cardapio p1 = new Cardapio("Pão de Queijo", 3.50);
-            //Pedido p1exi = new Pedido(p1);
-            //listAdicionar.Items.Add(p1exi);
+            listAdicionar.Items.Add(new Produto(1, "Pão de Queijo", 3.50,false));
 
-            listAdicionar.Items.Add(new Cardapio("Coxinha ", 5.00));
+            listAdicionar.Items.Add(new Produto(2, "Coxinha ", 5.00,false));
 
-            listAdicionar.Items.Add(new Cardapio("Pastel de Carne", 6.00));
+            listAdicionar.Items.Add(new Produto(3, "Pastel de Carne", 6.00, false));
 
-            listAdicionar.Items.Add(new Cardapio("Pastel de Queijo", 5.50));
+            listAdicionar.Items.Add(new Produto(4, "Pastel de Queijo", 5.50, false));
 
-            listAdicionar.Items.Add(new Cardapio("Suco Natural (300ml)", 4.00));
+            listAdicionar.Items.Add(new Produto(5, "Suco Natural (300ml)", 4.00, false));
 
-            listAdicionar.Items.Add(new Cardapio("Refrigerante Lata", 4.50));
+            listAdicionar.Items.Add(new Produto(6, "Refrigerante Lata", 4.50, false));
 
-            listAdicionar.Items.Add(new Cardapio("Hamburguer Simples", 8.00));
+            listAdicionar.Items.Add(new Produto(7, "Hamburguer Simples", 8.00, true));
 
-            listAdicionar.Items.Add(new Cardapio("Hambúrguer com Queijo", 9.00));
+            listAdicionar.Items.Add(new Produto(8, "Hambúrguer com Queijo", 9.00, true));
 
-            listAdicionar.Items.Add(new Cardapio("X-Tudo", 12.00));
+            listAdicionar.Items.Add(new Produto(9, "X-Tudo", 12.00, true));
 
-            listAdicionar.Items.Add(new Cardapio("Água Mineral (500ml)", 2.50));
-
-
+            listAdicionar.Items.Add(new Produto(10, "Água Mineral (500ml)", 2.50, false));
 
             comboBoxPagamento.Items.Add("Pix");
             comboBoxPagamento.Items.Add("Dinheiro");
@@ -73,7 +68,7 @@ namespace cantinaPainel
             comboBoxPagamento.Items.Add("Vr");
             comboBoxPagamento.SelectedIndex = 0;
 
-            
+        
             //txtBoxTroco.ReadOnly = true;
             txtBoxTroco.Enabled = false;
         }
@@ -84,8 +79,8 @@ namespace cantinaPainel
             if (listAdicionar.SelectedIndex != -1 && numericQuantidade.Value > 0)
             {
                 double quant = (double)numericQuantidade.Value;
-                Cardapio produtoSelecionado = (Cardapio)listAdicionar.SelectedItem;
-                Cardapio novoItem = new Cardapio(produtoSelecionado.Produto, produtoSelecionado.Preco);
+                Produto produtoSelecionado = (Produto)listAdicionar.SelectedItem;
+                Produto novoItem = new Produto(produtoSelecionado.Codigo, produtoSelecionado.Item, produtoSelecionado.Preco, produtoSelecionado.IsChapa);
                 novoItem.Quantidade = (int)numericQuantidade.Value;
                 listPedido.Items.Add(novoItem);
                 Pedido.extrato.Add(novoItem);
@@ -108,7 +103,7 @@ namespace cantinaPainel
             {
 
                 double quant = (double)numericQuantidade.Value;
-                Cardapio produtoSelecionado = (Cardapio)listPedido.SelectedItem;
+                Produto produtoSelecionado = (Produto)listPedido.SelectedItem;
 
                 if (listPedido.SelectedIndex != -1)
                 {
@@ -134,11 +129,12 @@ namespace cantinaPainel
             {
 
                 listPedido.Items.Clear();
-                Pedido.nomes.Add(txtBoxNome.Text);
+                Pedido pedido = new Pedido();
+                pedido.Nome_Cliente = (txtBoxNome.Text);
                 txtBoxNome.Clear();
+                PersistenciaPedido.pedidos.Add(pedido);
                 string Extrato = string.Join("\n", Pedido.extrato);
-                string Nomes = string.Join("\n", Pedido.nomes);
-                MessageBox.Show($"Cliente: {Nomes} \n{Extrato}\n \no total é: {totalPedido:f2}\n {check}");
+                MessageBox.Show($"Cliente: {pedido.Nome_Cliente} \n{Extrato}\n \no total é: {totalPedido:f2}\n {check}");
                 total.Text = $"O total e: R${totalPedido = 0}";
 
                 txtBoxTroco.Clear();
