@@ -16,6 +16,7 @@ namespace cantinaPainel
         private double totalPedido = 0;
         private double totalTroco = 0;
         private string nome;
+        public string metodoPgmt;
         string check = "Local";
         List<Produto> extrato2 = new();
         private void listAdicionar_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,7 +70,6 @@ namespace cantinaPainel
             comboBoxPagamento.Items.Add("Vr");
             comboBoxPagamento.SelectedIndex = 0;
 
-        
             //txtBoxTroco.ReadOnly = true;
             txtBoxTroco.Enabled = false;
         }
@@ -128,7 +128,7 @@ namespace cantinaPainel
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            if (txtBoxNome.Text.Length > 0 && listPedido.Items.Count != 0)
+            if (txtBoxNome.Text.Length > 0 && listPedido.Items.Count != 0 && metodoPgmt != null)
             {
 
                 listPedido.Items.Clear();
@@ -172,11 +172,13 @@ namespace cantinaPainel
 
         private void btnTroco_Click(object sender, EventArgs e)
         {
+
             double troco = (double)numericTroco.Value;
             if (troco >= totalPedido)
             {
                 totalTroco = troco - totalPedido;
                 txtBoxTroco.Text = $"R$: {totalTroco:f2}";
+                metodoPgmt = "Dinheiro";
             }
             else
             {
@@ -187,13 +189,46 @@ namespace cantinaPainel
 
         private void comboBoxPagamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            bool mostrarTroco = comboBoxPagamento.SelectedIndex == 1;
+            bool mostrarTroco = false;
+            if (comboBoxPagamento.SelectedIndex == 1)
+            {   
+                mostrarTroco = true;
+            }
 
+           else if (comboBoxPagamento.SelectedIndex == 0)
+            {
+                mostrarTroco = false;
+                metodoPgmt = "Pix";
+            }
+
+            else if (comboBoxPagamento.SelectedIndex == 2)
+            {
+                mostrarTroco = false;
+                metodoPgmt = "Crédito";
+            }
+            else if (comboBoxPagamento.SelectedIndex == 3)
+            {
+                mostrarTroco = false;
+                metodoPgmt = "Débito";
+            }
+            else if (comboBoxPagamento.SelectedIndex == 4)
+            {
+                mostrarTroco = false;
+                metodoPgmt = "Va";
+            }
+            else if (comboBoxPagamento.SelectedIndex == 5)
+            {
+                mostrarTroco = false;
+                metodoPgmt = "Vr";
+            }
             numericTroco.Visible = mostrarTroco;
             txtBoxTroco.Visible = mostrarTroco;
             btnTroco.Visible = mostrarTroco;
             label6.Visible = mostrarTroco;
             label7.Visible = mostrarTroco;
+            txtBoxTroco.Enabled = mostrarTroco;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -270,6 +270,7 @@
             // 
             // numericTroco
             // 
+            numericTroco.DecimalPlaces = 2;
             numericTroco.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             numericTroco.Location = new Point(596, 345);
             numericTroco.Name = "numericTroco";
