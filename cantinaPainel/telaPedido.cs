@@ -17,6 +17,7 @@ namespace cantinaPainel
         private double totalTroco = 0;
         private string nome;
         string check = "Local";
+        List<Produto> extrato2 = new();
         private void listAdicionar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listAdicionar.SelectedIndex != -1)
@@ -84,6 +85,7 @@ namespace cantinaPainel
                 novoItem.Quantidade = (int)numericQuantidade.Value;
                 listPedido.Items.Add(novoItem);
                 Pedido.extrato.Add(novoItem);
+                extrato2.Add(novoItem);
                 totalPedido += novoItem.Preco * quant;
 
                 total.Text = $"O total e: R${totalPedido:f2}";
@@ -111,6 +113,7 @@ namespace cantinaPainel
                 }
                 listPedido.Items.Remove(produtoSelecionado);
                 Pedido.extrato.Remove(produtoSelecionado);
+                extrato2.Remove(produtoSelecionado);
                 totalPedido -= produtoSelecionado.Preco * quant;
                 total.Text = $"O total e: R${totalPedido:f2}";
 
@@ -133,10 +136,12 @@ namespace cantinaPainel
                 pedido.Nome_Cliente = (txtBoxNome.Text);
                 txtBoxNome.Clear();
                 PersistenciaPedido.pedidos.Add(pedido);
-                string Extrato = string.Join("\n", Pedido.extrato);
-                MessageBox.Show($"Cliente: {pedido.Nome_Cliente} \n{Extrato}\n \no total é: {totalPedido:f2}\n {check}");
+                //Pedido.extrato.Add(pedido);
+                string Extrato = string.Join("\n", extrato2);
+                MessageBox.Show($"Cliente: {pedido.Nome_Cliente} \n{Extrato}\n \no total é: {totalPedido:f2}\n{check}");
                 total.Text = $"O total e: R${totalPedido = 0}";
 
+                extrato2.Clear();
                 txtBoxTroco.Clear();
                 numericTroco.Value = 0;
                 checkBox1.Checked = false;

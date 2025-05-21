@@ -48,7 +48,7 @@
             // 
             // btnEntregar
             // 
-            btnEntregar.Location = new Point(556, 343);
+            btnEntregar.Location = new Point(573, 380);
             btnEntregar.Name = "btnEntregar";
             btnEntregar.Size = new Size(74, 31);
             btnEntregar.TabIndex = 1;
@@ -75,9 +75,9 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(108, 78);
+            listBox1.Location = new Point(90, 62);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(405, 244);
+            listBox1.Size = new Size(557, 274);
             listBox1.TabIndex = 6;
             // 
             // formsBalcao

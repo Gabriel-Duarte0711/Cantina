@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace cantinaPainel
@@ -22,18 +23,20 @@ namespace cantinaPainel
         private void formsBalcao_Load(object sender, EventArgs e)
         {
             Pedido pedido = new Pedido();
-           
+
             PersistenciaPedido pedido1 = new PersistenciaPedido();
             //string Extrato = string.Join("\n", PersistenciaPedido.);
-
-            List<Pedido> pedidoss = new List<Pedido>();
-
-  
 
             foreach (var item in PersistenciaPedido.pedidos)
             {
                 listBox1.Items.Add(item);
             }
+
+      
+            
+
+            
+
         }
 
         private void btnEntregar_Click(object sender, EventArgs e)
@@ -46,6 +49,11 @@ namespace cantinaPainel
             this.Hide();
             formsPedido formpedido = new formsPedido();
             formpedido.Show();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

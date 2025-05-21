@@ -30,16 +30,13 @@ namespace cantinaPainel
 
         public override string ToString()
         {
-            string Extrato = string.Join("\n", extrato);
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Cliente: {nome_cliente}\n");
-            sb.AppendLine($"\nProdutos: {Extrato}");
 
             foreach (Produto produto in extrato) 
             {
-                sb.AppendLine($"{Extrato}");
+                sb.Append($"{nome_cliente}\n {produto}");
             }
-            return sb.ToString();
+            return sb.ToString();         
         }
 
     }
