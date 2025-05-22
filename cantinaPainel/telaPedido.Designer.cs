@@ -160,7 +160,7 @@
             btnSair.BackColor = Color.FromArgb(17, 25, 12);
             btnSair.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSair.ForeColor = Color.FromArgb(230, 255, 0);
-            btnSair.Location = new Point(639, 569);
+            btnSair.Location = new Point(657, 570);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(75, 23);
             btnSair.TabIndex = 9;
@@ -361,7 +361,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
-            ClientSize = new Size(1496, 604);
+            ClientSize = new Size(845, 604);
             Controls.Add(checkBox1);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
