@@ -14,6 +14,7 @@ namespace cantinaPainel
         private string nome;
         private int codigo=0;
         private bool isChapa;
+
         public Produto(int codigo,string produto, double preco, bool isChapa)
         {
             this.item = produto;

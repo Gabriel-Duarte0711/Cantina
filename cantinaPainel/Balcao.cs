@@ -22,21 +22,29 @@ namespace cantinaPainel
         }
         private void formsBalcao_Load(object sender, EventArgs e)
         {
-            Pedido pedido = new Pedido();
-
-            PersistenciaPedido pedido1 = new PersistenciaPedido();
-            //string Extrato = string.Join("\n", PersistenciaPedido.);
-
-            foreach (var item in PersistenciaPedido.pedidos)
+            foreach (var pedido in PersistenciaPedido.pedidos)
             {
-                listBox1.Items.Add(item);
+                foreach (var produto in pedido.extrato)
+                {
+                    
+                    if(produto.IsChapa == true)
+                    {
+
+                        return;
+                    }
+                }
+
+                foreach (var pedido2 in PersistenciaPedido.pedidos)
+                {
+                    foreach (var produto in pedido.extrato)
+                    {
+                        if (produto.IsChapa == true)
+                        {
+                            listBox2.Items.Add(pedido2);
+                        }
+                    }
+                }
             }
-
-      
-            
-
-            
-
         }
 
         private void btnEntregar_Click(object sender, EventArgs e)

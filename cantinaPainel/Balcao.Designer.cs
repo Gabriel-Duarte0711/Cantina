@@ -34,6 +34,7 @@
             btnVoltar = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
             listBox1 = new ListBox();
+            listBox2 = new ListBox();
             SuspendLayout();
             // 
             // label1
@@ -75,16 +76,26 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(90, 62);
+            listBox1.Location = new Point(81, 62);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(557, 274);
+            listBox1.Size = new Size(182, 274);
             listBox1.TabIndex = 6;
+            // 
+            // listBox2
+            // 
+            listBox2.FormattingEnabled = true;
+            listBox2.ItemHeight = 15;
+            listBox2.Location = new Point(380, 62);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(182, 274);
+            listBox2.TabIndex = 7;
             // 
             // formsBalcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(listBox2);
             Controls.Add(listBox1);
             Controls.Add(btnVoltar);
             Controls.Add(btnEntregar);
@@ -103,5 +114,6 @@
         private Button btnVoltar;
         private ContextMenuStrip contextMenuStrip1;
         private ListBox listBox1;
+        private ListBox listBox2;
     }
 }

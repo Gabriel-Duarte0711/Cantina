@@ -84,7 +84,6 @@ namespace cantinaPainel
                 Produto novoItem = new Produto(produtoSelecionado.Codigo, produtoSelecionado.Item, produtoSelecionado.Preco, produtoSelecionado.IsChapa);
                 novoItem.Quantidade = (int)numericQuantidade.Value;
                 listPedido.Items.Add(novoItem);
-                Pedido.extrato.Add(novoItem);
                 extrato2.Add(novoItem);
                 totalPedido += novoItem.Preco * quant;
 
@@ -112,7 +111,6 @@ namespace cantinaPainel
                     numericQuantidade.Value = produtoSelecionado.Quantidade;
                 }
                 listPedido.Items.Remove(produtoSelecionado);
-                Pedido.extrato.Remove(produtoSelecionado);
                 extrato2.Remove(produtoSelecionado);
                 totalPedido -= produtoSelecionado.Preco * quant;
                 total.Text = $"O total e: R${totalPedido:f2}";
@@ -131,16 +129,21 @@ namespace cantinaPainel
             if (txtBoxNome.Text.Length > 0 && listPedido.Items.Count != 0 && metodoPgmt != null)
             {
 
-                listPedido.Items.Clear();
+                
                 Pedido pedido = new Pedido();
                 pedido.Nome_Cliente = (txtBoxNome.Text);
-                txtBoxNome.Clear();
+                pedido.extrato = listPedido.Items.Cast<Produto>().ToList();
                 PersistenciaPedido.pedidos.Add(pedido);
-                //Pedido.extrato.Add(pedido);
+                txtBoxNome.Clear();
+                
+                listPedido.Items.Clear();
+
+
                 string Extrato = string.Join("\n", extrato2);
                 MessageBox.Show($"Cliente: {pedido.Nome_Cliente} \n{Extrato}\n \no total é: {totalPedido:f2}\n{check}");
                 total.Text = $"O total e: R${totalPedido = 0}";
 
+                
                 extrato2.Clear();
                 txtBoxTroco.Clear();
                 numericTroco.Value = 0;

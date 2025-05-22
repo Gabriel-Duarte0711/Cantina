@@ -11,7 +11,7 @@ namespace cantinaPainel
     {
 
 
-        public static List<Produto> extrato = new();
+        public List<Produto> extrato = new List<Produto>();
         private string nome_cliente;
         private string metodo_pgmt;
         private bool isViagem;
@@ -31,10 +31,10 @@ namespace cantinaPainel
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-
+            sb.Append(nome_cliente);
             foreach (Produto produto in extrato) 
             {
-                sb.Append($"{nome_cliente}\n {produto}");
+                sb.Append($"\n {produto}");
             }
             return sb.ToString();         
         }
