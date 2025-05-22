@@ -24,25 +24,21 @@ namespace cantinaPainel
         {
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
+                bool pedidoTemChapa = false;
+
                 foreach (var produto in pedido.extrato)
                 {
-                    
-                    if(produto.IsChapa == true)
+                    if (produto.IsChapa)
                     {
-
-                        return;
+                        pedidoTemChapa = true;
+                        return; // para de verificar produtos desse pedido
                     }
                 }
 
-                foreach (var pedido2 in PersistenciaPedido.pedidos)
+                if (!pedidoTemChapa)
                 {
-                    foreach (var produto in pedido.extrato)
-                    {
-                        if (produto.IsChapa == true)
-                        {
-                            listBox2.Items.Add(pedido2);
-                        }
-                    }
+                    
+                    listBox1.Items.Add($"\n{pedido.ToString()}");
                 }
             }
         }
