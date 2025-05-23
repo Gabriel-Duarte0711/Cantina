@@ -46,9 +46,9 @@ namespace cantinaPainel
 
             listAdicionar.Items.Add(new Produto(2, "Coxinha ", 5.00,false));
 
-            listAdicionar.Items.Add(new Produto(3, "Pastel de Carne", 6.00, false));
+            listAdicionar.Items.Add(new Produto(3, "Pastel de Carne", 6.00, true));
 
-            listAdicionar.Items.Add(new Produto(4, "Pastel de Queijo", 5.50, false));
+            listAdicionar.Items.Add(new Produto(4, "Pastel de Queijo", 5.50, true));
 
             listAdicionar.Items.Add(new Produto(5, "Suco Natural (300ml)", 4.00, false));
 
@@ -129,9 +129,10 @@ namespace cantinaPainel
             if (txtBoxNome.Text.Length > 0 && listPedido.Items.Count != 0 && metodoPgmt != null)
             {
 
-                
+                DateTime hora = DateTime.Now;
                 Pedido pedido = new Pedido();
                 pedido.Nome_Cliente = (txtBoxNome.Text);
+                pedido.StatusPedido = Status.PREPARANDO;
                 pedido.extrato = listPedido.Items.Cast<Produto>().ToList();
                 PersistenciaPedido.pedidos.Add(pedido);
                 txtBoxNome.Clear();
@@ -140,7 +141,7 @@ namespace cantinaPainel
 
 
                 string Extrato = string.Join("\n", extrato2);
-                MessageBox.Show($"Cliente: {pedido.Nome_Cliente} \n{Extrato}\n \no total é: {totalPedido:f2}\n{check}");
+                MessageBox.Show($"Cliente: {pedido.Nome_Cliente} \n{Extrato}\n \no total é: {totalPedido:f2}\nPedido para: {check}\nPago no: {metodoPgmt}\ndata: {hora}");
                 total.Text = $"O total e: R${totalPedido = 0}";
 
                 

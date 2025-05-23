@@ -33,7 +33,8 @@
             btnEntregar = new Button();
             btnVoltar = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            listBox1 = new ListBox();
+            listBoxPedidos = new ListBox();
+            listBoxHistorico = new ListBox();
             SuspendLayout();
             // 
             // label1
@@ -71,21 +72,31 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // listBox1
+            // listBoxPedidos
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(48, 55);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(707, 304);
-            listBox1.TabIndex = 6;
+            listBoxPedidos.FormattingEnabled = true;
+            listBoxPedidos.ItemHeight = 15;
+            listBoxPedidos.Location = new Point(48, 55);
+            listBoxPedidos.Name = "listBoxPedidos";
+            listBoxPedidos.Size = new Size(707, 214);
+            listBoxPedidos.TabIndex = 6;
+            // 
+            // listBoxHistorico
+            // 
+            listBoxHistorico.FormattingEnabled = true;
+            listBoxHistorico.ItemHeight = 15;
+            listBoxHistorico.Location = new Point(48, 299);
+            listBoxHistorico.Name = "listBoxHistorico";
+            listBoxHistorico.Size = new Size(304, 139);
+            listBoxHistorico.TabIndex = 7;
             // 
             // formsBalcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(listBox1);
+            Controls.Add(listBoxHistorico);
+            Controls.Add(listBoxPedidos);
             Controls.Add(btnVoltar);
             Controls.Add(btnEntregar);
             Controls.Add(label1);
@@ -102,6 +113,7 @@
         private Button btnEntregar;
         private Button btnVoltar;
         private ContextMenuStrip contextMenuStrip1;
-        private ListBox listBox1;
+        private ListBox listBoxPedidos;
+        private ListBox listBoxHistorico;
     }
 }

@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace cantinaPainel
 {
-    internal class PersistenciaPedido
-    {
-        public static List<Pedido> pedidos = new List<Pedido>();
-    }
+        public enum Status
+        {
+            PREPARANDO,
+            PRONTO,
+            ENTREGUE
+        }
 }
