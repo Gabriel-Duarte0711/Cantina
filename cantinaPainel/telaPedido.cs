@@ -42,9 +42,9 @@ namespace cantinaPainel
         {
 
 
-            listAdicionar.Items.Add(new Produto(1, "Pão de Queijo", 3.50,false));
+            listAdicionar.Items.Add(new Produto(1, "Pão de Queijo", 3.50, false));
 
-            listAdicionar.Items.Add(new Produto(2, "Coxinha ", 5.00,false));
+            listAdicionar.Items.Add(new Produto(2, "Coxinha ", 5.00, false));
 
             listAdicionar.Items.Add(new Produto(3, "Pastel de Carne", 6.00, true));
 
@@ -133,10 +133,11 @@ namespace cantinaPainel
                 Pedido pedido = new Pedido();
                 pedido.Nome_Cliente = (txtBoxNome.Text);
                 pedido.StatusPedido = Status.PREPARANDO;
+                pedido.IsViagem = checkBox1.Checked;
                 pedido.extrato = listPedido.Items.Cast<Produto>().ToList();
                 PersistenciaPedido.pedidos.Add(pedido);
                 txtBoxNome.Clear();
-                
+
                 listPedido.Items.Clear();
 
 
@@ -144,7 +145,7 @@ namespace cantinaPainel
                 MessageBox.Show($"Cliente: {pedido.Nome_Cliente} \n{Extrato}\n \no total é: {totalPedido:f2}\nPedido para: {check}\nPago no: {metodoPgmt}\ndata: {hora}");
                 total.Text = $"O total e: R${totalPedido = 0}";
 
-                
+
                 extrato2.Clear();
                 txtBoxTroco.Clear();
                 numericTroco.Value = 0;
@@ -195,11 +196,11 @@ namespace cantinaPainel
         {
             bool mostrarTroco = false;
             if (comboBoxPagamento.SelectedIndex == 1)
-            {   
+            {
                 mostrarTroco = true;
             }
 
-           else if (comboBoxPagamento.SelectedIndex == 0)
+            else if (comboBoxPagamento.SelectedIndex == 0)
             {
                 mostrarTroco = false;
                 metodoPgmt = "Pix";
@@ -258,10 +259,17 @@ namespace cantinaPainel
             {
                 check = "Viagem";
             }
-            else 
+            else
             {
                 check = "Local";
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            formsCozinha formsCozinha = new formsCozinha();
+            formsCozinha.Show();
+            this.Hide();
         }
     }
 }

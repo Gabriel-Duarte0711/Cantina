@@ -49,9 +49,9 @@
             // 
             // btnEntregar
             // 
-            btnEntregar.Location = new Point(573, 380);
+            btnEntregar.Location = new Point(629, 292);
             btnEntregar.Name = "btnEntregar";
-            btnEntregar.Size = new Size(74, 31);
+            btnEntregar.Size = new Size(126, 40);
             btnEntregar.TabIndex = 1;
             btnEntregar.Text = "Entregar";
             btnEntregar.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             // 
             listBoxPedidos.FormattingEnabled = true;
             listBoxPedidos.ItemHeight = 15;
-            listBoxPedidos.Location = new Point(48, 55);
+            listBoxPedidos.Location = new Point(48, 63);
             listBoxPedidos.Name = "listBoxPedidos";
             listBoxPedidos.Size = new Size(707, 214);
             listBoxPedidos.TabIndex = 6;
@@ -85,9 +85,9 @@
             // 
             listBoxHistorico.FormattingEnabled = true;
             listBoxHistorico.ItemHeight = 15;
-            listBoxHistorico.Location = new Point(48, 299);
+            listBoxHistorico.Location = new Point(48, 359);
             listBoxHistorico.Name = "listBoxHistorico";
-            listBoxHistorico.Size = new Size(304, 139);
+            listBoxHistorico.Size = new Size(707, 79);
             listBoxHistorico.TabIndex = 7;
             // 
             // formsBalcao

@@ -18,6 +18,7 @@ namespace cantinaPainel
         private bool isViagem;
         private Status statusPedido;
 
+
         public Status StatusPedido
         {
             get { return statusPedido; }
@@ -34,6 +35,7 @@ namespace cantinaPainel
         public bool IsViagem
         {
             get { return isViagem; }
+            set {  isViagem = value; }
         }
 
 
@@ -43,11 +45,28 @@ namespace cantinaPainel
         {
             StringBuilder sb = new StringBuilder();
             sb.Append($"Cliente: {nome_cliente} ");
+            
             foreach (Produto produto in extrato)
             {
 
                 sb.Append($"/ {produto.Quantidade}x - {produto.Item} ");
             }
+            return sb.ToString();
+        }
+
+        public string SomenteChapas()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Cliente: {Nome_Cliente}");
+
+            foreach (var produto in extrato)
+            {
+                if (produto.IsChapa)
+                {
+                    sb.AppendLine($"/ {produto.Quantidade}x - {produto.Item}");
+                }
+            }
+
             return sb.ToString();
         }
 

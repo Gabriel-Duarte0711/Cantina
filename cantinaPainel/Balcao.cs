@@ -22,6 +22,7 @@ namespace cantinaPainel
         }
         private void formsBalcao_Load(object sender, EventArgs e)
         {
+            
             listBoxHistorico.Enabled = false;
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
@@ -32,13 +33,14 @@ namespace cantinaPainel
                     if (produto.IsChapa)
                     {
                         pedidoTemChapa = true;
-                        return;
+                        break;
                     }
                 }
 
-                if (!pedidoTemChapa)
+                if (!pedidoTemChapa && pedido.StatusPedido == Status.PREPARANDO)
                 {
-                    
+                    pedido.StatusPedido = Status.PRONTO;
+                    string tipo = pedido.IsViagem ? "Viagem" : "Local";
                     listBoxPedidos.Items.Add($"\n{pedido.ToString()}");
 
                 }
@@ -48,12 +50,27 @@ namespace cantinaPainel
 
         private void btnEntregar_Click(object sender, EventArgs e)
         {
-            if (listBoxPedidos.SelectedIndex != -1)
+
+
+            foreach (var item in PersistenciaPedido.pedidos)
             {
-                listBoxHistorico.Items.Insert(0,listBoxPedidos.SelectedItem);
-                listBoxPedidos.Items.RemoveAt(listBoxPedidos.SelectedIndex);
-                listBoxPedidos.SelectedIndex = -1;
+                if (listBoxPedidos.SelectedIndex != -1 && item.StatusPedido == Status.PRONTO)
+                {
+                    listBoxHistorico.Items.Insert(0, listBoxPedidos.SelectedItem);
+                    if (item.IsViagem) 
+                    {
+                        MessageBox.Show($"Pedido do cliente {item.Nome_Cliente} é para viagem!");
+                    }
+
+                    listBoxPedidos.Items.RemoveAt(listBoxPedidos.SelectedIndex);
+                    listBoxPedidos.SelectedIndex = -1;
+
+                    item.StatusPedido = Status.ENTREGUE;
+
+                    break;
+                }
             }
+            
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

@@ -28,33 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            listBoxChapa = new ListBox();
+            button1 = new Button();
+            btnFeito = new Button();
             SuspendLayout();
             // 
-            // label1
+            // listBoxChapa
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16F);
-            label1.Location = new Point(337, 178);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 30);
-            label1.TabIndex = 0;
-            label1.Text = "Cozinha";
+            listBoxChapa.FormattingEnabled = true;
+            listBoxChapa.ItemHeight = 15;
+            listBoxChapa.Location = new Point(30, 53);
+            listBoxChapa.Name = "listBoxChapa";
+            listBoxChapa.Size = new Size(484, 334);
+            listBoxChapa.TabIndex = 0;
+            listBoxChapa.SelectedIndexChanged += listBoxChapa_SelectedIndexChanged;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(12, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(41, 35);
+            button1.TabIndex = 1;
+            button1.Text = "<";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // btnFeito
+            // 
+            btnFeito.Location = new Point(607, 108);
+            btnFeito.Name = "btnFeito";
+            btnFeito.Size = new Size(75, 23);
+            btnFeito.TabIndex = 2;
+            btnFeito.Text = "Feito";
+            btnFeito.UseVisualStyleBackColor = true;
+            btnFeito.Click += btnFeito_Click;
             // 
             // formsCozinha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            Controls.Add(btnFeito);
+            Controls.Add(button1);
+            Controls.Add(listBoxChapa);
             Name = "formsCozinha";
             Text = "cozinha";
+            Load += formsCozinha_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Label label1;
+        private ListBox listBoxChapa;
+        private Button button1;
+        private Button btnFeito;
     }
 }

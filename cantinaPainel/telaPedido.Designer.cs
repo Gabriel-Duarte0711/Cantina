@@ -55,6 +55,7 @@
             button1 = new Button();
             pictureBox1 = new PictureBox();
             checkBox1 = new CheckBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTroco).BeginInit();
@@ -356,12 +357,23 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
+            // button2
+            // 
+            button2.Location = new Point(1109, 356);
+            button2.Name = "button2";
+            button2.Size = new Size(87, 33);
+            button2.TabIndex = 28;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // formsPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1290, 604);
+            Controls.Add(button2);
             Controls.Add(checkBox1);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
@@ -428,5 +440,6 @@
         private Button button1;
         private PictureBox pictureBox1;
         private CheckBox checkBox1;
+        private Button button2;
     }
 }
