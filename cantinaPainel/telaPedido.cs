@@ -132,8 +132,9 @@ namespace cantinaPainel
                 DateTime hora = DateTime.Now;
                 Pedido pedido = new Pedido();
                 pedido.Nome_Cliente = (txtBoxNome.Text);
-                pedido.StatusPedido = Status.PREPARANDO;
+                pedido.StatusPedido = Status.PRONTO;
                 pedido.IsViagem = checkBox1.Checked;
+                pedido.MetodoPagamento = metodoPgmt;
                 pedido.extrato = listPedido.Items.Cast<Produto>().ToList();
                 PersistenciaPedido.pedidos.Add(pedido);
                 txtBoxNome.Clear();
@@ -256,7 +257,7 @@ namespace cantinaPainel
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked == true)
-            {
+            {      
                 check = "Viagem";
             }
             else

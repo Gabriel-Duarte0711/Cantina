@@ -14,7 +14,7 @@ namespace cantinaPainel
 
         public List<Produto> extrato = new List<Produto>();
         private string nome_cliente;
-        private string metodo_pgmt;
+        private string metodoPagamento;
         private bool isViagem;
         private Status statusPedido;
 
@@ -32,10 +32,17 @@ namespace cantinaPainel
             set { nome_cliente = value; }
         }
 
+        
         public bool IsViagem
         {
             get { return isViagem; }
             set {  isViagem = value; }
+        }
+
+        public string MetodoPagamento
+        {
+            get { return metodoPagamento; }
+            set { metodoPagamento = value; }
         }
 
 
@@ -44,12 +51,12 @@ namespace cantinaPainel
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append($"Cliente: {nome_cliente} ");
+
             
             foreach (Produto produto in extrato)
             {
 
-                sb.Append($"/ {produto.Quantidade}x - {produto.Item} ");
+                sb.Append($" {produto.Quantidade}x - {produto.Item} /");
             }
             return sb.ToString();
         }
@@ -57,7 +64,7 @@ namespace cantinaPainel
         public string SomenteChapas()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Cliente: {Nome_Cliente}");
+            //sb.AppendLine($"Cliente: {Nome_Cliente}");
 
             foreach (var produto in extrato)
             {

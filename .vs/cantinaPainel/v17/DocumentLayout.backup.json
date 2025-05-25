@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "D:\\projeto final cantina\\Cantina\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|d:\\projeto final cantina\\cantina\\cantinapainel\\balcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\balcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|d:\\projeto final cantina\\cantina\\cantinapainel\\balcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\balcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|d:\\projeto final cantina\\cantina\\cantinapainel\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|d:\\projeto final cantina\\cantina\\cantinapainel\\persistenciapedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\persistenciapedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|d:\\projeto final cantina\\cantina\\cantinapainel\\telapedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\telapedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|d:\\projeto final cantina\\cantina\\cantinapainel\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|D:\\projeto final cantina\\Cantina\\cantinapainel\\telapedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\telapedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|d:\\projeto final cantina\\cantina\\cantinapainel\\telapedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\telapedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|d:\\projeto final cantina\\cantina\\cantinapainel\\cozinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\cozinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|d:\\projeto final cantina\\cantina\\cantinapainel\\cozinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|D:\\projeto final cantina\\Cantina\\cantinapainel\\cozinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\cozinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|d:\\projeto final cantina\\cantina\\cantinapainel\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|d:\\projeto final cantina\\cantina\\cantinapainel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D94B5A02-60A0-4C57-A450-9EFC01AD3A65}|cantinaPainel\\cantinaPainel.csproj|solutionrelative:cantinapainel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,17 +42,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Balcao.cs",
               "DocumentMoniker": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\Balcao.cs",
               "RelativeDocumentMoniker": "cantinaPainel\\Balcao.cs",
-              "ToolTip": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\Balcao.cs",
-              "RelativeToolTip": "cantinaPainel\\Balcao.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAADkAAAAUAAAAAAAAAA==",
+              "ToolTip": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\Balcao.cs*",
+              "RelativeToolTip": "cantinaPainel\\Balcao.cs*",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAzwF4AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T13:18:52.388Z",
               "IsPinned": true,
@@ -60,47 +60,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Produto.cs",
-              "DocumentMoniker": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\Produto.cs",
-              "RelativeDocumentMoniker": "cantinaPainel\\Produto.cs",
-              "ToolTip": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\Produto.cs",
-              "RelativeToolTip": "cantinaPainel\\Produto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Balcao.cs [Projeto]",
+              "DocumentMoniker": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\Balcao.cs",
+              "RelativeDocumentMoniker": "cantinaPainel\\Balcao.cs",
+              "ToolTip": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\Balcao.cs [Projeto]*",
+              "RelativeToolTip": "cantinaPainel\\Balcao.cs [Projeto]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T18:50:37.732Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-05-25T02:17:28.706Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\Program.cs",
+              "RelativeDocumentMoniker": "cantinaPainel\\Program.cs",
+              "ToolTip": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\Program.cs",
+              "RelativeToolTip": "cantinaPainel\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T02:19:06.002Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PersistenciaPedido.cs",
-              "DocumentMoniker": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\PersistenciaPedido.cs",
-              "RelativeDocumentMoniker": "cantinaPainel\\PersistenciaPedido.cs",
-              "ToolTip": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\PersistenciaPedido.cs",
-              "RelativeToolTip": "cantinaPainel\\PersistenciaPedido.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:45:38.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "cozinha.cs",
               "DocumentMoniker": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\cozinha.cs",
               "RelativeDocumentMoniker": "cantinaPainel\\cozinha.cs",
               "ToolTip": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\cozinha.cs",
               "RelativeToolTip": "cantinaPainel\\cozinha.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAcwDAAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAA4wC8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T19:00:40.794Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "cozinha.cs [Projeto]",
               "DocumentMoniker": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\cozinha.cs",
               "RelativeDocumentMoniker": "cantinaPainel\\cozinha.cs",
@@ -112,13 +110,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Pedido.cs",
               "DocumentMoniker": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\Pedido.cs",
               "RelativeDocumentMoniker": "cantinaPainel\\Pedido.cs",
               "ToolTip": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\Pedido.cs",
               "RelativeToolTip": "cantinaPainel\\Pedido.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAwwCUAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAIwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T13:12:45.664Z",
               "EditorCaption": ""
@@ -131,14 +129,14 @@
               "RelativeDocumentMoniker": "cantinaPainel\\telaPedido.cs",
               "ToolTip": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\telaPedido.cs",
               "RelativeToolTip": "cantinaPainel\\telaPedido.cs",
-              "ViewState": "AgIAAPIAAAAAAAAAAAAqwBMBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-17T19:11:25.522Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "telaPedido.cs [Projeto]",
               "DocumentMoniker": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\telaPedido.cs",
               "RelativeDocumentMoniker": "cantinaPainel\\telaPedido.cs",
