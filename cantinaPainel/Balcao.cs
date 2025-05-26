@@ -48,7 +48,7 @@ namespace cantinaPainel
             listViewHistorico.FullRowSelect = true;
             listViewHistorico.MultiSelect = false;
             listViewHistorico.HideSelection = true;
-
+            
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
                 bool pedidoTemChapa = false;
@@ -72,7 +72,7 @@ namespace cantinaPainel
                     }
                 }
 
-                if (!pedidoTemChapa)
+                if (!pedidoTemChapa && !pedido.StatusPedido.Equals(Status.ENTREGUE))
                 {
                     
                  
@@ -90,21 +90,35 @@ namespace cantinaPainel
         private void btnEntregar_Click(object sender, EventArgs e)
         {
 
-            foreach (var pedido in PersistenciaPedido.pedidos)
+
+            if (listViewPedidos.SelectedItems.Count > 0)
             {
+
+                ListViewItem selecionado = listViewPedidos.SelectedItems[0];
+
+                listViewHistorico.Items.Insert(0, (ListViewItem)selecionado.Clone());
+
+                
+
+                //if (listViewPedidos.SelectedIndices.Count > 0)
+                //{
+                //    int index = listViewPedidos.SelectedIndices[0];
+                //    PersistenciaPedido.pedidos[index].StatusPedido = Status.ENTREGUE;
+                //}
+
                 if (listViewPedidos.SelectedItems.Count > 0)
                 {
+                    int index = listViewPedidos.SelectedItems[0].Index;
+                    PersistenciaPedido.pedidos[index].StatusPedido = Status.ENTREGUE;
 
-                    ListViewItem selecionado = listViewPedidos.SelectedItems[0];
-
-                    listViewHistorico.Items.Insert(0, (ListViewItem)selecionado.Clone());
-
-                    listViewPedidos.Items.Remove(selecionado);
-
-                    pedido.StatusPedido = Status.ENTREGUE;
-
-                    break;
+                    listViewHistorico.Items.Clear();
+                    foreach (var item in PersistenciaPedido.pedidos)
+                    {
+                        listViewHistorico.Items.Add(item.extrato);
+                    }
                 }
+                listViewPedidos.Items.Remove(selecionado);
+
             }
 
         }
