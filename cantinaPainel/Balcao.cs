@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,7 +23,26 @@ namespace cantinaPainel
 
         }
 
-        public string viagem;
+
+        private void CarregarHistorico()
+        {
+            foreach (var pedido in PersistenciaPedido.pedidos)
+            {
+                if (pedido.StatusPedido.Equals(Status.ENTREGUE))
+                {
+                    string viagem = pedido.IsViagem ? "Sim" : "Não";
+
+                    var item = new ListViewItem(pedido.Nome_Cliente);
+                    item.SubItems.Add(pedido.ToString());
+                    item.SubItems.Add(viagem);
+                    item.Tag = pedido;
+
+                    listViewHistorico.Items.Insert(0, item);
+                }
+            }
+        }
+
+
         private void formsBalcao_Load(object sender, EventArgs e)
         {
 
@@ -48,20 +69,22 @@ namespace cantinaPainel
             listViewHistorico.FullRowSelect = true;
             listViewHistorico.MultiSelect = false;
             listViewHistorico.HideSelection = true;
-            
+
+            listViewPedidos.Items.Clear();
+            listViewHistorico.Items.Clear();
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
                 bool pedidoTemChapa = false;
+                string viagem = pedido.IsViagem ? "Sim" : "Não";
 
-
-                if (pedido.IsViagem == false)
-                {
-                    viagem = "Não";
-                }
-                else if (pedido.IsViagem == true)
-                {
-                    viagem = "Sim";
-                }
+                //if (pedido.IsViagem == false)
+                //{
+                //    viagem = "Não";
+                //}
+                //else if (pedido.IsViagem == true)
+                //{
+                //    viagem = "Sim";
+                //}
 
                 foreach (var produto in pedido.extrato)
                 {
@@ -76,15 +99,17 @@ namespace cantinaPainel
                 {
                     
                  
-                        var item = new ListViewItem(pedido.Nome_Cliente);               // Coluna 1: Cliente
+                    var item = new ListViewItem(pedido.Nome_Cliente);               // Coluna 1: Cliente
                     item.SubItems.Add(pedido.ToString());                           // Coluna 2: Pedido
-                    //item.SubItems.Add(pedido.IsViagem.ToString());                  // Coluna 3: Viagem
-                    item.SubItems.Add(viagem);                  // Coluna 3: Viagem
+                    item.SubItems.Add(viagem);                                      // Coluna 3: Viagem
+
+                    item.Tag = pedido;
 
                     listViewPedidos.Items.Add(item);
                 }
-
+                
             }
+            CarregarHistorico();
         }
 
         private void btnEntregar_Click(object sender, EventArgs e)
@@ -93,34 +118,24 @@ namespace cantinaPainel
 
             if (listViewPedidos.SelectedItems.Count > 0)
             {
-
+              
                 ListViewItem selecionado = listViewPedidos.SelectedItems[0];
 
-                listViewHistorico.Items.Insert(0, (ListViewItem)selecionado.Clone());
-
-                
-
-                //if (listViewPedidos.SelectedIndices.Count > 0)
-                //{
-                //    int index = listViewPedidos.SelectedIndices[0];
-                //    PersistenciaPedido.pedidos[index].StatusPedido = Status.ENTREGUE;
-                //}
-
-                if (listViewPedidos.SelectedItems.Count > 0)
+                var pedidoReal = selecionado.Tag as Pedido;
+                if(pedidoReal != null)
                 {
-                    int index = listViewPedidos.SelectedItems[0].Index;
-                    PersistenciaPedido.pedidos[index].StatusPedido = Status.ENTREGUE;
 
-                    listViewHistorico.Items.Clear();
-                    foreach (var item in PersistenciaPedido.pedidos)
-                    {
-                        listViewHistorico.Items.Add(item.extrato);
-                    }
+                    pedidoReal.StatusPedido = Status.ENTREGUE;
+
+                    var itemHistorico = (ListViewItem)selecionado.Clone();
+
+                    itemHistorico.Tag = pedidoReal;
+                    
+                    listViewHistorico.Items.Insert(0, itemHistorico);
+
+                    listViewPedidos.Items.Remove(selecionado);
                 }
-                listViewPedidos.Items.Remove(selecionado);
-
             }
-
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
