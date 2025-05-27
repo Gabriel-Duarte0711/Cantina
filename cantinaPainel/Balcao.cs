@@ -77,15 +77,6 @@ namespace cantinaPainel
                 bool pedidoTemChapa = false;
                 string viagem = pedido.IsViagem ? "Sim" : "Não";
 
-                //if (pedido.IsViagem == false)
-                //{
-                //    viagem = "Não";
-                //}
-                //else if (pedido.IsViagem == true)
-                //{
-                //    viagem = "Sim";
-                //}
-
                 foreach (var produto in pedido.extrato)
                 {
                     if (produto.IsChapa)
@@ -94,18 +85,22 @@ namespace cantinaPainel
                         break;
                     }
                 }
-
-                if (!pedidoTemChapa && !pedido.StatusPedido.Equals(Status.ENTREGUE))
+                if (!pedidoTemChapa)
                 {
-                    
-                 
-                    var item = new ListViewItem(pedido.Nome_Cliente);               // Coluna 1: Cliente
-                    item.SubItems.Add(pedido.ToString());                           // Coluna 2: Pedido
-                    item.SubItems.Add(viagem);                                      // Coluna 3: Viagem
+                    pedido.StatusPedido.Equals(Status.PRONTO);
 
-                    item.Tag = pedido;
+                    if (!pedido.StatusPedido.Equals(Status.ENTREGUE))
+                    {
 
-                    listViewPedidos.Items.Add(item);
+
+                        var item = new ListViewItem(pedido.Nome_Cliente);               // Coluna 1: Cliente
+                        item.SubItems.Add(pedido.ToString());                           // Coluna 2: Pedido
+                        item.SubItems.Add(viagem);                                      // Coluna 3: Viagem
+
+                        item.Tag = pedido;
+
+                        listViewPedidos.Items.Add(item);
+                    }
                 }
                 
             }
@@ -114,6 +109,12 @@ namespace cantinaPainel
 
         private void btnEntregar_Click(object sender, EventArgs e)
         {
+
+            if (listViewHistorico.Items.Count > 5)
+            {
+                listViewHistorico.Items.RemoveAt(6);
+
+            }
 
 
             if (listViewPedidos.SelectedItems.Count > 0)
@@ -153,6 +154,10 @@ namespace cantinaPainel
         private void listViewHistorico_SelectedIndexChanged(object sender, EventArgs e)
         {
             listViewHistorico.SelectedItems.Clear();
+           if(listViewHistorico.Items.Count > 5)
+            {
+                listViewHistorico.Items.RemoveAt(4);
+            }
         }
     }
 }

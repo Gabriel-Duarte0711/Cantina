@@ -132,7 +132,7 @@ namespace cantinaPainel
                 DateTime hora = DateTime.Now;
                 Pedido pedido = new Pedido();
                 pedido.Nome_Cliente = (txtBoxNome.Text);
-                pedido.StatusPedido = Status.PRONTO;
+                pedido.StatusPedido = Status.PREPARANDO;
                 pedido.IsViagem = checkBox1.Checked;
                 pedido.MetodoPagamento = metodoPgmt;
                 pedido.extrato = listPedido.Items.Cast<Produto>().ToList();

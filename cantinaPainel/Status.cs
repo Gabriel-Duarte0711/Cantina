@@ -8,6 +8,7 @@ namespace cantinaPainel
 {
         public enum Status
         {
+            CANCELADO,
             PREPARANDO,
             PRONTO,
             ENTREGUE

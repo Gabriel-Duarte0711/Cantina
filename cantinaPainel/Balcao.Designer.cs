@@ -84,7 +84,7 @@
             // 
             listViewHistorico.Location = new Point(28, 340);
             listViewHistorico.Name = "listViewHistorico";
-            listViewHistorico.Size = new Size(760, 98);
+            listViewHistorico.Size = new Size(760, 196);
             listViewHistorico.TabIndex = 9;
             listViewHistorico.UseCompatibleStateImageBehavior = false;
             listViewHistorico.SelectedIndexChanged += listViewHistorico_SelectedIndexChanged;
@@ -93,7 +93,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 567);
             Controls.Add(listViewHistorico);
             Controls.Add(listViewPedidos);
             Controls.Add(btnVoltar);
