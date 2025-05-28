@@ -18,6 +18,7 @@ namespace cantinaPainel
         private string nome;
         public string metodoPgmt;
         string check = "Local";
+        
         List<Produto> extrato2 = new();
         private void listAdicionar_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -126,11 +127,15 @@ namespace cantinaPainel
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
+            
             if (txtBoxNome.Text.Length > 0 && listPedido.Items.Count != 0 && metodoPgmt != null)
             {
 
+          
                 DateTime hora = DateTime.Now;
                 Pedido pedido = new Pedido();
+                PersistenciaPedido.numeroPedido++;
+                pedido.CodigoPedido = PersistenciaPedido.numeroPedido;
                 pedido.Nome_Cliente = (txtBoxNome.Text);
                 pedido.StatusPedido = Status.PREPARANDO;
                 pedido.IsViagem = checkBox1.Checked;

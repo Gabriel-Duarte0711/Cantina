@@ -9,5 +9,6 @@ namespace cantinaPainel
     internal class PersistenciaPedido
     {
         public static List<Pedido> pedidos = new List<Pedido>();
+        public static int numeroPedido = 0;
     }
 }

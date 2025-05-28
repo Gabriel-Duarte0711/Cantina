@@ -33,8 +33,8 @@
             btnEntregar = new Button();
             btnVoltar = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            listViewPedidos = new ListView();
-            listViewHistorico = new ListView();
+            listBoxPedidos = new ListBox();
+            listBoxHistorico = new ListBox();
             SuspendLayout();
             // 
             // label1
@@ -72,30 +72,32 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // listViewPedidos
+            // listBoxPedidos
             // 
-            listViewPedidos.Location = new Point(28, 55);
-            listViewPedidos.Name = "listViewPedidos";
-            listViewPedidos.Size = new Size(760, 231);
-            listViewPedidos.TabIndex = 8;
-            listViewPedidos.UseCompatibleStateImageBehavior = false;
+            listBoxPedidos.FormattingEnabled = true;
+            listBoxPedidos.ItemHeight = 15;
+            listBoxPedidos.Location = new Point(161, 77);
+            listBoxPedidos.Name = "listBoxPedidos";
+            listBoxPedidos.Size = new Size(561, 169);
+            listBoxPedidos.TabIndex = 6;
             // 
-            // listViewHistorico
+            // listBoxHistorico
             // 
-            listViewHistorico.Location = new Point(28, 340);
-            listViewHistorico.Name = "listViewHistorico";
-            listViewHistorico.Size = new Size(760, 196);
-            listViewHistorico.TabIndex = 9;
-            listViewHistorico.UseCompatibleStateImageBehavior = false;
-            listViewHistorico.SelectedIndexChanged += listViewHistorico_SelectedIndexChanged;
+            listBoxHistorico.FormattingEnabled = true;
+            listBoxHistorico.ItemHeight = 15;
+            listBoxHistorico.Location = new Point(108, 338);
+            listBoxHistorico.Name = "listBoxHistorico";
+            listBoxHistorico.Size = new Size(561, 169);
+            listBoxHistorico.TabIndex = 7;
+            listBoxHistorico.SelectedIndexChanged += listBoxHistorico_SelectedIndexChanged;
             // 
             // formsBalcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 567);
-            Controls.Add(listViewHistorico);
-            Controls.Add(listViewPedidos);
+            Controls.Add(listBoxHistorico);
+            Controls.Add(listBoxPedidos);
             Controls.Add(btnVoltar);
             Controls.Add(btnEntregar);
             Controls.Add(label1);
@@ -112,7 +114,7 @@
         private Button btnEntregar;
         private Button btnVoltar;
         private ContextMenuStrip contextMenuStrip1;
-        private ListView listViewPedidos;
-        private ListView listViewHistorico;
+        private ListBox listBoxPedidos;
+        private ListBox listBoxHistorico;
     }
 }

@@ -17,6 +17,7 @@ namespace cantinaPainel
         private string metodoPagamento;
         private bool isViagem;
         private Status statusPedido;
+        private int codigoPedido = 0;
 
 
         public Status StatusPedido
@@ -45,8 +46,13 @@ namespace cantinaPainel
             set { metodoPagamento = value; }
         }
 
+        public int CodigoPedido
+        {
+            get { return codigoPedido; }
+            set { codigoPedido = value; }
+        }
 
-        
+
 
         public override string ToString()
         {
@@ -56,7 +62,7 @@ namespace cantinaPainel
             foreach (Produto produto in extrato)
             {
 
-                sb.Append($" {produto.Quantidade}x - {produto.Item} /");
+                sb.Append($"Pedido: {codigoPedido} -- {produto.Quantidade}x - {produto.Item} /");
             }
             return sb.ToString();
         }
