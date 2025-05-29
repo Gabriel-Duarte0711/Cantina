@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Numerics;
+using System.Text.Json;
 using System.Windows.Forms;
 using static System.Windows.Forms.DataFormats;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -41,8 +42,6 @@ namespace cantinaPainel
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
             listAdicionar.Items.Add(new Produto(1, "Pão de Queijo", 3.50, false));
 
             listAdicionar.Items.Add(new Produto(2, "Coxinha ", 5.00, false));
@@ -142,10 +141,10 @@ namespace cantinaPainel
                 pedido.MetodoPagamento = metodoPgmt;
                 pedido.extrato = listPedido.Items.Cast<Produto>().ToList();
                 PersistenciaPedido.pedidos.Add(pedido);
+
+
                 txtBoxNome.Clear();
-
                 listPedido.Items.Clear();
-
 
                 string Extrato = string.Join("\n", extrato2);
                 MessageBox.Show($"Cliente: {pedido.Nome_Cliente} \n{Extrato}\n \no total é: {totalPedido:f2}\nPedido para: {check}\nPago no: {metodoPgmt}\ndata: {hora}");

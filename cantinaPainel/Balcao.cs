@@ -39,7 +39,6 @@ namespace cantinaPainel
 
         private void formsBalcao_Load(object sender, EventArgs e)
         {
-
             listBoxHistorico.Enabled = false;
             Produto produtoSelecionado = (Produto)listBoxPedidos.SelectedItem;
             listBoxPedidos.Items.Clear();
@@ -63,7 +62,6 @@ namespace cantinaPainel
 
                     if (!pedido.StatusPedido.Equals(Status.ENTREGUE))
                     {
-
                         //listBoxPedidos.Items.Add($"Código: {pedido.CodigoPedido} Pedido: {pedido.ToString()}");
                         listBoxPedidos.Items.Add(pedido);
                     }
@@ -89,10 +87,11 @@ namespace cantinaPainel
                 pedidoSelecionado.StatusPedido = Status.ENTREGUE;
             }
 
-            if (listBoxPedidos.SelectedIndex != -1)
+            if (pedidoSelecionado != null)
             {       
-                listBoxHistorico.Items.Insert(0, listBoxPedidos.SelectedItem);
-                listBoxPedidos.Items.RemoveAt(listBoxPedidos.SelectedIndex);
+                
+                listBoxHistorico.Items.Insert(0, pedidoSelecionado);
+                listBoxPedidos.Items.Remove(pedidoSelecionado);
             }
         }
 
