@@ -45,51 +45,31 @@ namespace cantinaPainel
             listBoxHistorico.Items.Clear();
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
-                bool pedidoTemChapa = false;
+              
                 string viagem = pedido.IsViagem ? "Sim" : "Não";
 
-                foreach (var produto in pedido.extrato)
+                if (pedido.StatusPedido == Status.PRONTO)
                 {
-                    if (produto.IsChapa)
-                    {
-                        pedidoTemChapa = true;
-                        break;
-                    }
+                    listBoxPedidos.Items.Add(pedido);
                 }
-                if (!pedidoTemChapa)
-                {
-                    pedido.StatusPedido.Equals(Status.PRONTO);
-
-                    if (!pedido.StatusPedido.Equals(Status.ENTREGUE))
-                    {
-                        //listBoxPedidos.Items.Add($"Código: {pedido.CodigoPedido} Pedido: {pedido.ToString()}");
-                        listBoxPedidos.Items.Add(pedido);
-                    }
-                }
-
+              
             }
-            CarregarHistorico();
-        }
 
+        }
+  
+     
         private void btnEntregar_Click(object sender, EventArgs e)
         {
             if (listBoxHistorico.Items.Count >= 5)
             {
                 listBoxHistorico.Items.RemoveAt(4);
-
             }
 
             var pedidoSelecionado = listBoxPedidos.SelectedItem as Pedido;
-            //var pedidoSelecionado = (Pedido)listBoxPedidos.SelectedItem;
-            if (pedidoSelecionado != null)
-            {
-                //MessageBox.Show($"Pedido selecionado: {pedidoSelecionado.CodigoPedido}");
-                pedidoSelecionado.StatusPedido = Status.ENTREGUE;
-            }
 
             if (pedidoSelecionado != null)
-            {       
-                
+            {
+                pedidoSelecionado.StatusPedido = Status.ENTREGUE;
                 listBoxHistorico.Items.Insert(0, pedidoSelecionado);
                 listBoxPedidos.Items.Remove(pedidoSelecionado);
             }

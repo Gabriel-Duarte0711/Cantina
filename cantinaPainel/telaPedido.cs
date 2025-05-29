@@ -136,10 +136,30 @@ namespace cantinaPainel
                 PersistenciaPedido.numeroPedido++;
                 pedido.CodigoPedido = PersistenciaPedido.numeroPedido;
                 pedido.Nome_Cliente = (txtBoxNome.Text);
-                pedido.StatusPedido = Status.PREPARANDO;
+                pedido.extrato = listPedido.Items.Cast<Produto>().ToList();
+
+                bool pedidoTemChapa = false;
+                foreach (Produto produto in pedido.extrato)
+                {
+                    if (produto.IsChapa)
+                    {
+                        pedidoTemChapa = true;
+                        break; // Achou um, já pode parar de procurar
+                    }
+                }
+                if (pedidoTemChapa)
+                {
+                    pedido.StatusPedido = Status.PREPARANDO;
+                }
+                else
+                {
+                    pedido.StatusPedido = Status.PRONTO;
+                }
+
+
                 pedido.IsViagem = checkBox1.Checked;
                 pedido.MetodoPagamento = metodoPgmt;
-                pedido.extrato = listPedido.Items.Cast<Produto>().ToList();
+                
                 PersistenciaPedido.pedidos.Add(pedido);
 
 

@@ -57,17 +57,15 @@ namespace cantinaPainel
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-
-            
+     
             foreach (Produto produto in extrato)
             {
-
-                sb.Append($"Pedido: {codigoPedido} -- {produto.Quantidade}x - {produto.Item} /");
+                sb.AppendLine($"Pedido: {codigoPedido} -- {produto.Quantidade}x - {produto.Item} /");
             }
             return sb.ToString();
         }
 
-        public string SomenteChapas()
+        public string ToStringSomenteChapas()
         {
             StringBuilder sb = new StringBuilder();
             //sb.AppendLine($"Cliente: {Nome_Cliente}");
@@ -76,7 +74,7 @@ namespace cantinaPainel
             {
                 if (produto.IsChapa)
                 {
-                    sb.AppendLine($"/ {produto.Quantidade}x - {produto.Item}");
+                    sb.AppendLine($"Pedido: {codigoPedido} -- {produto.Quantidade}x - {produto.Item} /");
                 }
             }
 

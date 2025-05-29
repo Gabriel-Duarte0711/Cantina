@@ -33,29 +33,24 @@ namespace cantinaPainel
         {
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
-                bool pedidoTemChapa = false;
-
-                foreach (var produto in pedido.extrato)
+                if (pedido.StatusPedido == Status.PREPARANDO)
                 {
-                    if (produto.IsChapa)
-                    {
-                        pedidoTemChapa = true;
-                        break;
-                    }
-                }
-
-                if (pedidoTemChapa)
-                {
-                    pedido.StatusPedido = Status.PREPARANDO;
-                    listBoxChapa.Items.Add($"\n{pedido.SomenteChapas()}");
-
-                }
-
+                    listBoxChapa.Items.Add(pedido);
+                }   
             }
         }
 
         private void btnFeito_Click(object sender, EventArgs e)
-        { 
+        {
+            var pedidoSelecionado = listBoxChapa.SelectedItem as Pedido;
+            if (pedidoSelecionado != null)
+            {
+                pedidoSelecionado.StatusPedido = Status.PRONTO;
+                listBoxChapa.Items.Remove(pedidoSelecionado);
+                listBoxChapa.SelectedIndex = -1;
+
+            }
+
         }
     }    
 }
