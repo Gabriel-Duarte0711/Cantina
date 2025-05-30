@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace cantinaPainel
 {
-    
+
     class Pedido
     {
 
-      
+
 
         public List<Produto> extrato = new List<Produto>();
         private string nome_cliente;
@@ -25,7 +25,7 @@ namespace cantinaPainel
             get { return statusPedido; }
             set { statusPedido = value; }
         }
-  
+
 
         public string Nome_Cliente
         {
@@ -33,11 +33,11 @@ namespace cantinaPainel
             set { nome_cliente = value; }
         }
 
-        
+
         public bool IsViagem
         {
             get { return isViagem; }
-            set {  isViagem = value; }
+            set { isViagem = value; }
         }
 
         public string MetodoPagamento
@@ -56,30 +56,59 @@ namespace cantinaPainel
 
         public override string ToString()
         {
+            //bool temProdutoChapa = false;
             StringBuilder sb = new StringBuilder();
-     
-            foreach (Produto produto in extrato)
+            sb.Append($"Pedido: {codigoPedido} --");
+            //foreach (Produto produto in extrato)
+            //{
+            //    if (produto.IsChapa)
+            //    {
+            //        temProdutoChapa = true;
+            //        break;
+            //    }
+            //}
+            if (this.statusPedido==Status.PREPARANDO)
             {
-                sb.AppendLine($"Pedido: {codigoPedido} -- {produto.Quantidade}x - {produto.Item} /");
-            }
-            return sb.ToString();
-        }
-
-        public string ToStringSomenteChapas()
-        {
-            StringBuilder sb = new StringBuilder();
-            //sb.AppendLine($"Cliente: {Nome_Cliente}");
-
-            foreach (var produto in extrato)
-            {
-                if (produto.IsChapa)
-                {
-                    sb.AppendLine($"Pedido: {codigoPedido} -- {produto.Quantidade}x - {produto.Item} /");
+                foreach (var produto in extrato)
+                 {                
+                    if (produto.IsChapa)
+                    {
+                        sb.Append($" {produto.Quantidade}x - {produto.Item} /");
+                    }
                 }
             }
+            
+            else
+            {
+                foreach (var produto in extrato)
+                    sb.Append($" {produto.Quantidade}x - {produto.Item} /");
+            }
+                return sb.ToString().TrimEnd(' ', '/');
 
-            return sb.ToString();
+            //else if (!temProdutoChapa)
+            //{
+            //    sb.Append($" {produto.Quantidade}x - {produto.Item} /");
+            //}   
         }
 
+            
+        }
+
+        //    public string ToStringSomenteChapas()
+        //    {
+        //        StringBuilder sb = new StringBuilder();
+
+        //        foreach (var produto in extrato)
+        //        {
+        //            if (produto.IsChapa)
+        //            {
+        //                sb.AppendLine($"Pedido: {codigoPedido} -- {produto.Quantidade}x - {produto.Item} /");
+        //            }
+        //        }
+
+        //        return sb.ToString();
+        //    }
+
+        //}
     }
-}
+

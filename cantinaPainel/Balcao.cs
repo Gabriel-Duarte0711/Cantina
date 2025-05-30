@@ -23,16 +23,28 @@ namespace cantinaPainel
 
         }
 
-
+        List<Pedido> entregue = new List<Pedido>();
         private void CarregarHistorico()
         {
+            entregue.Clear();
             foreach (var pedido in PersistenciaPedido.pedidos)
-            {
-                if (pedido.StatusPedido.Equals(Status.ENTREGUE))
                 {
-                    string viagem = pedido.IsViagem ? "Sim" : "Não";
-                    listBoxHistorico.Items.Insert(0,pedido);
-                }
+                    if (pedido.StatusPedido == Status.ENTREGUE)
+                    {
+                        entregue.Insert(0, pedido);
+
+                        if (entregue.Count > 5)
+                        {
+                            entregue.RemoveAt(entregue.Count - 1);
+                        }
+                    }
+            }
+            listBoxHistorico.Items.Clear();
+
+            foreach (var pedido in entregue)
+            {
+                string descricao = $"{pedido}";
+                listBoxHistorico.Items.Add(descricao);
             }
         }
 
@@ -43,6 +55,7 @@ namespace cantinaPainel
             Produto produtoSelecionado = (Produto)listBoxPedidos.SelectedItem;
             listBoxPedidos.Items.Clear();
             listBoxHistorico.Items.Clear();
+            CarregarHistorico();
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
               
@@ -70,6 +83,7 @@ namespace cantinaPainel
             if (pedidoSelecionado != null)
             {
                 pedidoSelecionado.StatusPedido = Status.ENTREGUE;
+                entregue.Add(pedidoSelecionado);
                 listBoxHistorico.Items.Insert(0, pedidoSelecionado);
                 listBoxPedidos.Items.Remove(pedidoSelecionado);
             }
@@ -81,7 +95,7 @@ namespace cantinaPainel
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             formsPedido formpedido = new formsPedido();
             formpedido.Show();
         }

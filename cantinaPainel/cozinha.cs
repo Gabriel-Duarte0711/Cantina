@@ -31,6 +31,7 @@ namespace cantinaPainel
 
         private void formsCozinha_Load(object sender, EventArgs e)
         {
+
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
                 if (pedido.StatusPedido == Status.PREPARANDO)
