@@ -16,7 +16,7 @@
     <Compile Update="telaPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="tela.cs">
+    <Compile Update="telaChamada.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="UserControl1.cs">

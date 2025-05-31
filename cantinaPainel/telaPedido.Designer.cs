@@ -56,6 +56,7 @@
             pictureBox1 = new PictureBox();
             checkBox1 = new CheckBox();
             button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTroco).BeginInit();
@@ -363,9 +364,19 @@
             button2.Name = "button2";
             button2.Size = new Size(87, 33);
             button2.TabIndex = 28;
-            button2.Text = "button2";
+            button2.Text = "Cozinha";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(1109, 299);
+            button3.Name = "button3";
+            button3.Size = new Size(87, 33);
+            button3.TabIndex = 29;
+            button3.Text = "Chamada";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // formsPedido
             // 
@@ -373,6 +384,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1290, 604);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(checkBox1);
             Controls.Add(pictureBox1);
@@ -441,5 +453,6 @@
         private PictureBox pictureBox1;
         private CheckBox checkBox1;
         private Button button2;
+        private Button button3;
     }
 }

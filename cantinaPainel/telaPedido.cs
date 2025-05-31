@@ -19,7 +19,7 @@ namespace cantinaPainel
         private string nome;
         public string metodoPgmt;
         string check = "Local";
-        
+
         List<Produto> extrato2 = new();
         private void listAdicionar_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -126,11 +126,11 @@ namespace cantinaPainel
 
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
-            
+
             if (txtBoxNome.Text.Length > 0 && listPedido.Items.Count != 0 && metodoPgmt != null)
             {
 
-          
+
                 DateTime hora = DateTime.Now;
                 Pedido pedido = new Pedido();
                 PersistenciaPedido.numeroPedido++;
@@ -159,7 +159,7 @@ namespace cantinaPainel
 
                 pedido.IsViagem = checkBox1.Checked;
                 pedido.MetodoPagamento = metodoPgmt;
-                
+
                 PersistenciaPedido.pedidos.Add(pedido);
 
 
@@ -281,7 +281,7 @@ namespace cantinaPainel
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked == true)
-            {      
+            {
                 check = "Viagem";
             }
             else
@@ -294,6 +294,13 @@ namespace cantinaPainel
         {
             formsCozinha formsCozinha = new formsCozinha();
             formsCozinha.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            formsTela formsTela = new formsTela();
+            formsTela.Show();
             this.Hide();
         }
     }

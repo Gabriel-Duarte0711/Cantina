@@ -36,6 +36,7 @@
             listBoxPedidos = new ListBox();
             listBoxHistorico = new ListBox();
             pictureBox1 = new PictureBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -54,9 +55,9 @@
             // 
             btnEntregar.BackColor = Color.FromArgb(17, 25, 12);
             btnEntregar.ForeColor = Color.FromArgb(230, 255, 0);
-            btnEntregar.Location = new Point(613, 323);
+            btnEntregar.Location = new Point(38, 388);
             btnEntregar.Name = "btnEntregar";
-            btnEntregar.Size = new Size(126, 40);
+            btnEntregar.Size = new Size(1438, 37);
             btnEntregar.TabIndex = 1;
             btnEntregar.Text = "Entregar";
             btnEntregar.UseVisualStyleBackColor = false;
@@ -86,16 +87,16 @@
             listBoxPedidos.ItemHeight = 15;
             listBoxPedidos.Location = new Point(38, 108);
             listBoxPedidos.Name = "listBoxPedidos";
-            listBoxPedidos.Size = new Size(701, 199);
+            listBoxPedidos.Size = new Size(1438, 274);
             listBoxPedidos.TabIndex = 6;
             // 
             // listBoxHistorico
             // 
             listBoxHistorico.FormattingEnabled = true;
             listBoxHistorico.ItemHeight = 15;
-            listBoxHistorico.Location = new Point(38, 386);
+            listBoxHistorico.Location = new Point(38, 431);
             listBoxHistorico.Name = "listBoxHistorico";
-            listBoxHistorico.Size = new Size(701, 169);
+            listBoxHistorico.Size = new Size(1438, 79);
             listBoxHistorico.TabIndex = 7;
             listBoxHistorico.SelectedIndexChanged += listBoxHistorico_SelectedIndexChanged;
             // 
@@ -105,17 +106,30 @@
             pictureBox1.Image = Properties.Resources.imagem_2025_05_15_081300623;
             pictureBox1.Location = new Point(163, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(385, 87);
+            pictureBox1.Size = new Size(967, 87);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 27;
             pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(17, 25, 12);
+            button1.ForeColor = Color.FromArgb(230, 255, 0);
+            button1.Location = new Point(1350, 14);
+            button1.Name = "button1";
+            button1.Size = new Size(126, 40);
+            button1.TabIndex = 28;
+            button1.Text = "Chamada";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // formsBalcao
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
-            ClientSize = new Size(800, 567);
+            ClientSize = new Size(1505, 531);
+            Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(listBoxHistorico);
             Controls.Add(listBoxPedidos);
@@ -139,5 +153,6 @@
         private ListBox listBoxPedidos;
         private ListBox listBoxHistorico;
         private PictureBox pictureBox1;
+        private Button button1;
     }
 }

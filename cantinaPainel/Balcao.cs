@@ -28,16 +28,16 @@ namespace cantinaPainel
         {
             entregue.Clear();
             foreach (var pedido in PersistenciaPedido.pedidos)
+            {
+                if (pedido.StatusPedido == Status.ENTREGUE)
                 {
-                    if (pedido.StatusPedido == Status.ENTREGUE)
-                    {
-                        entregue.Insert(0, pedido);
+                    entregue.Insert(0, pedido);
 
-                        if (entregue.Count > 5)
-                        {
-                            entregue.RemoveAt(entregue.Count - 1);
-                        }
+                    if (entregue.Count > 5)
+                    {
+                        entregue.RemoveAt(entregue.Count - 1);
                     }
+                }
             }
             listBoxHistorico.Items.Clear();
 
@@ -58,19 +58,19 @@ namespace cantinaPainel
             CarregarHistorico();
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
-              
+
                 string viagem = pedido.IsViagem ? "Sim" : "Não";
 
                 if (pedido.StatusPedido == Status.PRONTO)
                 {
                     listBoxPedidos.Items.Add(pedido);
                 }
-              
+
             }
 
         }
-  
-     
+
+
         private void btnEntregar_Click(object sender, EventArgs e)
         {
             if (listBoxHistorico.Items.Count >= 5)
@@ -116,7 +116,14 @@ namespace cantinaPainel
 
         private void listBoxHistorico_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            formsTela formsTela = new formsTela();
+            formsTela.Show();
+            this.Hide();
         }
     }
 }

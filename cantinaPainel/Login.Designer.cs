@@ -34,6 +34,8 @@
             txtBoxUsuario = new TextBox();
             txtBoxSenha = new TextBox();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnLogin
@@ -89,11 +91,24 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.imagem_2025_05_15_081300623;
+            pictureBox1.Location = new Point(77, 1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(385, 87);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 27;
+            pictureBox1.TabStop = false;
+            // 
             // formsLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(txtBoxSenha);
             Controls.Add(txtBoxUsuario);
@@ -102,6 +117,7 @@
             Controls.Add(btnLogin);
             Name = "formsLogin";
             Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -114,5 +130,6 @@
         private TextBox txtBoxUsuario;
         private TextBox txtBoxSenha;
         private Button button1;
+        private PictureBox pictureBox1;
     }
 }
