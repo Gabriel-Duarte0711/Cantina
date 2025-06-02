@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             label1 = new Label();
             btnEntregar = new Button();
             btnVoltar = new Button();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             listBoxPedidos = new ListBox();
             listBoxHistorico = new ListBox();
             pictureBox1 = new PictureBox();
@@ -45,7 +43,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(38, 68);
+            label1.Location = new Point(12, 51);
             label1.Name = "label1";
             label1.Size = new Size(102, 37);
             label1.TabIndex = 0;
@@ -75,11 +73,6 @@
             btnVoltar.Text = "<";
             btnVoltar.UseVisualStyleBackColor = false;
             btnVoltar.Click += btnVoltar_Click;
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
             // 
             // listBoxPedidos
             // 
@@ -149,7 +142,6 @@
         private Label label1;
         private Button btnEntregar;
         private Button btnVoltar;
-        private ContextMenuStrip contextMenuStrip1;
         private ListBox listBoxPedidos;
         private ListBox listBoxHistorico;
         private PictureBox pictureBox1;

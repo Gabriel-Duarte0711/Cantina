@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             btnLogin = new Button();
-            label1 = new Label();
-            label2 = new Label();
             txtBoxUsuario = new TextBox();
             txtBoxSenha = new TextBox();
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            label5 = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -47,24 +47,6 @@
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(168, 160);
-            label1.Name = "label1";
-            label1.Size = new Size(47, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Usuário";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(168, 198);
-            label2.Name = "label2";
-            label2.Size = new Size(39, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Senha";
             // 
             // txtBoxUsuario
             // 
@@ -102,18 +84,40 @@
             pictureBox1.TabIndex = 27;
             pictureBox1.TabStop = false;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(157, 160);
+            label5.Name = "label5";
+            label5.Size = new Size(76, 20);
+            label5.TabIndex = 28;
+            label5.Text = "Usuário:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(157, 198);
+            label1.Name = "label1";
+            label1.Size = new Size(66, 20);
+            label1.TabIndex = 29;
+            label1.Text = "Senha:";
+            // 
             // formsLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(label5);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(txtBoxSenha);
             Controls.Add(txtBoxUsuario);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(btnLogin);
             Name = "formsLogin";
             Text = "Login";
@@ -125,11 +129,11 @@
         #endregion
 
         private Button btnLogin;
-        private Label label1;
-        private Label label2;
         private TextBox txtBoxUsuario;
         private TextBox txtBoxSenha;
         private Button button1;
         private PictureBox pictureBox1;
+        private Label label5;
+        private Label label1;
     }
 }

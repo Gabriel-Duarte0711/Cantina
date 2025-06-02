@@ -65,23 +65,23 @@
             // 
             // listAdicionar
             // 
-            listAdicionar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listAdicionar.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listAdicionar.FormattingEnabled = true;
-            listAdicionar.ItemHeight = 15;
+            listAdicionar.ItemHeight = 17;
             listAdicionar.Location = new Point(78, 177);
             listAdicionar.Name = "listAdicionar";
-            listAdicionar.Size = new Size(214, 94);
+            listAdicionar.Size = new Size(214, 89);
             listAdicionar.TabIndex = 0;
             listAdicionar.SelectedIndexChanged += listAdicionar_SelectedIndexChanged;
             // 
             // listPedido
             // 
-            listPedido.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listPedido.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listPedido.FormattingEnabled = true;
-            listPedido.ItemHeight = 15;
+            listPedido.ItemHeight = 17;
             listPedido.Location = new Point(518, 174);
             listPedido.Name = "listPedido";
-            listPedido.Size = new Size(214, 94);
+            listPedido.Size = new Size(214, 89);
             listPedido.TabIndex = 1;
             listPedido.SelectedIndexChanged += listPedido_SelectedIndexChanged;
             // 
@@ -114,40 +114,40 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            label1.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
             label1.Location = new Point(72, 148);
             label1.Name = "label1";
-            label1.Size = new Size(148, 20);
+            label1.Size = new Size(139, 22);
             label1.TabIndex = 4;
             label1.Text = "Produtos Cantina";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            label2.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
             label2.Location = new Point(515, 148);
             label2.Name = "label2";
-            label2.Size = new Size(77, 20);
+            label2.Size = new Size(77, 22);
             label2.TabIndex = 5;
             label2.Text = "Carrinho";
             // 
             // total
             // 
             total.AutoSize = true;
-            total.Font = new Font("Microsoft Sans Serif", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            total.Font = new Font("Agrandir Narrow Bold", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             total.ForeColor = Color.White;
             total.Location = new Point(396, 495);
             total.Name = "total";
-            total.Size = new Size(104, 29);
+            total.Size = new Size(87, 31);
             total.TabIndex = 6;
             total.Text = "TOTAL:";
             // 
             // btnFinalizar
             // 
             btnFinalizar.BackColor = Color.FromArgb(17, 25, 12);
-            btnFinalizar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnFinalizar.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFinalizar.ForeColor = Color.FromArgb(230, 255, 0);
             btnFinalizar.Location = new Point(596, 435);
             btnFinalizar.Name = "btnFinalizar";
@@ -190,11 +190,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.FromArgb(17, 25, 12);
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(243, 241, 238);
             label3.Location = new Point(78, 278);
             label3.Name = "label3";
-            label3.Size = new Size(107, 20);
+            label3.Size = new Size(99, 22);
             label3.TabIndex = 11;
             label3.Text = "Quantidade:";
             // 
@@ -240,11 +240,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
             label4.Location = new Point(518, 275);
             label4.Name = "label4";
-            label4.Size = new Size(60, 20);
+            label4.Size = new Size(58, 22);
             label4.TabIndex = 17;
             label4.Text = "Nome:";
             // 
@@ -262,11 +262,11 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
             label5.Location = new Point(518, 312);
             label5.Name = "label5";
-            label5.Size = new Size(74, 20);
+            label5.Size = new Size(72, 22);
             label5.TabIndex = 19;
             label5.Text = "Método:";
             // 
@@ -283,11 +283,11 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
             label6.Location = new Point(518, 345);
             label6.Name = "label6";
-            label6.Size = new Size(56, 20);
+            label6.Size = new Size(53, 22);
             label6.TabIndex = 21;
             label6.Text = "Valor:";
             // 
@@ -302,18 +302,18 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
             label7.Location = new Point(518, 409);
             label7.Name = "label7";
-            label7.Size = new Size(59, 20);
+            label7.Size = new Size(57, 22);
             label7.TabIndex = 23;
             label7.Text = "Troco:";
             // 
             // btnTroco
             // 
             btnTroco.BackColor = Color.FromArgb(17, 25, 12);
-            btnTroco.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTroco.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnTroco.ForeColor = Color.FromArgb(230, 255, 0);
             btnTroco.Location = new Point(596, 379);
             btnTroco.Name = "btnTroco";

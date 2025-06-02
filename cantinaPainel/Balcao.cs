@@ -82,10 +82,15 @@ namespace cantinaPainel
 
             if (pedidoSelecionado != null)
             {
+                if (pedidoSelecionado.IsViagem == true) 
+                {
+                    MessageBox.Show("pedido para viagem");
+                }
                 pedidoSelecionado.StatusPedido = Status.ENTREGUE;
                 entregue.Add(pedidoSelecionado);
                 listBoxHistorico.Items.Insert(0, pedidoSelecionado);
                 listBoxPedidos.Items.Remove(pedidoSelecionado);
+                
             }
         }
 

@@ -54,6 +54,7 @@
             listBoxNomePronto.Name = "listBoxNomePronto";
             listBoxNomePronto.Size = new Size(177, 319);
             listBoxNomePronto.TabIndex = 1;
+            listBoxNomePronto.SelectedIndexChanged += listBoxNomePronto_SelectedIndexChanged;
             // 
             // button1
             // 
@@ -69,9 +70,9 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.imagem_2025_05_15_081300623;
-            pictureBox1.Location = new Point(88, -1);
+            pictureBox1.Location = new Point(65, -1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(713, 73);
+            pictureBox1.Size = new Size(700, 73);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 28;
             pictureBox1.TabStop = false;

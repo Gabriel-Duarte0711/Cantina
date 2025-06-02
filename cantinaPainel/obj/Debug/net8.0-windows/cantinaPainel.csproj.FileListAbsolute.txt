@@ -86,3 +86,4 @@ D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaP
 D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsTela.resources
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsTela.resources
 D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.SplashScreen.resources
+C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.ChamadaGigante.resources
