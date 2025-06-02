@@ -22,7 +22,7 @@ namespace cantinaPainel
             InitializeComponent();
 
         }
-
+        int numero=0;
         List<Pedido> entregue = new List<Pedido>();
         private void CarregarHistorico()
         {
@@ -67,6 +67,9 @@ namespace cantinaPainel
                 }
 
             }
+            numero = listBoxPedidos.Items.Count;
+            lblContadorPedidos.Text = numero.ToString();
+            lblContadorPedidos.Text.Equals(numero);
 
         }
 
@@ -82,7 +85,7 @@ namespace cantinaPainel
 
             if (pedidoSelecionado != null)
             {
-                if (pedidoSelecionado.IsViagem == true) 
+                if (pedidoSelecionado.IsViagem == true)
                 {
                     MessageBox.Show("pedido para viagem");
                 }
@@ -90,7 +93,9 @@ namespace cantinaPainel
                 entregue.Add(pedidoSelecionado);
                 listBoxHistorico.Items.Insert(0, pedidoSelecionado);
                 listBoxPedidos.Items.Remove(pedidoSelecionado);
-                
+
+                numero = numero-1;
+                lblContadorPedidos.Text = numero.ToString();
             }
         }
 
@@ -129,6 +134,16 @@ namespace cantinaPainel
             formsTela formsTela = new formsTela();
             formsTela.Show();
             this.Hide();
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblContadorPedidos_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

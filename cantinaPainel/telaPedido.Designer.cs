@@ -65,106 +65,118 @@
             // 
             // listAdicionar
             // 
-            listAdicionar.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listAdicionar.BackColor = Color.FromArgb(243, 241, 238);
+            listAdicionar.Font = new Font("Inter", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listAdicionar.ForeColor = Color.FromArgb(17, 25, 12);
             listAdicionar.FormattingEnabled = true;
-            listAdicionar.ItemHeight = 17;
-            listAdicionar.Location = new Point(78, 177);
+            listAdicionar.ItemHeight = 18;
+            listAdicionar.Location = new Point(60, 200);
             listAdicionar.Name = "listAdicionar";
-            listAdicionar.Size = new Size(214, 89);
+            listAdicionar.Size = new Size(280, 130);
             listAdicionar.TabIndex = 0;
             listAdicionar.SelectedIndexChanged += listAdicionar_SelectedIndexChanged;
             // 
             // listPedido
             // 
-            listPedido.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listPedido.BackColor = Color.FromArgb(243, 241, 238);
+            listPedido.Font = new Font("Inter", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            listPedido.ForeColor = Color.FromArgb(17, 25, 12);
             listPedido.FormattingEnabled = true;
-            listPedido.ItemHeight = 17;
-            listPedido.Location = new Point(518, 174);
+            listPedido.ItemHeight = 18;
+            listPedido.Location = new Point(520, 200);
             listPedido.Name = "listPedido";
-            listPedido.Size = new Size(214, 89);
+            listPedido.Size = new Size(280, 130);
             listPedido.TabIndex = 1;
             listPedido.SelectedIndexChanged += listPedido_SelectedIndexChanged;
             // 
             // btnAdicionar
             // 
-            btnAdicionar.BackColor = Color.FromArgb(17, 25, 12);
-            btnAdicionar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAdicionar.ForeColor = Color.FromArgb(230, 255, 0);
-            btnAdicionar.Location = new Point(339, 177);
+            btnAdicionar.BackColor = Color.FromArgb(230, 255, 0);
+            btnAdicionar.FlatAppearance.BorderSize = 0;
+            btnAdicionar.FlatStyle = FlatStyle.Flat;
+            btnAdicionar.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdicionar.ForeColor = Color.FromArgb(17, 25, 12);
+            btnAdicionar.Location = new Point(370, 220);
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(99, 23);
+            btnAdicionar.Size = new Size(120, 45);
             btnAdicionar.TabIndex = 2;
-            btnAdicionar.Text = "Adicionar >";
+            btnAdicionar.Text = "Adicionar ⚡";
             btnAdicionar.UseVisualStyleBackColor = false;
             btnAdicionar.Click += btnAdicionar_Click;
             // 
             // btnRemover
             // 
-            btnRemover.BackColor = Color.FromArgb(17, 25, 12);
-            btnRemover.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRemover.ForeColor = Color.FromArgb(230, 255, 0);
-            btnRemover.Location = new Point(339, 233);
+            btnRemover.BackColor = Color.FromArgb(124, 122, 106);
+            btnRemover.FlatAppearance.BorderSize = 0;
+            btnRemover.FlatStyle = FlatStyle.Flat;
+            btnRemover.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRemover.ForeColor = Color.FromArgb(243, 241, 238);
+            btnRemover.Location = new Point(370, 280);
             btnRemover.Name = "btnRemover";
-            btnRemover.Size = new Size(99, 23);
+            btnRemover.Size = new Size(120, 45);
             btnRemover.TabIndex = 3;
-            btnRemover.Text = "< Remover";
+            btnRemover.Text = "⬅ Remover";
             btnRemover.UseVisualStyleBackColor = false;
             btnRemover.Click += btnRemover_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(72, 148);
+            label1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(243, 241, 238);
+            label1.Location = new Point(60, 160);
             label1.Name = "label1";
-            label1.Size = new Size(139, 22);
+            label1.Size = new Size(196, 26);
             label1.TabIndex = 4;
             label1.Text = "Produtos Cantina";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(515, 148);
+            label2.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(243, 241, 238);
+            label2.Location = new Point(520, 160);
             label2.Name = "label2";
-            label2.Size = new Size(77, 22);
+            label2.Size = new Size(103, 26);
             label2.TabIndex = 5;
             label2.Text = "Carrinho";
             // 
             // total
             // 
             total.AutoSize = true;
-            total.Font = new Font("Agrandir Narrow Bold", 17.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            total.ForeColor = Color.White;
-            total.Location = new Point(396, 495);
+            total.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            total.ForeColor = Color.FromArgb(230, 255, 0);
+            total.Location = new Point(400, 520);
             total.Name = "total";
-            total.Size = new Size(87, 31);
+            total.Size = new Size(137, 37);
             total.TabIndex = 6;
             total.Text = "TOTAL:";
             // 
             // btnFinalizar
             // 
-            btnFinalizar.BackColor = Color.FromArgb(17, 25, 12);
-            btnFinalizar.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnFinalizar.ForeColor = Color.FromArgb(230, 255, 0);
-            btnFinalizar.Location = new Point(596, 435);
+            btnFinalizar.BackColor = Color.FromArgb(230, 255, 0);
+            btnFinalizar.FlatAppearance.BorderSize = 0;
+            btnFinalizar.FlatStyle = FlatStyle.Flat;
+            btnFinalizar.Font = new Font("Inter", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnFinalizar.ForeColor = Color.FromArgb(17, 25, 12);
+            btnFinalizar.Location = new Point(620, 470);
             btnFinalizar.Name = "btnFinalizar";
-            btnFinalizar.Size = new Size(136, 28);
+            btnFinalizar.Size = new Size(180, 50);
             btnFinalizar.TabIndex = 7;
-            btnFinalizar.Text = "Finalizar";
+            btnFinalizar.Text = "⚡ Finalizar Rápido";
             btnFinalizar.UseVisualStyleBackColor = false;
             btnFinalizar.Click += btnFinalizar_Click;
             // 
             // btnSair
             // 
-            btnSair.BackColor = Color.FromArgb(17, 25, 12);
-            btnSair.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSair.ForeColor = Color.FromArgb(230, 255, 0);
-            btnSair.Location = new Point(657, 570);
+            btnSair.BackColor = Color.FromArgb(124, 122, 106);
+            btnSair.FlatAppearance.BorderSize = 0;
+            btnSair.FlatStyle = FlatStyle.Flat;
+            btnSair.Font = new Font("Inter", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSair.ForeColor = Color.FromArgb(243, 241, 238);
+            btnSair.Location = new Point(720, 580);
             btnSair.Name = "btnSair";
-            btnSair.Size = new Size(75, 23);
+            btnSair.Size = new Size(80, 35);
             btnSair.TabIndex = 9;
             btnSair.Text = "Sair";
             btnSair.UseVisualStyleBackColor = false;
@@ -176,162 +188,188 @@
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(120, 23);
             numericUpDown1.TabIndex = 0;
+            numericUpDown1.Visible = false;
             // 
             // numericQuantidade
             // 
-            numericQuantidade.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numericQuantidade.Location = new Point(191, 277);
+            numericQuantidade.BackColor = Color.FromArgb(243, 241, 238);
+            numericQuantidade.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            numericQuantidade.ForeColor = Color.FromArgb(17, 25, 12);
+            numericQuantidade.Location = new Point(210, 350);
             numericQuantidade.Name = "numericQuantidade";
-            numericQuantidade.Size = new Size(101, 21);
+            numericQuantidade.Size = new Size(130, 25);
             numericQuantidade.TabIndex = 10;
             numericQuantidade.ValueChanged += numericQuantidade_ValueChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(17, 25, 12);
-            label3.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(243, 241, 238);
-            label3.Location = new Point(78, 278);
+            label3.Location = new Point(60, 352);
             label3.Name = "label3";
-            label3.Size = new Size(99, 22);
+            label3.Size = new Size(124, 24);
             label3.TabIndex = 11;
             label3.Text = "Quantidade:";
             // 
             // btnVoltar
             // 
-            btnVoltar.BackColor = Color.FromArgb(17, 25, 12);
-            btnVoltar.ForeColor = Color.FromArgb(230, 255, 0);
-            btnVoltar.Location = new Point(12, 12);
+            btnVoltar.BackColor = Color.FromArgb(230, 255, 0);
+            btnVoltar.FlatAppearance.BorderSize = 0;
+            btnVoltar.FlatStyle = FlatStyle.Flat;
+            btnVoltar.Font = new Font("Inter", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVoltar.ForeColor = Color.FromArgb(17, 25, 12);
+            btnVoltar.Location = new Point(20, 20);
             btnVoltar.Name = "btnVoltar";
-            btnVoltar.Size = new Size(37, 40);
+            btnVoltar.Size = new Size(50, 50);
             btnVoltar.TabIndex = 12;
-            btnVoltar.Text = "<";
+            btnVoltar.Text = "←";
             btnVoltar.UseVisualStyleBackColor = false;
             btnVoltar.Click += btnVoltar_Click_1;
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.CalendarMonthBackground = Color.FromArgb(243, 241, 238);
+            dateTimePicker1.Font = new Font("Inter", 9F);
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(396, 569);
+            dateTimePicker1.Location = new Point(400, 585);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.ShowUpDown = true;
-            dateTimePicker1.Size = new Size(80, 23);
+            dateTimePicker1.Size = new Size(100, 22);
             dateTimePicker1.TabIndex = 13;
             // 
             // dateTimePicker2
             // 
+            dateTimePicker2.CalendarMonthBackground = Color.FromArgb(243, 241, 238);
+            dateTimePicker2.Font = new Font("Inter", 9F);
             dateTimePicker2.Format = DateTimePickerFormat.Time;
-            dateTimePicker2.Location = new Point(482, 569);
+            dateTimePicker2.Location = new Point(510, 585);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.ShowUpDown = true;
-            dateTimePicker2.Size = new Size(80, 23);
+            dateTimePicker2.Size = new Size(100, 22);
             dateTimePicker2.TabIndex = 14;
             // 
             // txtBoxNome
             // 
-            txtBoxNome.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBoxNome.Location = new Point(596, 274);
+            txtBoxNome.BackColor = Color.FromArgb(243, 241, 238);
+            txtBoxNome.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxNome.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBoxNome.ForeColor = Color.FromArgb(17, 25, 12);
+            txtBoxNome.Location = new Point(620, 350);
             txtBoxNome.Name = "txtBoxNome";
-            txtBoxNome.Size = new Size(136, 21);
+            txtBoxNome.Size = new Size(180, 25);
             txtBoxNome.TabIndex = 15;
             txtBoxNome.Tag = "";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(518, 275);
+            label4.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(243, 241, 238);
+            label4.Location = new Point(520, 352);
             label4.Name = "label4";
-            label4.Size = new Size(58, 22);
+            label4.Size = new Size(72, 24);
             label4.TabIndex = 17;
             label4.Text = "Nome:";
             // 
             // comboBoxPagamento
             // 
+            comboBoxPagamento.BackColor = Color.FromArgb(243, 241, 238);
             comboBoxPagamento.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxPagamento.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBoxPagamento.FlatStyle = FlatStyle.Flat;
+            comboBoxPagamento.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBoxPagamento.ForeColor = Color.FromArgb(17, 25, 12);
             comboBoxPagamento.FormattingEnabled = true;
-            comboBoxPagamento.Location = new Point(596, 312);
+            comboBoxPagamento.Location = new Point(620, 385);
             comboBoxPagamento.Name = "comboBoxPagamento";
-            comboBoxPagamento.Size = new Size(136, 23);
+            comboBoxPagamento.Size = new Size(180, 30);
             comboBoxPagamento.TabIndex = 18;
             comboBoxPagamento.SelectedIndexChanged += comboBoxPagamento_SelectedIndexChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(518, 312);
+            label5.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(243, 241, 238);
+            label5.Location = new Point(520, 387);
             label5.Name = "label5";
-            label5.Size = new Size(72, 22);
+            label5.Size = new Size(86, 24);
             label5.TabIndex = 19;
             label5.Text = "Método:";
             // 
             // numericTroco
             // 
+            numericTroco.BackColor = Color.FromArgb(243, 241, 238);
             numericTroco.DecimalPlaces = 2;
-            numericTroco.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numericTroco.Location = new Point(596, 345);
+            numericTroco.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            numericTroco.ForeColor = Color.FromArgb(17, 25, 12);
+            numericTroco.Location = new Point(100, 420);
             numericTroco.Name = "numericTroco";
-            numericTroco.Size = new Size(136, 21);
+            numericTroco.Size = new Size(120, 25);
             numericTroco.TabIndex = 20;
             numericTroco.ValueChanged += numericTroco_ValueChanged;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(518, 345);
+            label6.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.FromArgb(243, 241, 238);
+            label6.Location = new Point(29, 420);
             label6.Name = "label6";
-            label6.Size = new Size(53, 22);
+            label6.Size = new Size(65, 24);
             label6.TabIndex = 21;
             label6.Text = "Valor:";
             // 
             // txtBoxTroco
             // 
-            txtBoxTroco.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBoxTroco.Location = new Point(596, 408);
+            txtBoxTroco.BackColor = Color.FromArgb(243, 241, 238);
+            txtBoxTroco.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxTroco.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBoxTroco.ForeColor = Color.FromArgb(17, 25, 12);
+            txtBoxTroco.Location = new Point(320, 420);
             txtBoxTroco.Name = "txtBoxTroco";
-            txtBoxTroco.Size = new Size(136, 21);
+            txtBoxTroco.ReadOnly = true;
+            txtBoxTroco.Size = new Size(120, 25);
             txtBoxTroco.TabIndex = 22;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Agrandir Narrow Bold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(518, 409);
+            label7.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(243, 241, 238);
+            label7.Location = new Point(250, 422);
             label7.Name = "label7";
-            label7.Size = new Size(57, 22);
+            label7.Size = new Size(71, 24);
             label7.TabIndex = 23;
             label7.Text = "Troco:";
             // 
             // btnTroco
             // 
-            btnTroco.BackColor = Color.FromArgb(17, 25, 12);
-            btnTroco.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTroco.ForeColor = Color.FromArgb(230, 255, 0);
-            btnTroco.Location = new Point(596, 379);
+            btnTroco.BackColor = Color.FromArgb(230, 255, 0);
+            btnTroco.FlatAppearance.BorderSize = 0;
+            btnTroco.FlatStyle = FlatStyle.Flat;
+            btnTroco.Font = new Font("Inter", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTroco.ForeColor = Color.FromArgb(17, 25, 12);
+            btnTroco.Location = new Point(100, 460);
             btnTroco.Name = "btnTroco";
-            btnTroco.Size = new Size(136, 23);
+            btnTroco.Size = new Size(120, 35);
             btnTroco.TabIndex = 24;
-            btnTroco.Text = "Troco";
+            btnTroco.Text = "⚡ Calcular";
             btnTroco.UseVisualStyleBackColor = false;
             btnTroco.Click += btnTroco_Click;
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(17, 25, 12);
-            button1.ForeColor = Color.FromArgb(230, 255, 0);
-            button1.Location = new Point(1111, 413);
+            button1.BackColor = Color.FromArgb(202, 196, 183);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.FromArgb(17, 25, 12);
+            button1.Location = new Point(920, 420);
             button1.Name = "button1";
-            button1.Size = new Size(85, 31);
+            button1.Size = new Size(100, 40);
             button1.TabIndex = 25;
-            button1.Text = "balcao";
+            button1.Text = "Balcão";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -339,9 +377,9 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.imagem_2025_05_15_081300623;
-            pictureBox1.Location = new Point(55, 1);
+            pictureBox1.Location = new Point(90, 10);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(385, 87);
+            pictureBox1.Size = new Size(400, 100);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 26;
             pictureBox1.TabStop = false;
@@ -349,10 +387,11 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.ForeColor = Color.White;
-            checkBox1.Location = new Point(596, 479);
+            checkBox1.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkBox1.ForeColor = Color.FromArgb(243, 241, 238);
+            checkBox1.Location = new Point(620, 430);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(66, 19);
+            checkBox1.Size = new Size(82, 26);
             checkBox1.TabIndex = 27;
             checkBox1.Text = "Viagem";
             checkBox1.UseVisualStyleBackColor = true;
@@ -360,22 +399,32 @@
             // 
             // button2
             // 
-            button2.Location = new Point(1109, 356);
+            button2.BackColor = Color.FromArgb(202, 196, 183);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.FromArgb(17, 25, 12);
+            button2.Location = new Point(920, 370);
             button2.Name = "button2";
-            button2.Size = new Size(87, 33);
+            button2.Size = new Size(100, 40);
             button2.TabIndex = 28;
             button2.Text = "Cozinha";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(1109, 299);
+            button3.BackColor = Color.FromArgb(202, 196, 183);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.FromArgb(17, 25, 12);
+            button3.Location = new Point(920, 320);
             button3.Name = "button3";
-            button3.Size = new Size(87, 33);
+            button3.Size = new Size(100, 40);
             button3.TabIndex = 29;
             button3.Text = "Chamada";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // formsPedido
@@ -383,7 +432,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
-            ClientSize = new Size(1290, 604);
+            ClientSize = new Size(1071, 630);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(checkBox1);
@@ -413,7 +462,7 @@
             Controls.Add(listPedido);
             Controls.Add(listAdicionar);
             Name = "formsPedido";
-            Text = "v bc";
+            Text = "Cantina Bolt - Checkout rápido como um raio ⚡";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).EndInit();
