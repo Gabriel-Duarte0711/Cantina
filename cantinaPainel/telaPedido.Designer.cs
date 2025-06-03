@@ -65,7 +65,7 @@
             // 
             // listAdicionar
             // 
-            listAdicionar.BackColor = Color.FromArgb(243, 241, 238);
+            listAdicionar.BackColor = Color.FromArgb(202, 196, 183);
             listAdicionar.Font = new Font("Inter", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listAdicionar.ForeColor = Color.FromArgb(17, 25, 12);
             listAdicionar.FormattingEnabled = true;
@@ -78,7 +78,7 @@
             // 
             // listPedido
             // 
-            listPedido.BackColor = Color.FromArgb(243, 241, 238);
+            listPedido.BackColor = Color.FromArgb(202, 196, 183);
             listPedido.Font = new Font("Inter", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listPedido.ForeColor = Color.FromArgb(17, 25, 12);
             listPedido.FormattingEnabled = true;
@@ -192,7 +192,7 @@
             // 
             // numericQuantidade
             // 
-            numericQuantidade.BackColor = Color.FromArgb(243, 241, 238);
+            numericQuantidade.BackColor = Color.FromArgb(202, 196, 183);
             numericQuantidade.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             numericQuantidade.ForeColor = Color.FromArgb(17, 25, 12);
             numericQuantidade.Location = new Point(210, 350);
@@ -229,7 +229,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.CalendarMonthBackground = Color.FromArgb(243, 241, 238);
+            dateTimePicker1.CalendarMonthBackground = Color.FromArgb(202, 196, 183);
             dateTimePicker1.Font = new Font("Inter", 9F);
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Location = new Point(400, 585);
@@ -251,7 +251,7 @@
             // 
             // txtBoxNome
             // 
-            txtBoxNome.BackColor = Color.FromArgb(243, 241, 238);
+            txtBoxNome.BackColor = Color.FromArgb(202, 196, 183);
             txtBoxNome.BorderStyle = BorderStyle.FixedSingle;
             txtBoxNome.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBoxNome.ForeColor = Color.FromArgb(17, 25, 12);
@@ -274,7 +274,7 @@
             // 
             // comboBoxPagamento
             // 
-            comboBoxPagamento.BackColor = Color.FromArgb(243, 241, 238);
+            comboBoxPagamento.BackColor = Color.FromArgb(202, 196, 183);
             comboBoxPagamento.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPagamento.FlatStyle = FlatStyle.Flat;
             comboBoxPagamento.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -299,7 +299,7 @@
             // 
             // numericTroco
             // 
-            numericTroco.BackColor = Color.FromArgb(243, 241, 238);
+            numericTroco.BackColor = Color.FromArgb(202, 196, 183);
             numericTroco.DecimalPlaces = 2;
             numericTroco.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             numericTroco.ForeColor = Color.FromArgb(17, 25, 12);
@@ -322,7 +322,7 @@
             // 
             // txtBoxTroco
             // 
-            txtBoxTroco.BackColor = Color.FromArgb(243, 241, 238);
+            txtBoxTroco.BackColor = Color.FromArgb(202, 196, 183);
             txtBoxTroco.BorderStyle = BorderStyle.FixedSingle;
             txtBoxTroco.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBoxTroco.ForeColor = Color.FromArgb(17, 25, 12);
