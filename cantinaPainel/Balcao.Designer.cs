@@ -180,6 +180,7 @@
             // 
             lblSubtitle.AutoSize = true;
             lblSubtitle.Font = new Font("Inter", 14F);
+            lblSubtitle.ForeColor = Color.FromArgb(243, 241, 238);
             lblSubtitle.Location = new Point(95, 75);
             lblSubtitle.Name = "lblSubtitle";
             lblSubtitle.Size = new Size(343, 27);
@@ -199,6 +200,7 @@
             panelMain.Padding = new Padding(30);
             panelMain.Size = new Size(1100, 561);
             panelMain.TabIndex = 21;
+            panelMain.Paint += panelMain_Paint_1;
             // 
             // panelPedidos
             // 

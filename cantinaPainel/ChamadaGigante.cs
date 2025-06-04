@@ -17,18 +17,32 @@ namespace cantinaPainel
             InitializeComponent();
         }
 
+        private void lblIconeCheck_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timerAnimacao_Tick(object sender, EventArgs e)
+        {
+            timerAnimacao.Stop();
+            this.Close();
+        }
+
+        private void panelPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void ChamadaGigante_Load(object sender, EventArgs e)
         {
             foreach (var item in PersistenciaPedido.pedidos)
             {
-                label1.Text = item.Nome_Cliente;
+                    label1.Text = item.Nome_Cliente;
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void lblNumeroPedido_Click(object sender, EventArgs e)
         {
-            timer1.Stop();
-            this.Close();
         }
     }
 }

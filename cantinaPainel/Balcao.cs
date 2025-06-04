@@ -22,7 +22,7 @@ namespace cantinaPainel
             InitializeComponent();
 
         }
-        int numero=0;
+        int numero = 0;
         List<Pedido> entregue = new List<Pedido>();
         private void CarregarHistorico()
         {
@@ -94,7 +94,7 @@ namespace cantinaPainel
                 listBoxHistorico.Items.Insert(0, pedidoSelecionado);
                 listBoxPedidos.Items.Remove(pedidoSelecionado);
 
-                numero = numero-1;
+                numero = numero - 1;
                 lblContadorPedidos.Text = numero.ToString();
             }
         }
@@ -143,7 +143,12 @@ namespace cantinaPainel
 
         private void lblContadorPedidos_Click(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void panelMain_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
