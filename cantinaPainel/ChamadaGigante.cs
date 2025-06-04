@@ -28,21 +28,13 @@ namespace cantinaPainel
             this.Close();
         }
 
-        private void panelPrincipal_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void ChamadaGigante_Load(object sender, EventArgs e)
+        private void ChamadaGigante_Load_1(object sender, EventArgs e)
         {
             foreach (var item in PersistenciaPedido.pedidos)
             {
-                    label1.Text = item.Nome_Cliente;
+                label1.Text = item.Nome_Cliente;
             }
-        }
-
-        private void lblNumeroPedido_Click(object sender, EventArgs e)
-        {
         }
     }
 }

@@ -29,31 +29,26 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            panelPrincipal = new Panel();
+            timerAnimacao = new System.Windows.Forms.Timer(components);
             panelCentral = new Panel();
             panelProduto = new Panel();
+            label1 = new Label();
             panelIcone = new Panel();
             lblIconeCheck = new Label();
             lblSubtitulo = new Label();
             lblTitulo = new Label();
-            timerAnimacao = new System.Windows.Forms.Timer(components);
-            label1 = new Label();
-            panelPrincipal.SuspendLayout();
+            pictureBox1 = new PictureBox();
             panelCentral.SuspendLayout();
             panelProduto.SuspendLayout();
             panelIcone.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // panelPrincipal
+            // timerAnimacao
             // 
-            panelPrincipal.BackColor = Color.FromArgb(17, 25, 12);
-            panelPrincipal.Controls.Add(panelCentral);
-            panelPrincipal.Location = new Point(-1, 0);
-            panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Padding = new Padding(44, 47, 44, 47);
-            panelPrincipal.Size = new Size(1051, 595);
-            panelPrincipal.TabIndex = 0;
-            panelPrincipal.Paint += panelPrincipal_Paint;
+            timerAnimacao.Enabled = true;
+            timerAnimacao.Interval = 10000;
+            timerAnimacao.Tick += timerAnimacao_Tick;
             // 
             // panelCentral
             // 
@@ -62,10 +57,10 @@
             panelCentral.Controls.Add(panelIcone);
             panelCentral.Controls.Add(lblSubtitulo);
             panelCentral.Controls.Add(lblTitulo);
-            panelCentral.Location = new Point(41, 12);
+            panelCentral.Location = new Point(42, 75);
             panelCentral.Name = "panelCentral";
             panelCentral.Padding = new Padding(52, 75, 52, 56);
-            panelCentral.Size = new Size(962, 531);
+            panelCentral.Size = new Size(962, 457);
             panelCentral.TabIndex = 0;
             // 
             // panelProduto
@@ -75,14 +70,24 @@
             panelProduto.Location = new Point(175, 356);
             panelProduto.Name = "panelProduto";
             panelProduto.Padding = new Padding(26, 28, 26, 28);
-            panelProduto.Size = new Size(612, 141);
+            panelProduto.Size = new Size(612, 81);
             panelProduto.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20F);
+            label1.Location = new Point(255, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(90, 37);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
             // 
             // panelIcone
             // 
             panelIcone.BackColor = Color.FromArgb(202, 196, 183);
             panelIcone.Controls.Add(lblIconeCheck);
-            panelIcone.Location = new Point(439, 40);
+            panelIcone.Location = new Point(439, 0);
             panelIcone.Name = "panelIcone";
             panelIcone.Size = new Size(88, 94);
             panelIcone.TabIndex = 5;
@@ -104,7 +109,7 @@
             // 
             lblSubtitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblSubtitulo.ForeColor = Color.FromArgb(102, 102, 102);
-            lblSubtitulo.Location = new Point(35, 306);
+            lblSubtitulo.Location = new Point(32, 279);
             lblSubtitulo.Name = "lblSubtitulo";
             lblSubtitulo.Size = new Size(858, 47);
             lblSubtitulo.TabIndex = 1;
@@ -114,60 +119,57 @@
             // lblTitulo
             // 
             lblTitulo.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.FromArgb(26, 43, 26);
-            lblTitulo.Location = new Point(66, 134);
+            lblTitulo.ForeColor = Color.FromArgb(17, 25, 12);
+            lblTitulo.Location = new Point(103, 97);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(804, 182);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "SEU PRODUTO ESTÁ PRONTO!";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // timerAnimacao
+            // pictureBox1
             // 
-            timerAnimacao.Enabled = true;
-            timerAnimacao.Interval = 1000;
-            timerAnimacao.Tick += timerAnimacao_Tick;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(264, 64);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            pictureBox1.BackColor = Color.FromArgb(202, 196, 183);
+            pictureBox1.Image = Properties.Resources.imagem_2025_05_15_081300623;
+            pictureBox1.Location = new Point(391, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(276, 73);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 29;
+            pictureBox1.TabStop = false;
             // 
             // ChamadaGigante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1050, 595);
-            Controls.Add(panelPrincipal);
+            BackColor = Color.FromArgb(17, 25, 12);
+            ClientSize = new Size(1045, 549);
+            Controls.Add(pictureBox1);
+            Controls.Add(panelCentral);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ChamadaGigante";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Produto Pronto - Cantina";
             TopMost = true;
-            WindowState = FormWindowState.Maximized;
-            panelPrincipal.ResumeLayout(false);
+            Load += ChamadaGigante_Load_1;
             panelCentral.ResumeLayout(false);
             panelProduto.ResumeLayout(false);
             panelProduto.PerformLayout();
             panelIcone.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelPrincipal;
-        private System.Windows.Forms.Panel panelCentral;
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblSubtitulo;
-        private System.Windows.Forms.Panel panelProduto;
         private System.Windows.Forms.Timer timerAnimacao;
-        private System.Windows.Forms.Panel panelIcone;
-        private System.Windows.Forms.Label lblIconeCheck;
+        private Panel panelCentral;
+        private Panel panelProduto;
         private Label label1;
+        private Panel panelIcone;
+        private Label lblIconeCheck;
+        private Label lblSubtitulo;
+        private Label lblTitulo;
+        private PictureBox pictureBox1;
     }
 }
