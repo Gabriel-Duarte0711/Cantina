@@ -82,7 +82,7 @@ namespace cantinaPainel
                 double quant = (double)numericQuantidade.Value;
                 Produto produtoSelecionado = (Produto)listAdicionar.SelectedItem;
                 Produto novoItem = new Produto(produtoSelecionado.Codigo, produtoSelecionado.Item, produtoSelecionado.Preco, produtoSelecionado.IsChapa);
-                novoItem.Quantidade = (int)numericQuantidade.Value;
+                novoItem.Quantidade = (int)numericQuantidade.Value;      
                 listPedido.Items.Add(novoItem);
                 extrato2.Add(novoItem);
                 totalPedido += novoItem.Preco * quant;
@@ -155,13 +155,9 @@ namespace cantinaPainel
                 {
                     pedido.StatusPedido = Status.PRONTO;
                 }
-
-
                 pedido.IsViagem = checkBox1.Checked;
                 pedido.MetodoPagamento = metodoPgmt;
-
                 PersistenciaPedido.pedidos.Add(pedido);
-
 
                 txtBoxNome.Clear();
                 listPedido.Items.Clear();
@@ -169,7 +165,6 @@ namespace cantinaPainel
                 string Extrato = string.Join("\n", extrato2);
                 MessageBox.Show($"Cliente: {pedido.Nome_Cliente} \n{Extrato}\n \no total é: {totalPedido:f2}\nPedido para: {check}\nPago no: {metodoPgmt}\ndata: {hora}");
                 total.Text = $"O total e: R${totalPedido = 0}";
-
 
                 extrato2.Clear();
                 txtBoxTroco.Clear();
