@@ -21,7 +21,6 @@ namespace cantinaPainel
 
         private void formsTela_Load(object sender, EventArgs e)
         {
-
             foreach (var item in PersistenciaPedido.pedidos)
             {
                 if (item.StatusPedido == Status.PRONTO || item.StatusPedido == Status.PREPARANDO)
@@ -35,13 +34,10 @@ namespace cantinaPainel
                     listBoxNomePronto.Items.Insert(0, item.Nome_Cliente);
                 }
             }
-
             temporizador = new System.Windows.Forms.Timer();
             temporizador.Interval = 30000;
             temporizador.Tick += Temporizador_Tick;
             temporizador.Start();
-
-
         }
         private void Temporizador_Tick(object sender, EventArgs e)
         {
