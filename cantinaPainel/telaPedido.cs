@@ -120,7 +120,7 @@ namespace cantinaPainel
             }
             else if (numericQuantidade.Value <= 0)
             {
-                MessageBox.Show("tem que adicionar ao menos uma unidade");
+                MessageBox.Show("tem que adicionar ao menos uma unidade.");
             }
         }
 
