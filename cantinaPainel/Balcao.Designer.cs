@@ -173,7 +173,7 @@
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1100, 100);
+            panelHeader.Size = new Size(1117, 100);
             panelHeader.TabIndex = 20;
             // 
             // lblSubtitle
@@ -198,7 +198,7 @@
             panelMain.Location = new Point(0, 100);
             panelMain.Name = "panelMain";
             panelMain.Padding = new Padding(30);
-            panelMain.Size = new Size(1100, 561);
+            panelMain.Size = new Size(1117, 576);
             panelMain.TabIndex = 21;
             panelMain.Paint += panelMain_Paint_1;
             // 
@@ -253,7 +253,7 @@
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(17, 25, 12);
-            ClientSize = new Size(1100, 661);
+            ClientSize = new Size(1117, 676);
             Controls.Add(panelMain);
             Controls.Add(panelHeader);
             Font = new Font("Inter", 9F);

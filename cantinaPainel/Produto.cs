@@ -11,9 +11,9 @@ namespace cantinaPainel
         private string item;
         private double preco;
         private int quantidade;
-        private string nome;
         private int codigo=0;
         private bool isChapa;
+        private int quantidadeEstoque;
 
         public Produto(int codigo,string produto, double preco, bool isChapa)
         {
@@ -53,19 +53,16 @@ namespace cantinaPainel
             get { return isChapa; }
             set { isChapa = value; }
         }
-
-        public string Nome
+        public int QuantidadeEstoque
         {
-            get { return nome; }
-            set{ nome = value; }
+            get { return quantidadeEstoque; }
+            set { quantidadeEstoque = value; }
         }
-
-
         public override string ToString()
         {
 
             if (quantidade > 0)
-                return$"{quantidade}x - {item} - R$ {preco:f2}";
+                return$"{quantidade}x - {item} - R$ {preco * quantidade:f2}";
             else
                 return$"{item} - R$ {preco:f2}";
         }

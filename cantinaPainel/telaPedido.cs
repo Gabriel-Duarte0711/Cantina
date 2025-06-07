@@ -79,14 +79,33 @@ namespace cantinaPainel
 
             if (listAdicionar.SelectedIndex != -1 && numericQuantidade.Value > 0)
             {
-                double quant = (double)numericQuantidade.Value;
+                int quant = (int)numericQuantidade.Value;
                 Produto produtoSelecionado = (Produto)listAdicionar.SelectedItem;
                 Produto novoItem = new Produto(produtoSelecionado.Codigo, produtoSelecionado.Item, produtoSelecionado.Preco, produtoSelecionado.IsChapa);
-                novoItem.Quantidade = (int)numericQuantidade.Value;      
-                listPedido.Items.Add(novoItem);
-                extrato2.Add(novoItem);
-                totalPedido += novoItem.Preco * quant;
 
+                bool encontrado = false;
+                foreach (Produto item in listPedido.Items)
+                {
+                    if (item.Codigo == produtoSelecionado.Codigo)
+                    {
+                        item.Quantidade += quant;
+                        int index = listPedido.Items.IndexOf(item);
+                        if (index >= 0)
+                            listPedido.Items[index] = item;
+                        encontrado = true;
+                        break;
+
+                    }
+                }
+                if (!encontrado)
+                {
+                    novoItem.Quantidade = quant;
+                    listPedido.Items.Add(novoItem);
+                    extrato2.Add(novoItem);
+                }
+
+                totalPedido += novoItem.Preco * quant;
+                listPedido.Refresh();
                 total.Text = $"O total e: R${totalPedido:f2}";
                 listAdicionar.SelectedIndex = -1;
                 numericQuantidade.Value = 0;
@@ -181,8 +200,6 @@ namespace cantinaPainel
             }
         }
 
-
-
         private void btnVoltar_Click_1(object sender, EventArgs e)
         {
             this.Hide();
@@ -261,16 +278,6 @@ namespace cantinaPainel
             formsBalcao formbalcao = new formsBalcao();
             formbalcao.Show();
             this.Hide();
-        }
-
-        private void numericQuantidade_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericTroco_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

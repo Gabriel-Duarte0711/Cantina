@@ -199,7 +199,6 @@
             numericQuantidade.Name = "numericQuantidade";
             numericQuantidade.Size = new Size(130, 25);
             numericQuantidade.TabIndex = 10;
-            numericQuantidade.ValueChanged += numericQuantidade_ValueChanged;
             // 
             // label3
             // 
@@ -307,7 +306,6 @@
             numericTroco.Name = "numericTroco";
             numericTroco.Size = new Size(120, 25);
             numericTroco.TabIndex = 20;
-            numericTroco.ValueChanged += numericTroco_ValueChanged;
             // 
             // label6
             // 
