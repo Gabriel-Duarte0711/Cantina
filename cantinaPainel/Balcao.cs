@@ -60,7 +60,6 @@ namespace cantinaPainel
             CarregarHistorico();
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
-                MessageBox.Show(pedido.CodigoPedido.ToString());
                 string viagem = pedido.IsViagem ? "Sim" : "Não";
 
                 if (pedido.StatusPedido == Status.PRONTO)
@@ -69,7 +68,7 @@ namespace cantinaPainel
                 }
 
             }
-          
+
             numero = listBoxPedidos.Items.Count;
             lblContadorPedidos.Text = numero.ToString();
             lblContadorPedidos.Text.Equals(numero);
@@ -82,6 +81,7 @@ namespace cantinaPainel
             if (listBoxHistorico.Items.Count >= 5)
             {
                 listBoxHistorico.Items.RemoveAt(4);
+                PersistenciaPedido.saveToFile();
             }
 
             var pedidoSelecionado = listBoxPedidos.SelectedItem as Pedido;
@@ -96,6 +96,7 @@ namespace cantinaPainel
                 entregue.Add(pedidoSelecionado);
                 listBoxHistorico.Items.Insert(0, pedidoSelecionado);
                 listBoxPedidos.Items.Remove(pedidoSelecionado);
+                PersistenciaPedido.saveToFile();
 
                 numero = numero - 1;
                 lblContadorPedidos.Text = numero.ToString();
@@ -113,19 +114,6 @@ namespace cantinaPainel
             formpedido.Show();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listViewHistorico_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            listBoxHistorico.SelectedItems.Clear();
-            if (listBoxHistorico.Items.Count > 5)
-            {
-                listBoxHistorico.Items.RemoveAt(4);
-            }
-        }
 
         private void listBoxHistorico_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -139,17 +127,17 @@ namespace cantinaPainel
             this.Hide();
         }
 
-        private void panelMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void lblContadorPedidos_Click(object sender, EventArgs e)
         {
 
         }
 
         private void panelMain_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listBoxPedidos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

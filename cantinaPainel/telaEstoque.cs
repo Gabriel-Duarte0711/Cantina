@@ -12,25 +12,90 @@ namespace cantinaPainel
 {
     public partial class formsEstoque : Form
     {
-        List<Estoque> estoqueGeral = new List<Estoque>();
+
         public formsEstoque()
         {
             InitializeComponent();
         }
+        private void AtualizarLista()
+        {
+            // Salvar seleção atual se existir
+            int selectedIndex = listBoxEstoque.SelectedIndex;
 
+            listBoxEstoque.DataSource = null;
+            listBoxEstoque.DataSource = PersistenciaEstoque.estoqueGeral;
+
+            // Restaurar seleção se ainda válida
+            if (selectedIndex >= 0 && selectedIndex < listBoxEstoque.Items.Count)
+            {
+                listBoxEstoque.SelectedIndex = selectedIndex;
+            }
+        }
         private void telaEstoque_Load(object sender, EventArgs e)
         {
-            foreach (var produto in PersistenciaProduto.itemEstoque)
+            PersistenciaEstoque.LoadListFromFile();
+
+            if (PersistenciaEstoque.estoqueGeral.Count == 0)
             {
-                Estoque novoEstoque = new Estoque();
-                novoEstoque.Produto = produto;
-                novoEstoque.Quantidade = 10; // exemplo: 10 unidades de cada
-                estoqueGeral.Add(novoEstoque);
+                PersistenciaEstoque.InicializarEstoque();
             }
 
-            foreach (var item in estoqueGeral)
+            AtualizarLista();
+        }
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            int quantidadeAdicionar = (int)numericUpDown1.Value;
+
+            // Aqui está a correção principal:
+            Estoque estoqueSelecionado = (Estoque)listBoxEstoque.SelectedItem;
+
+            if (estoqueSelecionado != null && quantidadeAdicionar > 0)
             {
-                listBoxEstoque.Items.Add(item);
+                estoqueSelecionado.AdicionarQuantidade(quantidadeAdicionar);
+                PersistenciaEstoque.saveToFile();
+                AtualizarLista();
+
+                listBoxEstoque.SelectedIndex = -1;
+                numericUpDown1.Value = 0;
+
+
+            }
+            else
+            {
+                MessageBox.Show("Selecione um item válido e uma quantidade maior que 0.");
+            }
+        }
+
+        private void listBoxEstoque_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxEstoque.SelectedItem != null)
+            {
+                numericUpDown1.Value = 1;
+            }
+        }
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int quantidadeRemover = (int)numericUpDown1.Value;
+            Estoque estoqueSelecionado = (Estoque)listBoxEstoque.SelectedItem;
+
+            // ✅ VERIFICAÇÃO MELHORADA
+            if (estoqueSelecionado?.Produto != null && quantidadeRemover > 0 && estoqueSelecionado.Quantidade >= quantidadeRemover)
+            {
+                estoqueSelecionado.RemoverQuantidade(quantidadeRemover);
+                PersistenciaEstoque.saveToFile();
+
+                listBoxEstoque.SelectedIndex = -1;
+                AtualizarLista();
+                numericUpDown1.Value = 0;
+            }
+            else
+            {
+                MessageBox.Show("Selecione um item válido e uma quantidade maior que 0.");
             }
         }
     }

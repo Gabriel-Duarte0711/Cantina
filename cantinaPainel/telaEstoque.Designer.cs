@@ -30,58 +30,140 @@
         {
             listBoxEstoque = new ListBox();
             btnAdicionar = new Button();
-            button2 = new Button();
+            btnRemover = new Button();
             numericUpDown1 = new NumericUpDown();
+            lblTitulo = new Label();
+            lblQuantidade = new Label();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+
+            // 
+            // pictureBox1 (Logo Bolt)
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.imagem_2025_05_15_081300623;
+            pictureBox1.Location = new Point(50, 15);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(120, 40);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 27;
+            pictureBox1.TabStop = false;
+
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.Font = new Font("Agrandir Narrow", 16F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.FromArgb(243, 241, 238); // Light Grey
+            lblTitulo.Location = new Point(190, 20);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(250, 35);
+            lblTitulo.TabIndex = 4;
+            lblTitulo.Text = "Controle de Estoque";
+            lblTitulo.TextAlign = ContentAlignment.MiddleLeft;
+
             // 
             // listBoxEstoque
             // 
+            listBoxEstoque.BackColor = Color.FromArgb(120, 118, 100); // Dark Grey
+            listBoxEstoque.BorderStyle = BorderStyle.None;
+            listBoxEstoque.Font = new Font("Inter", 10F);
+            listBoxEstoque.ForeColor = Color.FromArgb(243, 241, 238); // Light Grey
             listBoxEstoque.FormattingEnabled = true;
-            listBoxEstoque.ItemHeight = 15;
-            listBoxEstoque.Location = new Point(108, 47);
+            listBoxEstoque.ItemHeight = 18;
+            listBoxEstoque.Location = new Point(50, 80);
             listBoxEstoque.Name = "listBoxEstoque";
-            listBoxEstoque.Size = new Size(374, 379);
+            listBoxEstoque.ScrollAlwaysVisible = true;
+            listBoxEstoque.Size = new Size(400, 340);
             listBoxEstoque.TabIndex = 0;
+            listBoxEstoque.SelectedIndexChanged += listBoxEstoque_SelectedIndexChanged;
+
             // 
             // btnAdicionar
             // 
-            btnAdicionar.Location = new Point(567, 128);
+            btnAdicionar.BackColor = Color.FromArgb(225, 255, 0); // Lightning Yellow
+            btnAdicionar.Cursor = Cursors.Hand;
+            btnAdicionar.FlatAppearance.BorderSize = 0;
+            btnAdicionar.FlatStyle = FlatStyle.Flat;
+            btnAdicionar.Font = new Font("Inter", 10F, FontStyle.Bold);
+            btnAdicionar.ForeColor = Color.FromArgb(17, 25, 12); // Bolt Black
+            btnAdicionar.Location = new Point(480, 120);
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(97, 30);
+            btnAdicionar.Size = new Size(140, 45);
             btnAdicionar.TabIndex = 1;
-            btnAdicionar.Text = "Adicionar ⚡";
-            btnAdicionar.UseVisualStyleBackColor = true;
+            btnAdicionar.Text = "⚡ Adicionar";
+            btnAdicionar.UseVisualStyleBackColor = false;
+            btnAdicionar.Click += btnAdicionar_Click;
+
             // 
-            // button2
+            // btnRemover
             // 
-            button2.Location = new Point(567, 181);
-            button2.Name = "button2";
-            button2.Size = new Size(97, 27);
-            button2.TabIndex = 2;
-            button2.Text = "⬅ Remover";
-            button2.UseVisualStyleBackColor = true;
+            btnRemover.BackColor = Color.FromArgb(120, 118, 100); // Dark Grey
+            btnRemover.Cursor = Cursors.Hand;
+            btnRemover.FlatAppearance.BorderSize = 0;
+            btnRemover.FlatStyle = FlatStyle.Flat;
+            btnRemover.Font = new Font("Inter", 10F, FontStyle.Bold);
+            btnRemover.ForeColor = Color.FromArgb(243, 241, 238); // Light Grey
+            btnRemover.Location = new Point(480, 185);
+            btnRemover.Name = "btnRemover";
+            btnRemover.Size = new Size(140, 45);
+            btnRemover.TabIndex = 2;
+            btnRemover.Text = "Remover";
+            btnRemover.UseVisualStyleBackColor = false;
+            btnRemover.Click += button2_Click;
+
+            // 
+            // lblQuantidade
+            // 
+            lblQuantidade.Font = new Font("Inter", 11F, FontStyle.Bold);
+            lblQuantidade.ForeColor = Color.FromArgb(243, 241, 238); // Light Grey
+            lblQuantidade.Location = new Point(480, 260);
+            lblQuantidade.Name = "lblQuantidade";
+            lblQuantidade.Size = new Size(140, 25);
+            lblQuantidade.TabIndex = 5;
+            lblQuantidade.Text = "Quantidade:";
+            lblQuantidade.TextAlign = ContentAlignment.MiddleLeft;
+
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(567, 244);
+            numericUpDown1.BackColor = Color.FromArgb(120, 118, 100); // Dark Grey
+            numericUpDown1.BorderStyle = BorderStyle.None;
+            numericUpDown1.Font = new Font("Inter", 12F, FontStyle.Bold);
+            numericUpDown1.ForeColor = Color.FromArgb(243, 241, 238); // Light Grey
+            numericUpDown1.Location = new Point(480, 290);
+            numericUpDown1.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
+            numericUpDown1.Minimum = new decimal(new int[] { 0, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(97, 23);
+            numericUpDown1.Size = new Size(140, 24);
             numericUpDown1.TabIndex = 3;
+            numericUpDown1.TextAlign = HorizontalAlignment.Center;
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
+
             // 
             // formsEstoque
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(17, 25, 12); // Bolt Black background
+            ClientSize = new Size(700, 460);
+            Controls.Add(pictureBox1);
+            Controls.Add(lblQuantidade);
+            Controls.Add(lblTitulo);
             Controls.Add(numericUpDown1);
-            Controls.Add(button2);
+            Controls.Add(btnRemover);
             Controls.Add(btnAdicionar);
             Controls.Add(listBoxEstoque);
+            Font = new Font("Inter", 9F);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "formsEstoque";
-            Text = "telaEstoque";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Bolt - Controle de Estoque";
             Load += telaEstoque_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -89,7 +171,10 @@
 
         private ListBox listBoxEstoque;
         private Button btnAdicionar;
-        private Button button2;
+        private Button btnRemover;
         private NumericUpDown numericUpDown1;
+        private Label lblTitulo;
+        private Label lblQuantidade;
+        private PictureBox pictureBox1;
     }
 }

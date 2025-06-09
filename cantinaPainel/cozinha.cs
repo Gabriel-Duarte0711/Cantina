@@ -31,7 +31,7 @@ namespace cantinaPainel
 
         private void formsCozinha_Load(object sender, EventArgs e)
         {
-
+            PersistenciaPedido.LoadListFromFile();
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
                 if (pedido.StatusPedido == Status.PREPARANDO)
@@ -48,6 +48,7 @@ namespace cantinaPainel
             {
                 pedidoSelecionado.StatusPedido = Status.PRONTO;
                 listBoxChapa.Items.Remove(pedidoSelecionado);
+                PersistenciaPedido.saveToFile();
                 listBoxChapa.SelectedIndex = -1;
 
             }

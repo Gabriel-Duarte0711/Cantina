@@ -1,30 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using cantinaPainel;
 
-namespace cantinaPainel
+internal class Estoque
 {
-    internal class Estoque
-    { 
-      private Produto produto;
-      private int quantidade;
-        public Produto Produto 
-        { 
-            get { return produto; } 
-            set { produto = value; } 
-        }
-        public int Quantidade
-        {
-            get { return quantidade; } 
-            set { quantidade = value; } 
-        }
+    public Produto Produto { get; set; }
+    public int Quantidade { get; set; }
 
-        public override string ToString()
+    public void AdicionarQuantidade(int quantidade)
+    {
+        if (quantidade > 0) 
         {
-            return$"{produto.Item} Qnt: {quantidade}";
+            Quantidade += quantidade;
         }
+    }
+
+    public bool RemoverQuantidade(int quantidade)
+    {
+        if (quantidade > 0 && quantidade <= Quantidade)
+        {
+            Quantidade -= quantidade;
+            return true;
+        }
+        return false;
+    }
+
+    public bool EstoqueBaixo(int limite = 5)
+    {
+        return Quantidade <= limite;
+    }
+    public override string ToString()
+    {
+        if (Produto == null)
+            return $"Produto inválido | Qnt: {Quantidade}";
+
+        return $"{Produto.Item} | Qnt: {Quantidade}";
     }
 }

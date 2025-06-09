@@ -128,7 +128,7 @@
             listBoxChapa.BorderStyle = BorderStyle.None;
             listBoxChapa.Dock = DockStyle.Fill;
             listBoxChapa.Font = new Font("Inter", 14F);
-            listBoxChapa.ForeColor = Color.FromArgb(230, 255, 0);
+            listBoxChapa.ForeColor = Color.Black;
             listBoxChapa.FormattingEnabled = true;
             listBoxChapa.ItemHeight = 27;
             listBoxChapa.Location = new Point(32, 32);

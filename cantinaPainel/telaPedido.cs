@@ -46,7 +46,7 @@ namespace cantinaPainel
             {
                 listAdicionar.Items.Add(item);
             }
-
+            PersistenciaEstoque.LoadListFromFile();
             comboBoxPagamento.Items.Add("Pix");
             comboBoxPagamento.Items.Add("Dinheiro");
             comboBoxPagamento.Items.Add("Crédito");
@@ -61,71 +61,112 @@ namespace cantinaPainel
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            int quant = (int)numericQuantidade.Value;
+            Produto produtoSelecionado = (Produto)listAdicionar.SelectedItem;
 
-            if (listAdicionar.SelectedIndex != -1 && numericQuantidade.Value > 0)
+            if (listAdicionar.SelectedIndex != -1 && quant > 0)
             {
-                int quant = (int)numericQuantidade.Value;
-                Produto produtoSelecionado = (Produto)listAdicionar.SelectedItem;
-                Produto novoItem = new Produto(produtoSelecionado.Codigo, produtoSelecionado.Item, produtoSelecionado.Preco, produtoSelecionado.IsChapa);
+                Estoque estoque = null;
 
-                bool encontrado = false;
-                foreach (Produto item in listPedido.Items)
+                foreach (Estoque es in PersistenciaEstoque.estoqueGeral)
                 {
-                    if (item.Codigo == produtoSelecionado.Codigo)
+                    if (es.Produto.Codigo == produtoSelecionado.Codigo)
                     {
-                        item.Quantidade += quant;
-                        int index = listPedido.Items.IndexOf(item);
-                        if (index >= 0)
-                            listPedido.Items[index] = item;
-                        encontrado = true;
+                        estoque = es;
                         break;
-
                     }
                 }
-                if (!encontrado)
+
+                if (estoque != null && quant <= estoque.Quantidade)
                 {
-                    novoItem.Quantidade = quant;
-                    listPedido.Items.Add(novoItem);
-                    extrato2.Add(novoItem);
+                    Produto novoItem = new Produto(produtoSelecionado.Codigo, produtoSelecionado.Item, produtoSelecionado.Preco, produtoSelecionado.IsChapa);
+
+                    bool encontrado = false;
+
+                    foreach (Produto item in listPedido.Items)
+                    {
+                        if (item.Codigo == produtoSelecionado.Codigo)
+                        {
+                            item.Quantidade += quant;
+                            int index = listPedido.Items.IndexOf(item);
+                            if (index >= 0)
+                                listPedido.Items[index] = item;
+                            encontrado = true;
+                            break;
+                        }
+                    }
+
+                    if (!encontrado)
+                    {
+                        novoItem.Quantidade = quant;
+                        listPedido.Items.Add(novoItem);
+                        extrato2.Add(novoItem);
+                    }
+
+                    // Atualiza total
+                    totalPedido += novoItem.Preco * quant;
+                    listPedido.Refresh();
+                    total.Text = $"O total é: R${totalPedido:f2}";
+
+                    // Decrementa estoque
+                    estoque.RemoverQuantidade(quant);
+
+                    // Limpa inputs
+                    listAdicionar.SelectedIndex = -1;
+                    numericQuantidade.Value = 0;
                 }
-
-                totalPedido += novoItem.Preco * quant;
-                listPedido.Refresh();
-                total.Text = $"O total e: R${totalPedido:f2}";
-                listAdicionar.SelectedIndex = -1;
-                numericQuantidade.Value = 0;
+                else
+                {
+                    MessageBox.Show("Estoque insuficiente para este produto.");
+                }
             }
-            else if (numericQuantidade.Value <= 0)
+            else
             {
-                MessageBox.Show("tem que adicionar ao menos uma unidade");
+                MessageBox.Show("Tem que adicionar ao menos uma unidade.");
             }
-
         }
+
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            if (listPedido.SelectedIndex != -1 & numericQuantidade.Value > 0)
+            Produto produtoSelecionado = (Produto)listPedido.SelectedItem;
+            int quantidadeRemover = (int)numericQuantidade.Value;
+
+            if (produtoSelecionado == null || quantidadeRemover <= 0)
             {
+                MessageBox.Show("Selecione um produto e quantidade válida.");
+                return;
+            }
 
-                double quant = (double)numericQuantidade.Value;
-                Produto produtoSelecionado = (Produto)listPedido.SelectedItem;
+            if (quantidadeRemover > produtoSelecionado.Quantidade)
+            {
+                MessageBox.Show($"Quantidade máxima: {produtoSelecionado.Quantidade}");
+                return;
+            }
 
-                if (listPedido.SelectedIndex != -1)
-                {
-                    numericQuantidade.Value = produtoSelecionado.Quantidade;
-                }
+            // Calcular valor a descontar
+            double valorRemover = produtoSelecionado.Preco * quantidadeRemover;
+
+            // Atualizar quantidade ou remover produto
+            if (quantidadeRemover >= produtoSelecionado.Quantidade)
+            {
+                // Remove produto completamente
                 listPedido.Items.Remove(produtoSelecionado);
                 extrato2.Remove(produtoSelecionado);
-                totalPedido -= produtoSelecionado.Preco * quant;
-                total.Text = $"O total e: R${totalPedido:f2}";
-
-                listPedido.SelectedIndex = -1;
-                numericQuantidade.Value = 0;
             }
-            else if (numericQuantidade.Value <= 0)
+            else
             {
-                MessageBox.Show("tem que adicionar ao menos uma unidade.");
+                // Remove apenas parte da quantidade
+                produtoSelecionado.Quantidade -= quantidadeRemover;
+                listPedido.Refresh();
             }
+            var estoqueReal = PersistenciaEstoque.estoqueGeral.FirstOrDefault(e => e.Produto.Codigo == produtoSelecionado.Codigo);
+            estoqueReal?.AdicionarQuantidade(quantidadeRemover);
+            // Atualizar total e limpar seleção
+            totalPedido -= valorRemover;
+            total.Text = $"O total é: R${totalPedido:f2}";
+            listPedido.SelectedIndex = -1;
+            numericQuantidade.Value = 0;
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
@@ -296,6 +337,7 @@ namespace cantinaPainel
         private void button4_Click(object sender, EventArgs e)
         {
             PersistenciaPedido.LimparArquivo();
+            PersistenciaEstoque.LimparArquivoEstoque();
         }
     }
 }

@@ -120,6 +120,7 @@
             listBoxPedidos.Name = "listBoxPedidos";
             listBoxPedidos.Size = new Size(770, 276);
             listBoxPedidos.TabIndex = 3;
+            listBoxPedidos.SelectedIndexChanged += listBoxPedidos_SelectedIndexChanged;
             // 
             // listBoxHistorico
             // 

@@ -53,11 +53,14 @@ namespace cantinaPainel
 
         private void txtBoxSenha_TextChanged(object sender, EventArgs e)
         {
-           
+
             txtBoxSenha.PasswordChar = '*';
             txtBoxSenha.MaxLength = 10;
         }
 
-       
+        private void formsLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
