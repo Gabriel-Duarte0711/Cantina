@@ -57,6 +57,7 @@
             checkBox1 = new CheckBox();
             button2 = new Button();
             button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTroco).BeginInit();
@@ -425,12 +426,28 @@
             button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(202, 196, 183);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.FromArgb(17, 25, 12);
+            button4.Location = new Point(920, 261);
+            button4.Name = "button4";
+            button4.Size = new Size(100, 40);
+            button4.TabIndex = 30;
+            button4.Text = "Limpar";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // formsPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1071, 630);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(checkBox1);
@@ -501,5 +518,6 @@
         private CheckBox checkBox1;
         private Button button2;
         private Button button3;
+        private Button button4;
     }
 }

@@ -51,6 +51,8 @@ namespace cantinaPainel
 
         private void formsBalcao_Load(object sender, EventArgs e)
         {
+            PersistenciaPedido.LoadListFromFile();
+
             listBoxHistorico.Enabled = false;
             Produto produtoSelecionado = (Produto)listBoxPedidos.SelectedItem;
             listBoxPedidos.Items.Clear();
@@ -58,7 +60,7 @@ namespace cantinaPainel
             CarregarHistorico();
             foreach (var pedido in PersistenciaPedido.pedidos)
             {
-
+                MessageBox.Show(pedido.CodigoPedido.ToString());
                 string viagem = pedido.IsViagem ? "Sim" : "Não";
 
                 if (pedido.StatusPedido == Status.PRONTO)
@@ -67,6 +69,7 @@ namespace cantinaPainel
                 }
 
             }
+          
             numero = listBoxPedidos.Items.Count;
             lblContadorPedidos.Text = numero.ToString();
             lblContadorPedidos.Text.Equals(numero);

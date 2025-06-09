@@ -12,6 +12,7 @@ namespace cantinaPainel
 {
     public partial class formsEstoque : Form
     {
+        List<Estoque> estoqueGeral = new List<Estoque>();
         public formsEstoque()
         {
             InitializeComponent();
@@ -19,6 +20,18 @@ namespace cantinaPainel
 
         private void telaEstoque_Load(object sender, EventArgs e)
         {
+            foreach (var produto in PersistenciaProduto.itemEstoque)
+            {
+                Estoque novoEstoque = new Estoque();
+                novoEstoque.Produto = produto;
+                novoEstoque.Quantidade = 10; // exemplo: 10 unidades de cada
+                estoqueGeral.Add(novoEstoque);
+            }
+
+            foreach (var item in estoqueGeral)
+            {
+                listBoxEstoque.Items.Add(item);
+            }
         }
     }
 }

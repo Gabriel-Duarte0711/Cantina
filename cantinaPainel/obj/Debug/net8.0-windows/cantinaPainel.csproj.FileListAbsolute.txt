@@ -88,3 +88,7 @@ C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0
 C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.ChamadaGigante.resources
 D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.ChamadaGigante.resources
 D:\projeto final cantina\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsEstoque.resources
+C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.formsEstoque.resources
+C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaPainel.csproj.AssemblyReference.cache
+C:\Users\25163093\Documents\projeto final\Cantina\cantinaPainel\obj\Debug\net8.0-windows\cantinaP.D748249D.Up2Date

@@ -42,25 +42,10 @@ namespace cantinaPainel
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listAdicionar.Items.Add(new Produto(1, "Pão de Queijo", 3.50, false));
-
-            listAdicionar.Items.Add(new Produto(2, "Coxinha ", 5.00, false));
-
-            listAdicionar.Items.Add(new Produto(3, "Pastel de Carne", 6.00, true));
-
-            listAdicionar.Items.Add(new Produto(4, "Pastel de Queijo", 5.50, true));
-
-            listAdicionar.Items.Add(new Produto(5, "Suco Natural (300ml)", 4.00, false));
-
-            listAdicionar.Items.Add(new Produto(6, "Refrigerante Lata", 4.50, false));
-
-            listAdicionar.Items.Add(new Produto(7, "Hamburguer Simples", 8.00, true));
-
-            listAdicionar.Items.Add(new Produto(8, "Hambúrguer com Queijo", 9.00, true));
-
-            listAdicionar.Items.Add(new Produto(9, "X-Tudo", 12.00, true));
-
-            listAdicionar.Items.Add(new Produto(10, "Água Mineral (500ml)", 2.50, false));
+            foreach (var item in PersistenciaProduto.itemEstoque)
+            {
+                listAdicionar.Items.Add(item);
+            }
 
             comboBoxPagamento.Items.Add("Pix");
             comboBoxPagamento.Items.Add("Dinheiro");
@@ -152,6 +137,7 @@ namespace cantinaPainel
 
                 DateTime hora = DateTime.Now;
                 Pedido pedido = new Pedido();
+                PersistenciaPedido.ProximoNumeroPedido();
                 PersistenciaPedido.numeroPedido++;
                 pedido.CodigoPedido = PersistenciaPedido.numeroPedido;
                 pedido.Nome_Cliente = (txtBoxNome.Text);
@@ -177,6 +163,7 @@ namespace cantinaPainel
                 pedido.IsViagem = checkBox1.Checked;
                 pedido.MetodoPagamento = metodoPgmt;
                 PersistenciaPedido.pedidos.Add(pedido);
+                PersistenciaPedido.saveToFile();
 
                 txtBoxNome.Clear();
                 listPedido.Items.Clear();
@@ -304,6 +291,11 @@ namespace cantinaPainel
             formsTela formsTela = new formsTela();
             formsTela.Show();
             this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PersistenciaPedido.LimparArquivo();
         }
     }
 }
