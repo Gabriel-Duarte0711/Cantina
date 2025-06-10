@@ -58,6 +58,7 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTroco).BeginInit();
@@ -403,7 +404,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(17, 25, 12);
-            button2.Location = new Point(920, 370);
+            button2.Location = new Point(920, 375);
             button2.Name = "button2";
             button2.Size = new Size(100, 40);
             button2.TabIndex = 28;
@@ -418,7 +419,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.FromArgb(17, 25, 12);
-            button3.Location = new Point(920, 320);
+            button3.Location = new Point(920, 329);
             button3.Name = "button3";
             button3.Size = new Size(100, 40);
             button3.TabIndex = 29;
@@ -433,7 +434,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button4.ForeColor = Color.FromArgb(17, 25, 12);
-            button4.Location = new Point(920, 261);
+            button4.Location = new Point(920, 283);
             button4.Name = "button4";
             button4.Size = new Size(100, 40);
             button4.TabIndex = 30;
@@ -441,12 +442,28 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(202, 196, 183);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button5.ForeColor = Color.FromArgb(17, 25, 12);
+            button5.Location = new Point(920, 237);
+            button5.Name = "button5";
+            button5.Size = new Size(100, 40);
+            button5.TabIndex = 31;
+            button5.Text = "Estoque";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
             // formsPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1071, 630);
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -519,5 +536,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Button button5;
     }
 }

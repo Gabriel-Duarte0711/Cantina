@@ -339,5 +339,11 @@ namespace cantinaPainel
             PersistenciaPedido.LimparArquivo();
             PersistenciaEstoque.LimparArquivoEstoque();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            formsEstoque formsEstoque = new formsEstoque();
+            formsEstoque.Show();
+        }
     }
 }

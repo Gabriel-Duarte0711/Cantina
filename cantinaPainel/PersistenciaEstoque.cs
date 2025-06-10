@@ -37,6 +37,7 @@ namespace cantinaPainel
                 MessageBox.Show($"Error saving file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public static void LoadListFromFile()
         {
             try
