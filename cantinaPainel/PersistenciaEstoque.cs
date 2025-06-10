@@ -8,7 +8,7 @@ namespace cantinaPainel
     {
         
         public static List<Estoque> estoqueGeral = new List<Estoque>();
-        private static string caminho = @"C:\Temp\pedidos.json";
+        private static string caminho = @"C:\Temp\estoque.json";
         public static void InicializarEstoque()
         {
             estoqueGeral.Clear();

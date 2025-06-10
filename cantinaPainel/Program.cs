@@ -12,6 +12,8 @@ namespace cantinaPainel
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new formsAdm());
+            Application.Run(new formsEstoque());
+            Application.Run(new formsPedido());
         }
     }
 }

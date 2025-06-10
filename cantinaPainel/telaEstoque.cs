@@ -19,11 +19,17 @@ namespace cantinaPainel
         }
         private void AtualizarLista()
         {
-            // Salvar seleção atual se existir
             int selectedIndex = listBoxEstoque.SelectedIndex;
 
-            listBoxEstoque.DataSource = null;
-            listBoxEstoque.DataSource = PersistenciaEstoque.estoqueGeral;
+            listBoxEstoque.Items.Clear();
+
+            foreach (Estoque estoque in PersistenciaEstoque.estoqueGeral)
+            {
+                if (estoque.Produto.IsAtivo)
+                {
+                    listBoxEstoque.Items.Add(estoque);
+                }
+            }
 
             // Restaurar seleção se ainda válida
             if (selectedIndex >= 0 && selectedIndex < listBoxEstoque.Items.Count)
@@ -31,6 +37,7 @@ namespace cantinaPainel
                 listBoxEstoque.SelectedIndex = selectedIndex;
             }
         }
+
         private void telaEstoque_Load(object sender, EventArgs e)
         {
             PersistenciaEstoque.LoadListFromFile();

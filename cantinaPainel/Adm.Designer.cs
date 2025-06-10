@@ -32,63 +32,97 @@
             txtBoxCodigo = new TextBox();
             txtBoxProduto = new TextBox();
             lblProduto = new Label();
-            btnAdicionar = new Button();
+            btnEditar = new Button();
             listBoxTest = new ListBox();
             lblPreco = new Label();
             txtBoxPreco = new TextBox();
             checkBox1 = new CheckBox();
+            btnAtivo = new Button();
+            btnNoAtivo = new Button();
+            btnAdicionar = new Button();
+            pictureBoxLogo = new PictureBox();
+            lblTitulo = new Label();
+            separator = new Panel();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblCodigo
             // 
             lblCodigo.AutoSize = true;
-            lblCodigo.Location = new Point(288, 72);
+            lblCodigo.BackColor = Color.Transparent;
+            lblCodigo.Font = new Font("Inter", 10F);
+            lblCodigo.ForeColor = Color.FromArgb(243, 241, 238);
+            lblCodigo.Location = new Point(320, 80);
             lblCodigo.Name = "lblCodigo";
-            lblCodigo.Size = new Size(100, 15);
+            lblCodigo.Size = new Size(134, 21);
             lblCodigo.TabIndex = 0;
-            lblCodigo.Text = "Adicionar Código";
+            lblCodigo.Text = "Código do Produto";
             // 
             // txtBoxCodigo
             // 
-            txtBoxCodigo.Location = new Point(412, 64);
+            txtBoxCodigo.BackColor = Color.FromArgb(120, 118, 100);
+            txtBoxCodigo.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxCodigo.Font = new Font("Inter", 10F);
+            txtBoxCodigo.ForeColor = Color.FromArgb(243, 241, 238);
+            txtBoxCodigo.Location = new Point(320, 105);
             txtBoxCodigo.Name = "txtBoxCodigo";
-            txtBoxCodigo.Size = new Size(169, 23);
+            txtBoxCodigo.Size = new Size(220, 24);
             txtBoxCodigo.TabIndex = 1;
             txtBoxCodigo.TextChanged += txtBoxAddProdito_TextChanged;
+            txtBoxCodigo.KeyPress += txtBoxCodigo_KeyPress;
             // 
             // txtBoxProduto
             // 
-            txtBoxProduto.Location = new Point(412, 95);
+            txtBoxProduto.BackColor = Color.FromArgb(120, 118, 100);
+            txtBoxProduto.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxProduto.Font = new Font("Inter", 10F);
+            txtBoxProduto.ForeColor = Color.FromArgb(243, 241, 238);
+            txtBoxProduto.Location = new Point(320, 165);
             txtBoxProduto.Name = "txtBoxProduto";
-            txtBoxProduto.Size = new Size(169, 23);
+            txtBoxProduto.Size = new Size(220, 24);
             txtBoxProduto.TabIndex = 2;
             // 
             // lblProduto
             // 
             lblProduto.AutoSize = true;
-            lblProduto.Location = new Point(288, 103);
+            lblProduto.BackColor = Color.Transparent;
+            lblProduto.Font = new Font("Inter", 10F);
+            lblProduto.ForeColor = Color.FromArgb(243, 241, 238);
+            lblProduto.Location = new Point(320, 140);
             lblProduto.Name = "lblProduto";
-            lblProduto.Size = new Size(104, 15);
+            lblProduto.Size = new Size(126, 21);
             lblProduto.TabIndex = 3;
-            lblProduto.Text = "Adicionar Produto";
+            lblProduto.Text = "Nome do Produto";
             // 
-            // btnAdicionar
+            // btnEditar
             // 
-            btnAdicionar.Location = new Point(412, 198);
-            btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(169, 43);
-            btnAdicionar.TabIndex = 4;
-            btnAdicionar.Text = "Adicionar";
-            btnAdicionar.UseVisualStyleBackColor = true;
-            btnAdicionar.Click += btnAdicionar_Click;
+            btnEditar.BackColor = Color.FromArgb(120, 118, 100);
+            btnEditar.Cursor = Cursors.Hand;
+            btnEditar.FlatAppearance.BorderSize = 0;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Font = new Font("Inter", 9F);
+            btnEditar.ForeColor = Color.FromArgb(243, 241, 238);
+            btnEditar.Location = new Point(320, 370);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(140, 45);
+            btnEditar.TabIndex = 4;
+            btnEditar.Text = "EDITAR";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // listBoxTest
             // 
+            listBoxTest.BackColor = Color.FromArgb(120, 118, 100);
+            listBoxTest.BorderStyle = BorderStyle.FixedSingle;
+            listBoxTest.Font = new Font("Inter", 10F);
+            listBoxTest.ForeColor = Color.FromArgb(243, 241, 238);
             listBoxTest.FormattingEnabled = true;
-            listBoxTest.ItemHeight = 15;
-            listBoxTest.Location = new Point(12, 64);
+            listBoxTest.ItemHeight = 18;
+            listBoxTest.Location = new Point(30, 80);
             listBoxTest.Name = "listBoxTest";
-            listBoxTest.Size = new Size(240, 364);
+            listBoxTest.Size = new Size(260, 398);
             listBoxTest.TabIndex = 5;
             listBoxTest.SelectedIndexChanged += listBoxTest_SelectedIndexChanged;
             listBoxTest.MouseDown += listBox1_MouseDown;
@@ -96,46 +130,159 @@
             // lblPreco
             // 
             lblPreco.AutoSize = true;
-            lblPreco.Location = new Point(288, 137);
+            lblPreco.BackColor = Color.Transparent;
+            lblPreco.Font = new Font("Inter", 10F);
+            lblPreco.ForeColor = Color.FromArgb(243, 241, 238);
+            lblPreco.Location = new Point(320, 200);
             lblPreco.Name = "lblPreco";
-            lblPreco.Size = new Size(91, 15);
+            lblPreco.Size = new Size(80, 21);
             lblPreco.TabIndex = 6;
-            lblPreco.Text = "Adicionar Preço";
+            lblPreco.Text = "Preço (R$)";
             // 
             // txtBoxPreco
             // 
-            txtBoxPreco.Location = new Point(412, 129);
+            txtBoxPreco.BackColor = Color.FromArgb(120, 118, 100);
+            txtBoxPreco.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxPreco.Font = new Font("Inter", 10F);
+            txtBoxPreco.ForeColor = Color.FromArgb(243, 241, 238);
+            txtBoxPreco.Location = new Point(320, 225);
             txtBoxPreco.Name = "txtBoxPreco";
-            txtBoxPreco.Size = new Size(169, 23);
+            txtBoxPreco.Size = new Size(220, 24);
             txtBoxPreco.TabIndex = 8;
+            txtBoxPreco.KeyPress += txtBoxPreco_KeyPress_1;
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(412, 158);
+            checkBox1.BackColor = Color.Transparent;
+            checkBox1.Font = new Font("Inter", 10F);
+            checkBox1.ForeColor = Color.FromArgb(243, 241, 238);
+            checkBox1.Location = new Point(320, 265);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(60, 19);
+            checkBox1.Size = new Size(149, 25);
             checkBox1.TabIndex = 9;
-            checkBox1.Text = "Chapa";
-            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.Text = "Produto da Chapa";
+            checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // btnAtivo
+            // 
+            btnAtivo.BackColor = Color.FromArgb(46, 125, 50);
+            btnAtivo.Cursor = Cursors.Hand;
+            btnAtivo.FlatAppearance.BorderSize = 0;
+            btnAtivo.FlatStyle = FlatStyle.Flat;
+            btnAtivo.Font = new Font("Inter", 9F);
+            btnAtivo.ForeColor = Color.White;
+            btnAtivo.Location = new Point(480, 370);
+            btnAtivo.Name = "btnAtivo";
+            btnAtivo.Size = new Size(140, 45);
+            btnAtivo.TabIndex = 10;
+            btnAtivo.Text = "ATIVAR ITEM";
+            btnAtivo.UseVisualStyleBackColor = false;
+            btnAtivo.Click += btnAtivo_Click;
+            // 
+            // btnNoAtivo
+            // 
+            btnNoAtivo.BackColor = Color.FromArgb(183, 28, 28);
+            btnNoAtivo.Cursor = Cursors.Hand;
+            btnNoAtivo.FlatAppearance.BorderSize = 0;
+            btnNoAtivo.FlatStyle = FlatStyle.Flat;
+            btnNoAtivo.Font = new Font("Inter", 9F);
+            btnNoAtivo.ForeColor = Color.White;
+            btnNoAtivo.Location = new Point(480, 430);
+            btnNoAtivo.Name = "btnNoAtivo";
+            btnNoAtivo.Size = new Size(140, 45);
+            btnNoAtivo.TabIndex = 11;
+            btnNoAtivo.Text = "DESATIVAR ITEM";
+            btnNoAtivo.UseVisualStyleBackColor = false;
+            btnNoAtivo.Click += btnNoAtivo_Click;
+            // 
+            // btnAdicionar
+            // 
+            btnAdicionar.BackColor = Color.FromArgb(225, 255, 0);
+            btnAdicionar.Cursor = Cursors.Hand;
+            btnAdicionar.FlatAppearance.BorderSize = 0;
+            btnAdicionar.FlatStyle = FlatStyle.Flat;
+            btnAdicionar.Font = new Font("Inter", 9F);
+            btnAdicionar.ForeColor = Color.FromArgb(17, 25, 12);
+            btnAdicionar.Location = new Point(320, 310);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Size = new Size(140, 45);
+            btnAdicionar.TabIndex = 12;
+            btnAdicionar.Text = "ADICIONAR";
+            btnAdicionar.UseVisualStyleBackColor = false;
+            btnAdicionar.Click += btnAdicionar_Click;
+            // 
+            // pictureBoxLogo
+            // 
+            pictureBoxLogo.BackColor = Color.Transparent;
+            pictureBoxLogo.Location = new Point(30, 20);
+            pictureBoxLogo.Name = "pictureBoxLogo";
+            pictureBoxLogo.Size = new Size(120, 40);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxLogo.TabIndex = 14;
+            pictureBoxLogo.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.BackColor = Color.Transparent;
+            lblTitulo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.FromArgb(243, 241, 238);
+            lblTitulo.Location = new Point(160, 30);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(176, 20);
+            lblTitulo.TabIndex = 13;
+            lblTitulo.Text = "Painel Administrativo";
+            // 
+            // separator
+            // 
+            separator.BackColor = Color.FromArgb(120, 118, 100);
+            separator.Location = new Point(310, 70);
+            separator.Name = "separator";
+            separator.Size = new Size(2, 420);
+            separator.TabIndex = 15;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.imagem_2025_05_15_081300623;
+            pictureBox1.Location = new Point(30, 20);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(120, 40);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 28;
+            pictureBox1.TabStop = false;
             // 
             // formsAdm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(17, 25, 12);
+            ClientSize = new Size(900, 550);
+            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxLogo);
+            Controls.Add(separator);
+            Controls.Add(lblTitulo);
+            Controls.Add(btnAdicionar);
+            Controls.Add(btnNoAtivo);
+            Controls.Add(btnAtivo);
             Controls.Add(checkBox1);
             Controls.Add(txtBoxPreco);
             Controls.Add(lblPreco);
             Controls.Add(listBoxTest);
-            Controls.Add(btnAdicionar);
+            Controls.Add(btnEditar);
             Controls.Add(lblProduto);
             Controls.Add(txtBoxProduto);
             Controls.Add(txtBoxCodigo);
             Controls.Add(lblCodigo);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "formsAdm";
-            Text = "Adm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Cantina Painel - Administração";
             Load += formsAdm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -146,10 +293,17 @@
         private TextBox txtBoxCodigo;
         private TextBox txtBoxProduto;
         private Label lblProduto;
-        private Button btnAdicionar;
+        private Button btnEditar;
         private ListBox listBoxTest;
         private Label lblPreco;
         private TextBox txtBoxPreco;
         private CheckBox checkBox1;
+        private Button btnAtivo;
+        private Button btnNoAtivo;
+        private Button btnAdicionar;
+        private PictureBox pictureBoxLogo;
+        private Label lblTitulo;
+        private Panel separator;
+        private PictureBox pictureBox1;
     }
 }

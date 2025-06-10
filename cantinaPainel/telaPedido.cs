@@ -44,8 +44,12 @@ namespace cantinaPainel
         {
             foreach (var item in PersistenciaProduto.itemEstoque)
             {
-                listAdicionar.Items.Add(item);
+                if (item.IsAtivo)
+                {
+                    listAdicionar.Items.Add(item);
+                }
             }
+            
             PersistenciaEstoque.LoadListFromFile();
             comboBoxPagamento.Items.Add("Pix");
             comboBoxPagamento.Items.Add("Dinheiro");
@@ -79,7 +83,7 @@ namespace cantinaPainel
 
                 if (estoque != null && quant <= estoque.Quantidade)
                 {
-                    Produto novoItem = new Produto(produtoSelecionado.Codigo, produtoSelecionado.Item, produtoSelecionado.Preco, produtoSelecionado.IsChapa);
+                    Produto novoItem = new Produto(produtoSelecionado.Codigo, produtoSelecionado.Item, produtoSelecionado.Preco, produtoSelecionado.IsChapa, produtoSelecionado.IsAtivo);
 
                     bool encontrado = false;
 
@@ -179,7 +183,6 @@ namespace cantinaPainel
                 DateTime hora = DateTime.Now;
                 Pedido pedido = new Pedido();
                 PersistenciaPedido.ProximoNumeroPedido();
-                PersistenciaPedido.numeroPedido++;
                 pedido.CodigoPedido = PersistenciaPedido.numeroPedido;
                 pedido.Nome_Cliente = (txtBoxNome.Text);
                 pedido.extrato = listPedido.Items.Cast<Produto>().ToList();
@@ -338,6 +341,7 @@ namespace cantinaPainel
         {
             PersistenciaPedido.LimparArquivo();
             PersistenciaEstoque.LimparArquivoEstoque();
+            PersistenciaProduto.LimparArquivo();
         }
 
         private void button5_Click(object sender, EventArgs e)

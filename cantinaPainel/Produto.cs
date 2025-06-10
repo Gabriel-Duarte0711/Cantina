@@ -14,14 +14,16 @@ namespace cantinaPainel
         private int codigo=0;
         private bool isChapa;
         private int quantidadeEstoque;
+        private bool isAtivo;
 
-        public Produto(int codigo,string produto, double preco, bool isChapa)
+        public Produto(int codigo,string produto, double preco, bool isChapa, bool isAtivo)
         {
             this.item = produto;
             this.preco = preco;
             this.quantidade = 0;
             this.codigo= codigo;
             this.isChapa= isChapa;
+            this.isAtivo= isAtivo;
         }
 
         public string Item
@@ -58,9 +60,13 @@ namespace cantinaPainel
             get { return quantidadeEstoque; }
             set { quantidadeEstoque = value; }
         }
+        public bool IsAtivo
+        {
+            get { return isAtivo; }
+            set{ isAtivo = value; }
+        }
         public override string ToString()
         {
-
             if (quantidade > 0)
                 return$"{quantidade}x - {item} - R$ {preco * quantidade:f2}";
             else

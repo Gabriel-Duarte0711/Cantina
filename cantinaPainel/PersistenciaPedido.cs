@@ -8,16 +8,13 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Xml;
 using Newtonsoft.Json;
-
-
+using System.Windows.Forms;
 
 namespace cantinaPainel
 {
     internal class PersistenciaPedido
     {
         public static List<Pedido> pedidos = new List<Pedido>();
-
-
         private static string caminho = @"C:\Temp\pedidos.json";
         public static int numeroPedido = 0;
 
@@ -25,25 +22,29 @@ namespace cantinaPainel
         {
             try
             {
+                // Só carrega se a lista estiver vazia
+                if (pedidos.Count == 0)
+                {
+                    LoadListFromFile();
+                }
 
-                string teste = File.ReadAllText(caminho);
-
-                pedidos = JsonConvert.DeserializeObject<List<Pedido>>(teste) ?? new List<Pedido>();
-                int cont = 0;
+                // Encontrar o maior número de pedido que não seja 0
+                int maiorNumero = 0;
                 foreach (var pedido in pedidos)
                 {
-                    cont = pedido.CodigoPedido;
-
+                    if (pedido.CodigoPedido > maiorNumero)
+                    {
+                        maiorNumero = pedido.CodigoPedido;
+                    }
                 }
-                numeroPedido = cont++;
+
+                numeroPedido = maiorNumero + 1;
                 return numeroPedido;
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 0;
+                MessageBox.Show($"Erro ao obter próximo número: {ex.Message}");
+                return 1;
             }
         }
 
@@ -51,19 +52,21 @@ namespace cantinaPainel
         {
             try
             {
+                // IMPORTANTE: Limpar pedidos vazios antes de salvar
+                pedidos.RemoveAll(p => p.CodigoPedido == 0 ||
+                                     string.IsNullOrEmpty(p.Nome_Cliente) ||
+                                     p.extrato == null ||
+                                     p.extrato.Count == 0);
 
+                Directory.CreateDirectory(Path.GetDirectoryName(caminho));
                 string json = JsonConvert.SerializeObject(pedidos, Newtonsoft.Json.Formatting.Indented);
                 File.WriteAllText(caminho, json);
-
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao salvar: {ex.Message}");
             }
         }
-
 
         public static void LoadListFromFile()
         {
@@ -74,34 +77,44 @@ namespace cantinaPainel
                     string json = File.ReadAllText(caminho);
                     if (!string.IsNullOrEmpty(json))
                     {
-                        pedidos = JsonConvert.DeserializeObject<List<Pedido>>(json) ?? new List<Pedido>();
+                        var pedidosCarregados = JsonConvert.DeserializeObject<List<Pedido>>(json);
+                        pedidos = pedidosCarregados ?? new List<Pedido>();
+
+                        // Limpar pedidos vazios após carregar também
+                        pedidos.RemoveAll(p => p.CodigoPedido == 0 ||
+                                             string.IsNullOrEmpty(p.Nome_Cliente) ||
+                                             p.extrato == null ||
+                                             p.extrato.Count == 0);
+                    }
+                    else
+                    {
+                        pedidos = new List<Pedido>();
                     }
                 }
                 else
                 {
-                    // File doesn't exist, will be created on first save
                     pedidos = new List<Pedido>();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                pedidos = new List<Pedido>(); // Initialize empty list on error
+                MessageBox.Show($"Erro ao carregar: {ex.Message}");
+                pedidos = new List<Pedido>();
             }
         }
+
         public static void LimparArquivo()
         {
             try
             {
-                File.WriteAllText(caminho, string.Empty);
+                File.WriteAllText(caminho, "[]");
                 pedidos.Clear();
                 numeroPedido = 0;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao limpar o arquivo: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao limpar o arquivo: {ex.Message}");
             }
         }
     }
-
 }

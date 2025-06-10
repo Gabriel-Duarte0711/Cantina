@@ -110,6 +110,7 @@
             panelHeader.Padding = new Padding(24);
             panelHeader.Size = new Size(1613, 120);
             panelHeader.TabIndex = 30;
+            panelHeader.Paint += panelHeader_Paint;
             // 
             // panelActions
             // 

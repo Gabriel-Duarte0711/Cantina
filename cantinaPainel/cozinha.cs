@@ -19,7 +19,6 @@ namespace cantinaPainel
 
         private void listBoxChapa_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,29 +30,46 @@ namespace cantinaPainel
 
         private void formsCozinha_Load(object sender, EventArgs e)
         {
-            PersistenciaPedido.LoadListFromFile();
-            foreach (var pedido in PersistenciaPedido.pedidos)
+            try
             {
-                if (pedido.StatusPedido == Status.PREPARANDO)
+                PersistenciaPedido.LoadListFromFile();
+                listBoxChapa.Items.Clear(); // Limpa antes de adicionar
+
+                foreach (var pedido in PersistenciaPedido.pedidos)
                 {
-                    listBoxChapa.Items.Add(pedido);
-                }   
+                    if (pedido.StatusPedido == Status.PREPARANDO)
+                    {
+                        listBoxChapa.Items.Add(pedido);
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao carregar dados");
             }
         }
 
         private void btnFeito_Click(object sender, EventArgs e)
         {
-            var pedidoSelecionado = listBoxChapa.SelectedItem as Pedido;
-            if (pedidoSelecionado != null)
+            try
             {
-                pedidoSelecionado.StatusPedido = Status.PRONTO;
-                listBoxChapa.Items.Remove(pedidoSelecionado);
-                PersistenciaPedido.saveToFile();
-                listBoxChapa.SelectedIndex = -1;
-
+                var pedidoSelecionado = listBoxChapa.SelectedItem as Pedido;
+                if (pedidoSelecionado != null)
+                {
+                    pedidoSelecionado.StatusPedido = Status.PRONTO;
+                    listBoxChapa.Items.Remove(pedidoSelecionado);
+                    PersistenciaPedido.saveToFile();
+                    listBoxChapa.SelectedIndex = -1;
+                }
             }
-
+            catch
+            {
+                MessageBox.Show("Erro ao processar pedido");
+            }
         }
-    }    
-}
 
+        private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+        }
+    }
+}

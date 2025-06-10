@@ -55,23 +55,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\25163093\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\biel1\\.nuget\\packages\\": {},
+    "D:\\visual studio shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\25163093\\Documents\\projeto final\\Cantina\\cantinaPainel\\cantinaPainel.csproj",
+      "projectUniqueName": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\cantinaPainel.csproj",
       "projectName": "cantinaPainel",
-      "projectPath": "C:\\Users\\25163093\\Documents\\projeto final\\Cantina\\cantinaPainel\\cantinaPainel.csproj",
-      "packagesPath": "C:\\Users\\25163093\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\25163093\\Documents\\projeto final\\Cantina\\cantinaPainel\\obj\\",
+      "projectPath": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\cantinaPainel.csproj",
+      "packagesPath": "C:\\Users\\biel1\\.nuget\\packages\\",
+      "outputPath": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\visual studio shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\25163093\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\biel1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
