@@ -148,6 +148,7 @@
             panelMain.Padding = new Padding(32);
             panelMain.Size = new Size(1613, 432);
             panelMain.TabIndex = 32;
+            panelMain.Paint += panelMain_Paint;
             // 
             // formsCozinha
             // 

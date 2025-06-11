@@ -218,24 +218,38 @@ namespace cantinaPainel
                 return;
             }
 
+            foreach (var item in PersistenciaProduto.itemEstoque)
+            {
+                if(intValor == item.Codigo)
+                {
+                    MessageBox.Show("Código ja existe");
+                    return;
+                }
+            }
+
             int codigo = intValor;
             double preco = valor;
-            bool isChapa = checkBox1.Checked;
+            bool isChapa = checkBox1.Checked; 
             bool isAtivo = true;
 
-            Produto novoProduto = new Produto(codigo, novoItem, preco, isChapa, isAtivo);
+            foreach (var item in PersistenciaProduto.itemEstoque)
+            {
+                if (intValor != item.Codigo)
+                {
+                    Produto novoProduto = new Produto(codigo, novoItem, preco, isChapa, isAtivo);
 
-            PersistenciaProduto.itemEstoque.Add(novoProduto);
-            PersistenciaProduto.saveToFile();
+                    PersistenciaProduto.itemEstoque.Add(novoProduto);
+                    PersistenciaProduto.saveToFile();
 
-            AtualizarLista();
+                    AtualizarLista();
+                    txtBoxProduto.Clear();
+                    txtBoxCodigo.Clear();
+                    txtBoxPreco.Clear();
 
-            // Limpa todos os campos depois de adicionar
-            txtBoxProduto.Clear();
-            txtBoxCodigo.Clear();
-            txtBoxPreco.Clear();
-
-            txtBoxProduto.Focus();
+                    txtBoxProduto.Focus();
+                }
+            }
+            
         }
 
     }
