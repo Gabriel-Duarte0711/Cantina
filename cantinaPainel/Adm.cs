@@ -122,7 +122,8 @@ namespace cantinaPainel
                 else
                 {
                     MessageBox.Show("Número inválido.");
-                    txtBoxPreco.Focus();
+                    txtBoxCodigo.Focus();
+                    return;
                 }
                 if (double.TryParse(txtBoxPreco.Text.Replace('.', ','), out double valor))
                 {
@@ -132,7 +133,8 @@ namespace cantinaPainel
                 else
                 {
                     MessageBox.Show("Número inválido.");
-                    txtBoxPreco.Focus();
+                    txtBoxPreco.Focus(); 
+                    return ;
                 }
 
                 produtoSelecionado.Codigo = intValor;
@@ -192,13 +194,13 @@ namespace cantinaPainel
             }
         }
 
-        
+
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             string novoItem = txtBoxProduto.Text.Trim();
 
             if (string.IsNullOrEmpty(novoItem))
-            {
+            {       
                 MessageBox.Show("Digite um produto válido.");
                 txtBoxProduto.Focus();
                 return;
@@ -220,37 +222,44 @@ namespace cantinaPainel
 
             foreach (var item in PersistenciaProduto.itemEstoque)
             {
-                if(intValor == item.Codigo)
+                if (intValor == item.Codigo)
                 {
                     MessageBox.Show("Código ja existe");
+                    txtBoxCodigo.Focus();
                     return;
                 }
             }
 
+
+
             int codigo = intValor;
             double preco = valor;
-            bool isChapa = checkBox1.Checked; 
+            bool isChapa = checkBox1.Checked;
             bool isAtivo = true;
 
-            foreach (var item in PersistenciaProduto.itemEstoque)
-            {
-                if (intValor != item.Codigo)
-                {
-                    Produto novoProduto = new Produto(codigo, novoItem, preco, isChapa, isAtivo);
+            Produto novoProduto = new Produto(codigo, novoItem, preco, isChapa, isAtivo);
+            Estoque estoque = new Estoque();
 
-                    PersistenciaProduto.itemEstoque.Add(novoProduto);
-                    PersistenciaProduto.saveToFile();
+            PersistenciaProduto.itemEstoque.Add(novoProduto);
+            PersistenciaEstoque.estoqueGeral.Add(estoque);
 
-                    AtualizarLista();
-                    txtBoxProduto.Clear();
-                    txtBoxCodigo.Clear();
-                    txtBoxPreco.Clear();
+            PersistenciaEstoque.saveToFile();
+            PersistenciaProduto.saveToFile();
 
-                    txtBoxProduto.Focus();
-                }
-            }
-            
+            AtualizarLista();
+            txtBoxProduto.Clear();
+            txtBoxCodigo.Clear();
+            txtBoxPreco.Clear();
+            checkBox1.Checked = false;
+
+            txtBoxProduto.Focus();
         }
+        
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            formsEstoque formsEstoque = new formsEstoque();
+            formsEstoque.Show();
+        }
     }
 }

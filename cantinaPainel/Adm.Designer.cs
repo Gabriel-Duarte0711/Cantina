@@ -44,6 +44,7 @@
             lblTitulo = new Label();
             separator = new Panel();
             pictureBox1 = new PictureBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -253,12 +254,29 @@
             pictureBox1.TabIndex = 28;
             pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(120, 118, 100);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Inter", 9F);
+            button1.ForeColor = Color.FromArgb(243, 241, 238);
+            button1.Location = new Point(758, 430);
+            button1.Name = "button1";
+            button1.Size = new Size(140, 45);
+            button1.TabIndex = 29;
+            button1.Text = "EDITAR";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // formsAdm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(900, 550);
+            Controls.Add(button1);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBoxLogo);
             Controls.Add(separator);
@@ -305,5 +323,6 @@
         private Label lblTitulo;
         private Panel separator;
         private PictureBox pictureBox1;
+        private Button button1;
     }
 }

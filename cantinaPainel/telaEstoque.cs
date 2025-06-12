@@ -17,21 +17,38 @@ namespace cantinaPainel
         {
             InitializeComponent();
         }
+        //private void AtualizarLista()
+        //{
+        //    int selectedIndex = listBoxEstoque.SelectedIndex;
+
+        //    listBoxEstoque.Items.Clear();
+
+        //    foreach (Estoque estoque in PersistenciaEstoque.estoqueGeral)
+        //    {
+        //        if (estoque.Produto.IsAtivo)
+        //        {
+        //            listBoxEstoque.Items.Add(estoque);
+        //        }
+        //    }
+
+        //    // Restaurar seleção se ainda válida
+        //    if (selectedIndex >= 0 && selectedIndex < listBoxEstoque.Items.Count)
+        //    {
+        //        listBoxEstoque.SelectedIndex = selectedIndex;
+        //    }
+        //}
         private void AtualizarLista()
         {
+            listBoxEstoque.SelectedIndexChanged -= listBoxEstoque_SelectedIndexChanged;
+
             int selectedIndex = listBoxEstoque.SelectedIndex;
+            listBoxEstoque.DataSource = null;
+            listBoxEstoque.DataSource = PersistenciaEstoque.estoqueGeral;
 
-            listBoxEstoque.Items.Clear();
+            listBoxEstoque.SelectedIndex = -1;
 
-            foreach (Estoque estoque in PersistenciaEstoque.estoqueGeral)
-            {
-                if (estoque.Produto.IsAtivo)
-                {
-                    listBoxEstoque.Items.Add(estoque);
-                }
-            }
+            listBoxEstoque.SelectedIndexChanged += listBoxEstoque_SelectedIndexChanged;
 
-            // Restaurar seleção se ainda válida
             if (selectedIndex >= 0 && selectedIndex < listBoxEstoque.Items.Count)
             {
                 listBoxEstoque.SelectedIndex = selectedIndex;
