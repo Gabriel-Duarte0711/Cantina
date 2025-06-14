@@ -246,6 +246,9 @@ namespace cantinaPainel
             PersistenciaEstoque.saveToFile();
             PersistenciaProduto.saveToFile();
 
+            PersistenciaEstoque.InicializarEstoque();
+            PersistenciaEstoque.saveToFile();
+
             AtualizarLista();
             txtBoxProduto.Clear();
             txtBoxCodigo.Clear();

@@ -106,6 +106,8 @@ namespace cantinaPainel
                         listPedido.Items.Add(novoItem);
                         extrato2.Add(novoItem);
                     }
+                    
+                    
 
                     // Atualiza total
                     totalPedido += novoItem.Preco * quant;
@@ -114,6 +116,12 @@ namespace cantinaPainel
 
                     // Decrementa estoque
                     estoque.RemoverQuantidade(quant);
+
+                    if (estoque.EstoqueBaixo())
+                    {
+                        MessageBox.Show($"Estoque está baixo\n{produtoSelecionado.Item} - {estoque.Quantidade}");
+                    } 
+                    PersistenciaEstoque.saveToFile();
 
                     // Limpa inputs
                     listAdicionar.SelectedIndex = -1;
