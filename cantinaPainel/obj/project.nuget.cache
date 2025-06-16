@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5FG351AaNKg=",
+  "dgSpecHash": "BUCEmos8YGo=",
   "success": true,
-  "projectFilePath": "D:\\projeto final cantina\\Cantina\\cantinaPainel\\cantinaPainel.csproj",
+  "projectFilePath": "C:\\Users\\25163093\\Documents\\projeto final\\Cantina\\cantinaPainel\\cantinaPainel.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\biel1\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\25163093\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

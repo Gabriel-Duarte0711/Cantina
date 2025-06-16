@@ -231,23 +231,21 @@ namespace cantinaPainel
             }
 
 
-
             int codigo = intValor;
             double preco = valor;
             bool isChapa = checkBox1.Checked;
             bool isAtivo = true;
 
             Produto novoProduto = new Produto(codigo, novoItem, preco, isChapa, isAtivo);
-            Estoque estoque = new Estoque();
+            Estoque estoque = new Estoque(novoProduto, 0 );
+            //estoque.Produto = novoProduto;
+            //estoque.Quantidade = 0;
 
             PersistenciaProduto.itemEstoque.Add(novoProduto);
             PersistenciaEstoque.estoqueGeral.Add(estoque);
 
             PersistenciaEstoque.saveToFile();
             PersistenciaProduto.saveToFile();
-
-            PersistenciaEstoque.InicializarEstoque();
-            PersistenciaEstoque.saveToFile();
 
             AtualizarLista();
             txtBoxProduto.Clear();

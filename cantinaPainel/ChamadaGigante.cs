@@ -36,5 +36,10 @@ namespace cantinaPainel
                 label1.Text = item.Nome_Cliente;
             }
         }
+
+        private void panelProduto_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

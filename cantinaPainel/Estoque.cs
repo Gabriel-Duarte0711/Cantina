@@ -5,6 +5,12 @@ internal class Estoque
     public Produto Produto { get; set; }
     public int Quantidade { get; set; }
 
+    public Estoque (Produto produto, int quantidade)
+    {
+        Produto = produto;
+        Quantidade = quantidade;
+    }
+
     public void AdicionarQuantidade(int quantidade)
     {
         if (quantidade > 0) 

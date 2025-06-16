@@ -15,7 +15,7 @@ namespace cantinaPainel
 
             foreach (var produto in PersistenciaProduto.itemEstoque)
             {
-                Estoque novoEstoque = new Estoque
+                Estoque novoEstoque = new Estoque(produto, 0)
                 {
                     Produto = produto,
                     Quantidade = 0

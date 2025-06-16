@@ -38,6 +38,7 @@
             lblSubtitulo = new Label();
             lblTitulo = new Label();
             pictureBox1 = new PictureBox();
+            saveFileDialog1 = new SaveFileDialog();
             panelCentral.SuspendLayout();
             panelProduto.SuspendLayout();
             panelIcone.SuspendLayout();
@@ -72,6 +73,7 @@
             panelProduto.Padding = new Padding(26, 28, 26, 28);
             panelProduto.Size = new Size(612, 81);
             panelProduto.TabIndex = 2;
+            panelProduto.Paint += panelProduto_Paint;
             // 
             // label1
             // 
@@ -171,5 +173,6 @@
         private Label lblSubtitulo;
         private Label lblTitulo;
         private PictureBox pictureBox1;
+        private SaveFileDialog saveFileDialog1;
     }
 }
