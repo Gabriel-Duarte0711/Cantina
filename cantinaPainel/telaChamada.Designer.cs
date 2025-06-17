@@ -30,13 +30,13 @@
         {
             listBoxNomePreparando = new ListBox();
             listBoxNomePronto = new ListBox();
-            buttonVoltar = new Button();
             pictureBox1 = new PictureBox();
             labelPronto = new Label();
             labelPreparando = new Label();
             labelTitulo = new Label();
             panelPreparando = new Panel();
             panelPronto = new Panel();
+            btnVoltar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelPreparando.SuspendLayout();
             panelPronto.SuspendLayout();
@@ -68,21 +68,6 @@
             listBoxNomePronto.Size = new Size(220, 299);
             listBoxNomePronto.TabIndex = 1;
             listBoxNomePronto.SelectedIndexChanged += listBoxNomePronto_SelectedIndexChanged;
-            // 
-            // buttonVoltar
-            // 
-            buttonVoltar.BackColor = Color.FromArgb(243, 241, 238);
-            buttonVoltar.FlatAppearance.BorderSize = 0;
-            buttonVoltar.FlatStyle = FlatStyle.Flat;
-            buttonVoltar.Font = new Font("Inter", 14F);
-            buttonVoltar.ForeColor = Color.FromArgb(17, 25, 12);
-            buttonVoltar.Location = new Point(20, 20);
-            buttonVoltar.Name = "buttonVoltar";
-            buttonVoltar.Size = new Size(60, 40);
-            buttonVoltar.TabIndex = 2;
-            buttonVoltar.Text = "←";
-            buttonVoltar.UseVisualStyleBackColor = false;
-            buttonVoltar.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -149,19 +134,34 @@
             panelPronto.Size = new Size(250, 340);
             panelPronto.TabIndex = 33;
             // 
+            // btnVoltar
+            // 
+            btnVoltar.BackColor = Color.FromArgb(230, 255, 0);
+            btnVoltar.FlatAppearance.BorderSize = 0;
+            btnVoltar.FlatStyle = FlatStyle.Flat;
+            btnVoltar.Font = new Font("Inter", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVoltar.ForeColor = Color.FromArgb(17, 25, 12);
+            btnVoltar.Location = new Point(12, 15);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Size = new Size(50, 50);
+            btnVoltar.TabIndex = 34;
+            btnVoltar.Text = "←";
+            btnVoltar.UseVisualStyleBackColor = false;
+            btnVoltar.Click += btnVoltar_Click;
+            // 
             // formsTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(800, 550);
+            Controls.Add(btnVoltar);
             Controls.Add(labelPreparando);
             Controls.Add(labelPronto);
             Controls.Add(panelPronto);
             Controls.Add(panelPreparando);
             Controls.Add(labelTitulo);
             Controls.Add(pictureBox1);
-            Controls.Add(buttonVoltar);
             Name = "formsTela";
             Text = "Cantina Painel - Bolt Design";
             Load += formsTela_Load;
@@ -185,12 +185,12 @@
 
         private ListBox listBoxNomePreparando;
         private ListBox listBoxNomePronto;
-        private Button buttonVoltar;
         private PictureBox pictureBox1;
         private Label labelPronto;
         private Label labelPreparando;
         private Label labelTitulo;
         private Panel panelPreparando;
         private Panel panelPronto;
+        private Button btnVoltar;
     }
 }

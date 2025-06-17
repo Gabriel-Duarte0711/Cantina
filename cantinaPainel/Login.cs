@@ -16,33 +16,95 @@ namespace cantinaPainel
         {
             InitializeComponent();
         }
+        private void ExibirErroSenha()
+        {
+            MessageBox.Show("A senha está incorreta.\n\nTente novamente.");
+            txtBoxSenha.Focus();
+            txtBoxSenha.SelectAll(); // Seleciona todo o texto para facilitar a correção
+        }
+        public void login()
+        {
+            string usuario = txtBoxUsuario.Text.ToLower().Trim();
+            string senha = txtBoxSenha.Text.ToLower().Trim();
+            
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(senha))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos.");
+                txtBoxUsuario.Focus();
+                return;
+            }
 
+            switch (usuario)
+            {
+                case "pedido":
+                    if (senha == "pedido")
+                    {
+                        formsPedido formpedido = new formsPedido();
+                        formpedido.Show();
+                        this.Hide();
+                        loginAdm loginAdm = new loginAdm();
+                        loginAdm.adm = false;
+                    }
+                    else 
+                    {
+                        ExibirErroSenha();
+                    }
+                    break;
+                case "balcao":
+                    if (senha == "balcao")
+                    {
+                        formsBalcao formbalcao = new formsBalcao();
+                        formbalcao.Show();
+                        this.Hide();
+                        loginAdm loginAdm = new loginAdm();
+                        loginAdm.adm = false;
+                    }
+                    else
+                    {
+                        ExibirErroSenha();
+                    }
+                    break;
+                case "cozinha":
+                    if(senha == "cozinha")
+                    {
+                        formsCozinha formcozinha = new formsCozinha();
+                        formcozinha.Show();
+                        this.Hide();
+                        loginAdm loginAdm = new loginAdm();
+                        loginAdm.adm = false;
+                    }
+                    else
+                    {  
+                        ExibirErroSenha(); 
+                    } 
+                    break;
+                case "admin":
+                    if (senha == "admin")
+                    {
+                        formsAdm formadm = new formsAdm();
+                        formadm.Show();
+                        this.Hide();
+                        loginAdm loginAdm = new loginAdm();
+                        loginAdm.adm = true;
+                    }
+                    else 
+                    {
+                        ExibirErroSenha();
+                    }
+                    break;
+                default:
+                    MessageBox.Show("O nome do usuário está incorreto.\n\nTente novamente.");
+                    txtBoxUsuario.Focus();
+                    break;
+
+
+            }
+
+        
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtBoxUsuario.Text == "pedido" && txtBoxSenha.Text == "pedido")
-            {
-                formsPedido formpedido = new formsPedido();
-                formpedido.Show();
-                this.Hide();
-            }
-            else if (txtBoxUsuario.Text == "balcao" && txtBoxSenha.Text == "balcao")
-            {
-                formsBalcao formbalcao = new formsBalcao();
-                formbalcao.Show();
-                this.Hide();
-            }
-            else if (txtBoxUsuario.Text == "cozinha" && txtBoxSenha.Text == "cozinha")
-            {
-                formsCozinha formcozinha = new formsCozinha();
-                formcozinha.Show();
-                this.Hide();
-            }
-            else if (txtBoxUsuario.Text == "adm" && txtBoxSenha.Text == "adm")
-            {
-                formsAdm formadm = new formsAdm();
-                formadm.Show();
-                this.Hide();
-            }
+            login();
 
         }
 

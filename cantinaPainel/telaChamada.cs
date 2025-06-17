@@ -51,16 +51,16 @@ namespace cantinaPainel
                 listBoxNomePronto.Items.RemoveAt(listBoxNomePronto.Items.Count - 1);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void listBoxNomePronto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Hide();
             formsBalcao formlogin = new formsBalcao();
             formlogin.Show();
-        }
-
-        private void listBoxNomePronto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

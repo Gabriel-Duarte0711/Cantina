@@ -156,7 +156,7 @@
             btnChamada.FlatStyle = FlatStyle.Flat;
             btnChamada.Font = new Font("Inter", 16F, FontStyle.Bold);
             btnChamada.ForeColor = Color.FromArgb(243, 241, 238);
-            btnChamada.Location = new Point(894, 471);
+            btnChamada.Location = new Point(906, 520);
             btnChamada.Name = "btnChamada";
             btnChamada.Size = new Size(194, 44);
             btnChamada.TabIndex = 0;

@@ -11,9 +11,10 @@ namespace cantinaPainel
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new formsAdm());
-            Application.Run(new formsEstoque());
-            Application.Run(new formsPedido());
+            Application.Run(new formsLogin());
+            //Application.Run(new formsAdm());
+            //Application.Run(new formsEstoque());
+            //Application.Run(new formsPedido());
         }
     }
 }

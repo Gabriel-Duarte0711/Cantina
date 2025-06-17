@@ -52,13 +52,13 @@
             txtBoxTroco = new TextBox();
             label7 = new Label();
             btnTroco = new Button();
-            button1 = new Button();
+            btnBalcao = new Button();
             pictureBox1 = new PictureBox();
             checkBox1 = new CheckBox();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            btnCozinha = new Button();
+            btnChamada = new Button();
+            btnLimpar = new Button();
+            btnEstoque = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTroco).BeginInit();
@@ -358,20 +358,20 @@
             btnTroco.UseVisualStyleBackColor = false;
             btnTroco.Click += btnTroco_Click;
             // 
-            // button1
+            // btnBalcao
             // 
-            button1.BackColor = Color.FromArgb(202, 196, 183);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(17, 25, 12);
-            button1.Location = new Point(920, 420);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 40);
-            button1.TabIndex = 25;
-            button1.Text = "Balcão";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnBalcao.BackColor = Color.FromArgb(202, 196, 183);
+            btnBalcao.FlatAppearance.BorderSize = 0;
+            btnBalcao.FlatStyle = FlatStyle.Flat;
+            btnBalcao.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBalcao.ForeColor = Color.FromArgb(17, 25, 12);
+            btnBalcao.Location = new Point(920, 420);
+            btnBalcao.Name = "btnBalcao";
+            btnBalcao.Size = new Size(100, 40);
+            btnBalcao.TabIndex = 25;
+            btnBalcao.Text = "Balcão";
+            btnBalcao.UseVisualStyleBackColor = false;
+            btnBalcao.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -397,65 +397,65 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
-            // button2
+            // btnCozinha
             // 
-            button2.BackColor = Color.FromArgb(202, 196, 183);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.FromArgb(17, 25, 12);
-            button2.Location = new Point(920, 375);
-            button2.Name = "button2";
-            button2.Size = new Size(100, 40);
-            button2.TabIndex = 28;
-            button2.Text = "Cozinha";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnCozinha.BackColor = Color.FromArgb(202, 196, 183);
+            btnCozinha.FlatAppearance.BorderSize = 0;
+            btnCozinha.FlatStyle = FlatStyle.Flat;
+            btnCozinha.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCozinha.ForeColor = Color.FromArgb(17, 25, 12);
+            btnCozinha.Location = new Point(920, 375);
+            btnCozinha.Name = "btnCozinha";
+            btnCozinha.Size = new Size(100, 40);
+            btnCozinha.TabIndex = 28;
+            btnCozinha.Text = "Cozinha";
+            btnCozinha.UseVisualStyleBackColor = false;
+            btnCozinha.Click += button2_Click;
             // 
-            // button3
+            // btnChamada
             // 
-            button3.BackColor = Color.FromArgb(202, 196, 183);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.FromArgb(17, 25, 12);
-            button3.Location = new Point(920, 329);
-            button3.Name = "button3";
-            button3.Size = new Size(100, 40);
-            button3.TabIndex = 29;
-            button3.Text = "Chamada";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            btnChamada.BackColor = Color.FromArgb(202, 196, 183);
+            btnChamada.FlatAppearance.BorderSize = 0;
+            btnChamada.FlatStyle = FlatStyle.Flat;
+            btnChamada.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnChamada.ForeColor = Color.FromArgb(17, 25, 12);
+            btnChamada.Location = new Point(920, 329);
+            btnChamada.Name = "btnChamada";
+            btnChamada.Size = new Size(100, 40);
+            btnChamada.TabIndex = 29;
+            btnChamada.Text = "Chamada";
+            btnChamada.UseVisualStyleBackColor = false;
+            btnChamada.Click += button3_Click;
             // 
-            // button4
+            // btnLimpar
             // 
-            button4.BackColor = Color.FromArgb(202, 196, 183);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.FromArgb(17, 25, 12);
-            button4.Location = new Point(920, 283);
-            button4.Name = "button4";
-            button4.Size = new Size(100, 40);
-            button4.TabIndex = 30;
-            button4.Text = "Limpar";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            btnLimpar.BackColor = Color.FromArgb(202, 196, 183);
+            btnLimpar.FlatAppearance.BorderSize = 0;
+            btnLimpar.FlatStyle = FlatStyle.Flat;
+            btnLimpar.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLimpar.ForeColor = Color.FromArgb(17, 25, 12);
+            btnLimpar.Location = new Point(920, 283);
+            btnLimpar.Name = "btnLimpar";
+            btnLimpar.Size = new Size(100, 40);
+            btnLimpar.TabIndex = 30;
+            btnLimpar.Text = "Limpar";
+            btnLimpar.UseVisualStyleBackColor = false;
+            btnLimpar.Click += button4_Click;
             // 
-            // button5
+            // btnEstoque
             // 
-            button5.BackColor = Color.FromArgb(202, 196, 183);
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.FromArgb(17, 25, 12);
-            button5.Location = new Point(920, 237);
-            button5.Name = "button5";
-            button5.Size = new Size(100, 40);
-            button5.TabIndex = 31;
-            button5.Text = "Estoque";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
+            btnEstoque.BackColor = Color.FromArgb(202, 196, 183);
+            btnEstoque.FlatAppearance.BorderSize = 0;
+            btnEstoque.FlatStyle = FlatStyle.Flat;
+            btnEstoque.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEstoque.ForeColor = Color.FromArgb(17, 25, 12);
+            btnEstoque.Location = new Point(920, 237);
+            btnEstoque.Name = "btnEstoque";
+            btnEstoque.Size = new Size(100, 40);
+            btnEstoque.TabIndex = 31;
+            btnEstoque.Text = "Estoque";
+            btnEstoque.UseVisualStyleBackColor = false;
+            btnEstoque.Click += button5_Click;
             // 
             // formsPedido
             // 
@@ -463,13 +463,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1071, 630);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnEstoque);
+            Controls.Add(btnLimpar);
+            Controls.Add(btnChamada);
+            Controls.Add(btnCozinha);
             Controls.Add(checkBox1);
             Controls.Add(pictureBox1);
-            Controls.Add(button1);
+            Controls.Add(btnBalcao);
             Controls.Add(btnTroco);
             Controls.Add(label7);
             Controls.Add(txtBoxTroco);
@@ -530,12 +530,12 @@
         private TextBox txtBoxTroco;
         private Label label7;
         private Button btnTroco;
-        private Button button1;
+        private Button btnBalcao;
         private PictureBox pictureBox1;
         private CheckBox checkBox1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button btnCozinha;
+        private Button btnChamada;
+        private Button btnLimpar;
+        private Button btnEstoque;
     }
 }

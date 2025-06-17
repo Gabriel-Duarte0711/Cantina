@@ -59,6 +59,23 @@ namespace cantinaPainel
             comboBoxPagamento.Items.Add("Vr");
             comboBoxPagamento.SelectedIndex = 0;
 
+            loginAdm loginAdm = new loginAdm();
+            if (loginAdm.adm == false) 
+            {
+                btnEstoque.Visible = false;
+                btnLimpar.Visible = false;
+                btnChamada.Visible = false;
+                btnBalcao.Visible = false;
+                btnCozinha.Visible = false;
+            }
+            if (loginAdm.adm == true)
+            {
+                btnEstoque.Visible = true;
+                btnLimpar.Visible = true;
+                btnChamada.Visible = true;
+                btnBalcao.Visible = true;
+                btnCozinha.Visible = true;
+            }
             //txtBoxTroco.ReadOnly = true;
             txtBoxTroco.Enabled = false;
         }
