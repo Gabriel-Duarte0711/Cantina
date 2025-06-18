@@ -44,7 +44,7 @@
             lblTitulo = new Label();
             separator = new Panel();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
+            comboBoxMenu = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -254,21 +254,20 @@
             pictureBox1.TabIndex = 28;
             pictureBox1.TabStop = false;
             // 
-            // button1
+            // comboBoxMenu
             // 
-            button1.BackColor = Color.FromArgb(120, 118, 100);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Inter", 9F);
-            button1.ForeColor = Color.FromArgb(243, 241, 238);
-            button1.Location = new Point(758, 430);
-            button1.Name = "button1";
-            button1.Size = new Size(140, 45);
-            button1.TabIndex = 29;
-            button1.Text = "EDITAR";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            comboBoxMenu.BackColor = Color.FromArgb(202, 196, 183);
+            comboBoxMenu.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMenu.FlatStyle = FlatStyle.Flat;
+            comboBoxMenu.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBoxMenu.ForeColor = Color.FromArgb(17, 25, 12);
+            comboBoxMenu.FormattingEnabled = true;
+            comboBoxMenu.Location = new Point(791, 20);
+            comboBoxMenu.Name = "comboBoxMenu";
+            comboBoxMenu.Size = new Size(87, 30);
+            comboBoxMenu.TabIndex = 32;
+            comboBoxMenu.Tag = "";
+            comboBoxMenu.SelectedIndexChanged += comboBoxMenu_SelectedIndexChanged;
             // 
             // formsAdm
             // 
@@ -276,7 +275,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(900, 550);
-            Controls.Add(button1);
+            Controls.Add(comboBoxMenu);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBoxLogo);
             Controls.Add(separator);
@@ -298,6 +297,7 @@
             Name = "formsAdm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cantina Painel - Administração";
+            Activated += formsAdm_Activated;
             Load += formsAdm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -323,6 +323,6 @@
         private Label lblTitulo;
         private Panel separator;
         private PictureBox pictureBox1;
-        private Button button1;
+        private ComboBox comboBoxMenu;
     }
 }

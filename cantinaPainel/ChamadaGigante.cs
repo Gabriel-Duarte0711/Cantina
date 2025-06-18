@@ -31,12 +31,13 @@ namespace cantinaPainel
 
         private void ChamadaGigante_Load_1(object sender, EventArgs e)
         {
-            foreach (var item in PersistenciaPedido.pedidos)
-            {
-                label1.Text = item.Nome_Cliente;
-            }
+          
         }
 
+        public void chamada(string nomeCliente)
+        {
+            label1.Text = nomeCliente;
+        }
         private void panelProduto_Paint(object sender, PaintEventArgs e)
         {
 

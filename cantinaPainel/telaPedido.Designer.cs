@@ -52,13 +52,9 @@
             txtBoxTroco = new TextBox();
             label7 = new Label();
             btnTroco = new Button();
-            btnBalcao = new Button();
             pictureBox1 = new PictureBox();
             checkBox1 = new CheckBox();
-            btnCozinha = new Button();
-            btnChamada = new Button();
-            btnLimpar = new Button();
-            btnEstoque = new Button();
+            comboBoxMenu = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantidade).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericTroco).BeginInit();
@@ -358,21 +354,6 @@
             btnTroco.UseVisualStyleBackColor = false;
             btnTroco.Click += btnTroco_Click;
             // 
-            // btnBalcao
-            // 
-            btnBalcao.BackColor = Color.FromArgb(202, 196, 183);
-            btnBalcao.FlatAppearance.BorderSize = 0;
-            btnBalcao.FlatStyle = FlatStyle.Flat;
-            btnBalcao.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBalcao.ForeColor = Color.FromArgb(17, 25, 12);
-            btnBalcao.Location = new Point(920, 420);
-            btnBalcao.Name = "btnBalcao";
-            btnBalcao.Size = new Size(100, 40);
-            btnBalcao.TabIndex = 25;
-            btnBalcao.Text = "Balcão";
-            btnBalcao.UseVisualStyleBackColor = false;
-            btnBalcao.Click += button1_Click;
-            // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
@@ -397,65 +378,20 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
-            // btnCozinha
+            // comboBoxMenu
             // 
-            btnCozinha.BackColor = Color.FromArgb(202, 196, 183);
-            btnCozinha.FlatAppearance.BorderSize = 0;
-            btnCozinha.FlatStyle = FlatStyle.Flat;
-            btnCozinha.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCozinha.ForeColor = Color.FromArgb(17, 25, 12);
-            btnCozinha.Location = new Point(920, 375);
-            btnCozinha.Name = "btnCozinha";
-            btnCozinha.Size = new Size(100, 40);
-            btnCozinha.TabIndex = 28;
-            btnCozinha.Text = "Cozinha";
-            btnCozinha.UseVisualStyleBackColor = false;
-            btnCozinha.Click += button2_Click;
-            // 
-            // btnChamada
-            // 
-            btnChamada.BackColor = Color.FromArgb(202, 196, 183);
-            btnChamada.FlatAppearance.BorderSize = 0;
-            btnChamada.FlatStyle = FlatStyle.Flat;
-            btnChamada.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnChamada.ForeColor = Color.FromArgb(17, 25, 12);
-            btnChamada.Location = new Point(920, 329);
-            btnChamada.Name = "btnChamada";
-            btnChamada.Size = new Size(100, 40);
-            btnChamada.TabIndex = 29;
-            btnChamada.Text = "Chamada";
-            btnChamada.UseVisualStyleBackColor = false;
-            btnChamada.Click += button3_Click;
-            // 
-            // btnLimpar
-            // 
-            btnLimpar.BackColor = Color.FromArgb(202, 196, 183);
-            btnLimpar.FlatAppearance.BorderSize = 0;
-            btnLimpar.FlatStyle = FlatStyle.Flat;
-            btnLimpar.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLimpar.ForeColor = Color.FromArgb(17, 25, 12);
-            btnLimpar.Location = new Point(920, 283);
-            btnLimpar.Name = "btnLimpar";
-            btnLimpar.Size = new Size(100, 40);
-            btnLimpar.TabIndex = 30;
-            btnLimpar.Text = "Limpar";
-            btnLimpar.UseVisualStyleBackColor = false;
-            btnLimpar.Click += button4_Click;
-            // 
-            // btnEstoque
-            // 
-            btnEstoque.BackColor = Color.FromArgb(202, 196, 183);
-            btnEstoque.FlatAppearance.BorderSize = 0;
-            btnEstoque.FlatStyle = FlatStyle.Flat;
-            btnEstoque.Font = new Font("Inter", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEstoque.ForeColor = Color.FromArgb(17, 25, 12);
-            btnEstoque.Location = new Point(920, 237);
-            btnEstoque.Name = "btnEstoque";
-            btnEstoque.Size = new Size(100, 40);
-            btnEstoque.TabIndex = 31;
-            btnEstoque.Text = "Estoque";
-            btnEstoque.UseVisualStyleBackColor = false;
-            btnEstoque.Click += button5_Click;
+            comboBoxMenu.BackColor = Color.FromArgb(202, 196, 183);
+            comboBoxMenu.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMenu.FlatStyle = FlatStyle.Flat;
+            comboBoxMenu.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBoxMenu.ForeColor = Color.FromArgb(17, 25, 12);
+            comboBoxMenu.FormattingEnabled = true;
+            comboBoxMenu.Location = new Point(972, 20);
+            comboBoxMenu.Name = "comboBoxMenu";
+            comboBoxMenu.Size = new Size(87, 30);
+            comboBoxMenu.TabIndex = 33;
+            comboBoxMenu.Tag = "";
+            comboBoxMenu.SelectedIndexChanged += comboBoxMenu_SelectedIndexChanged;
             // 
             // formsPedido
             // 
@@ -463,13 +399,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(1071, 630);
-            Controls.Add(btnEstoque);
-            Controls.Add(btnLimpar);
-            Controls.Add(btnChamada);
-            Controls.Add(btnCozinha);
+            Controls.Add(comboBoxMenu);
             Controls.Add(checkBox1);
             Controls.Add(pictureBox1);
-            Controls.Add(btnBalcao);
             Controls.Add(btnTroco);
             Controls.Add(label7);
             Controls.Add(txtBoxTroco);
@@ -530,12 +462,8 @@
         private TextBox txtBoxTroco;
         private Label label7;
         private Button btnTroco;
-        private Button btnBalcao;
         private PictureBox pictureBox1;
         private CheckBox checkBox1;
-        private Button btnCozinha;
-        private Button btnChamada;
-        private Button btnLimpar;
-        private Button btnEstoque;
+        private ComboBox comboBoxMenu;
     }
 }

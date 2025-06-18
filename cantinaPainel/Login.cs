@@ -22,18 +22,20 @@ namespace cantinaPainel
             txtBoxSenha.Focus();
             txtBoxSenha.SelectAll(); // Seleciona todo o texto para facilitar a correção
         }
-        public void login()
+
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+
             string usuario = txtBoxUsuario.Text.ToLower().Trim();
             string senha = txtBoxSenha.Text.ToLower().Trim();
-            
+
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(senha))
             {
                 MessageBox.Show("Por favor, preencha todos os campos.");
                 txtBoxUsuario.Focus();
                 return;
             }
-
+            
             switch (usuario)
             {
                 case "pedido":
@@ -41,11 +43,10 @@ namespace cantinaPainel
                     {
                         formsPedido formpedido = new formsPedido();
                         formpedido.Show();
-                        this.Hide();
-                        loginAdm loginAdm = new loginAdm();
                         loginAdm.adm = false;
+                        this.Hide();                 
                     }
-                    else 
+                    else
                     {
                         ExibirErroSenha();
                     }
@@ -55,9 +56,8 @@ namespace cantinaPainel
                     {
                         formsBalcao formbalcao = new formsBalcao();
                         formbalcao.Show();
-                        this.Hide();
-                        loginAdm loginAdm = new loginAdm();
                         loginAdm.adm = false;
+                        this.Hide();
                     }
                     else
                     {
@@ -65,47 +65,37 @@ namespace cantinaPainel
                     }
                     break;
                 case "cozinha":
-                    if(senha == "cozinha")
+                    if (senha == "cozinha")
                     {
                         formsCozinha formcozinha = new formsCozinha();
                         formcozinha.Show();
-                        this.Hide();
-                        loginAdm loginAdm = new loginAdm();
                         loginAdm.adm = false;
+                        this.Hide();            
                     }
                     else
-                    {  
-                        ExibirErroSenha(); 
-                    } 
+                    {
+                        ExibirErroSenha();
+                    }
                     break;
                 case "admin":
                     if (senha == "admin")
                     {
                         formsAdm formadm = new formsAdm();
                         formadm.Show();
-                        this.Hide();
-                        loginAdm loginAdm = new loginAdm();
                         loginAdm.adm = true;
+                        this.Hide();   
                     }
-                    else 
+                    else
                     {
                         ExibirErroSenha();
                     }
+      
                     break;
                 default:
                     MessageBox.Show("O nome do usuário está incorreto.\n\nTente novamente.");
                     txtBoxUsuario.Focus();
                     break;
-
-
             }
-
-        
-        }
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            login();
-
         }
 
         private void button1_Click(object sender, EventArgs e)

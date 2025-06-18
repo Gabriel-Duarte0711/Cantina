@@ -39,7 +39,15 @@ namespace cantinaPainel
                 numericQuantidade.Enabled = false;
             }
         }
+        private const int CB_SETCUEBANNER = 0x1703;
 
+        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
+        private static extern int SendMessage(
+            IntPtr hWnd,
+            int msg,
+            int wParam,
+            [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam
+        );
         private void Form1_Load(object sender, EventArgs e)
         {
             foreach (var item in PersistenciaProduto.itemEstoque)
@@ -49,7 +57,7 @@ namespace cantinaPainel
                     listAdicionar.Items.Add(item);
                 }
             }
-            
+
             PersistenciaEstoque.LoadListFromFile();
             comboBoxPagamento.Items.Add("Pix");
             comboBoxPagamento.Items.Add("Dinheiro");
@@ -60,24 +68,23 @@ namespace cantinaPainel
             comboBoxPagamento.SelectedIndex = 0;
 
             loginAdm loginAdm = new loginAdm();
-            if (loginAdm.adm == false) 
+            if (loginAdm.adm == false)
             {
-                btnEstoque.Visible = false;
-                btnLimpar.Visible = false;
-                btnChamada.Visible = false;
-                btnBalcao.Visible = false;
-                btnCozinha.Visible = false;
+                comboBoxMenu.Visible = false;
             }
             if (loginAdm.adm == true)
             {
-                btnEstoque.Visible = true;
-                btnLimpar.Visible = true;
-                btnChamada.Visible = true;
-                btnBalcao.Visible = true;
-                btnCozinha.Visible = true;
+                comboBoxMenu.Visible = true;
             }
             //txtBoxTroco.ReadOnly = true;
             txtBoxTroco.Enabled = false;
+
+            SendMessage(this.comboBoxMenu.Handle, CB_SETCUEBANNER, 0, "Menu");
+            comboBoxMenu.Items.Add("Adm");
+            comboBoxMenu.Items.Add("Balcão");
+            comboBoxMenu.Items.Add("Cozinha");
+            comboBoxMenu.Items.Add("Chamada");
+            comboBoxMenu.Items.Add("Estoque");
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -123,8 +130,8 @@ namespace cantinaPainel
                         listPedido.Items.Add(novoItem);
                         extrato2.Add(novoItem);
                     }
-                    
-                    
+
+
 
                     // Atualiza total
                     totalPedido += novoItem.Preco * quant;
@@ -137,7 +144,7 @@ namespace cantinaPainel
                     if (estoque.EstoqueBaixo())
                     {
                         MessageBox.Show($"Estoque está baixo\n{produtoSelecionado.Item} - {estoque.Quantidade}");
-                    } 
+                    }
                     PersistenciaEstoque.saveToFile();
 
                     // Limpa inputs
@@ -373,6 +380,40 @@ namespace cantinaPainel
         {
             formsEstoque formsEstoque = new formsEstoque();
             formsEstoque.Show();
+        }
+
+        private void comboBoxMenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxMenu.SelectedIndex == 0)
+            {
+                formsAdm formsAdm = new formsAdm();
+                formsAdm.Show();
+                comboBoxMenu.SelectedIndex = -1;
+            }
+            else if (comboBoxMenu.SelectedIndex == 1)
+            {
+                formsBalcao formsBalcao = new formsBalcao();
+                formsBalcao.Show();
+                comboBoxMenu.SelectedIndex = -1;
+            }
+            else if (comboBoxMenu.SelectedIndex == 2)
+            {
+                formsCozinha formsCozinha = new formsCozinha();
+                formsCozinha.Show();
+                comboBoxMenu.SelectedIndex = -1;
+            }
+            else if (comboBoxMenu.SelectedIndex == 3)
+            {
+                formsTela formsTela = new formsTela();
+                formsTela.Show();
+                comboBoxMenu.SelectedIndex = -1;
+            }
+            else if (comboBoxMenu.SelectedIndex == 4)
+            {
+                formsEstoque formsEstoque = new formsEstoque();
+                formsEstoque.Show();
+                comboBoxMenu.SelectedIndex = -1;
+            }
         }
     }
 }

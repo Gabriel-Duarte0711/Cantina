@@ -41,6 +41,15 @@ namespace cantinaPainel
             }
         }
 
+        private const int CB_SETCUEBANNER = 0x1703;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
+        private static extern int SendMessage(
+            IntPtr hWnd,
+            int msg,
+            int wParam,
+            [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam
+        );
         private void formsAdm_Load(object sender, EventArgs e)
         {
             PersistenciaProduto.LoadListFromFile();
@@ -53,6 +62,14 @@ namespace cantinaPainel
             btnEditar.Visible = false;
             btnNoAtivo.Visible = false;
             AtualizarLista();
+            SendMessage(this.comboBoxMenu.Handle, CB_SETCUEBANNER, 0, "Menu");
+            comboBoxMenu.Items.Add("Pedido");
+            comboBoxMenu.Items.Add("Balcão");
+            comboBoxMenu.Items.Add("Cozinha");
+            comboBoxMenu.Items.Add("Chamada");
+            comboBoxMenu.Items.Add("Estoque");
+
+            comboBoxMenu.SelectedIndex = -1;
         }
 
         private void listBoxTest_SelectedIndexChanged(object sender, EventArgs e)
@@ -133,8 +150,8 @@ namespace cantinaPainel
                 else
                 {
                     MessageBox.Show("Número inválido.");
-                    txtBoxPreco.Focus(); 
-                    return ;
+                    txtBoxPreco.Focus();
+                    return;
                 }
 
                 produtoSelecionado.Codigo = intValor;
@@ -200,7 +217,7 @@ namespace cantinaPainel
             string novoItem = txtBoxProduto.Text.Trim();
 
             if (string.IsNullOrEmpty(novoItem))
-            {       
+            {
                 MessageBox.Show("Digite um produto válido.");
                 txtBoxProduto.Focus();
                 return;
@@ -237,7 +254,7 @@ namespace cantinaPainel
             bool isAtivo = true;
 
             Produto novoProduto = new Produto(codigo, novoItem, preco, isChapa, isAtivo);
-            Estoque estoque = new Estoque(novoProduto, 0 );
+            Estoque estoque = new Estoque(novoProduto, 0);
             //estoque.Produto = novoProduto;
             //estoque.Quantidade = 0;
 
@@ -255,12 +272,59 @@ namespace cantinaPainel
 
             txtBoxProduto.Focus();
         }
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             formsEstoque formsEstoque = new formsEstoque();
             formsEstoque.Show();
+        }
+
+        private void btnVenda_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+        }
+
+        private void formsAdm_Activated(object sender, EventArgs e)
+        {
+            comboBoxMenu.SelectedIndex = -1;
+        }
+
+        private void comboBoxMenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (comboBoxMenu.SelectedIndex == 0)
+            {
+                formsPedido formsPedido = new formsPedido();
+                formsPedido.Show();
+                comboBoxMenu.SelectedIndex = -1;
+            }
+            else if (comboBoxMenu.SelectedIndex == 1)
+            {
+                formsBalcao formsBalcao = new formsBalcao();
+                formsBalcao.Show();
+                comboBoxMenu.SelectedIndex = -1;
+            }
+            else if (comboBoxMenu.SelectedIndex == 2)
+            {
+                formsCozinha formsCozinha = new formsCozinha();
+                formsCozinha.Show();
+                comboBoxMenu.SelectedIndex = -1;
+            }
+            else if (comboBoxMenu.SelectedIndex == 3)
+            {
+                formsTela formsTela = new formsTela();
+                formsTela.Show();
+                comboBoxMenu.SelectedIndex = -1;
+            }
+            else if (comboBoxMenu.SelectedIndex == 4)
+            {
+                formsEstoque formsEstoque = new formsEstoque();
+                formsEstoque.Show();
+                comboBoxMenu.SelectedIndex = -1;
+            }
+
         }
     }
 }

@@ -30,6 +30,8 @@ namespace cantinaPainel
                 else if (item.StatusPedido == Status.ENTREGUE)
                 {
                     ChamadaGigante chamadaGigante = new ChamadaGigante();
+                    
+                    chamadaGigante.chamada(item.Nome_Cliente);
                     chamadaGigante.ShowDialog();
                     listBoxNomePronto.Items.Insert(0, item.Nome_Cliente);
                 }
@@ -38,6 +40,16 @@ namespace cantinaPainel
             temporizador.Interval = 30000;
             temporizador.Tick += Temporizador_Tick;
             temporizador.Start();
+
+            loginAdm loginAdm = new loginAdm();
+            if (loginAdm.adm == false)
+            {
+                btnVoltar.Visible = false;
+            }
+            if (loginAdm.adm == true)
+            {
+                btnVoltar.Visible = true;
+            }
         }
         private void Temporizador_Tick(object sender, EventArgs e)
         {

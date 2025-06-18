@@ -8,6 +8,6 @@ namespace cantinaPainel
 {
     internal class loginAdm
     {
-        public bool adm = false;
+        public static bool adm = false;
     }
 }

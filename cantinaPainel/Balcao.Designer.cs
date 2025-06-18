@@ -29,6 +29,7 @@
             panelHeader = new Panel();
             lblSubtitle = new Label();
             panelMain = new Panel();
+            comboBoxMenu = new ComboBox();
             panelPedidos = new Panel();
             lblContadorPedidos = new Label();
             panelHistorico = new Panel();
@@ -191,6 +192,7 @@
             // panelMain
             // 
             panelMain.BackColor = Color.FromArgb(17, 25, 12);
+            panelMain.Controls.Add(comboBoxMenu);
             panelMain.Controls.Add(panelPedidos);
             panelMain.Controls.Add(btnChamada);
             panelMain.Controls.Add(panelHistorico);
@@ -202,6 +204,21 @@
             panelMain.Size = new Size(1117, 576);
             panelMain.TabIndex = 21;
             panelMain.Paint += panelMain_Paint_1;
+            // 
+            // comboBoxMenu
+            // 
+            comboBoxMenu.BackColor = Color.FromArgb(202, 196, 183);
+            comboBoxMenu.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMenu.FlatStyle = FlatStyle.Flat;
+            comboBoxMenu.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBoxMenu.ForeColor = Color.FromArgb(17, 25, 12);
+            comboBoxMenu.FormattingEnabled = true;
+            comboBoxMenu.Location = new Point(1024, 242);
+            comboBoxMenu.Name = "comboBoxMenu";
+            comboBoxMenu.Size = new Size(87, 30);
+            comboBoxMenu.TabIndex = 34;
+            comboBoxMenu.Tag = "";
+            comboBoxMenu.SelectedIndexChanged += comboBoxMenu_SelectedIndexChanged;
             // 
             // panelPedidos
             // 
@@ -294,5 +311,6 @@
         private Panel panelButtons;
         private Label lblContadorPedidos;
         private Label lblSubtitle;
+        private ComboBox comboBoxMenu;
     }
 }
