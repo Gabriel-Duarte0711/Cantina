@@ -67,7 +67,6 @@ namespace cantinaPainel
             comboBoxPagamento.Items.Add("Vr");
             comboBoxPagamento.SelectedIndex = 0;
 
-            loginAdm loginAdm = new loginAdm();
             if (loginAdm.adm == false)
             {
                 comboBoxMenu.Visible = false;
@@ -85,6 +84,7 @@ namespace cantinaPainel
             comboBoxMenu.Items.Add("Cozinha");
             comboBoxMenu.Items.Add("Chamada");
             comboBoxMenu.Items.Add("Estoque");
+            comboBoxMenu.Items.Add("Login");
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -388,31 +388,43 @@ namespace cantinaPainel
             {
                 formsAdm formsAdm = new formsAdm();
                 formsAdm.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 1)
             {
                 formsBalcao formsBalcao = new formsBalcao();
                 formsBalcao.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 2)
             {
                 formsCozinha formsCozinha = new formsCozinha();
                 formsCozinha.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 3)
             {
                 formsTela formsTela = new formsTela();
                 formsTela.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 4)
             {
                 formsEstoque formsEstoque = new formsEstoque();
                 formsEstoque.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
+            }
+            else if (comboBoxMenu.SelectedIndex == 5) 
+            { 
+                formsLogin formsLogin = new formsLogin();
+                formsLogin.Show();
+                this.Close();
+                comboBoxMenu.SelectedIndex= -1;
             }
         }
     }

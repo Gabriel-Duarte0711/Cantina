@@ -37,6 +37,7 @@
             panelPreparando = new Panel();
             panelPronto = new Panel();
             btnVoltar = new Button();
+            comboBoxMenu = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelPreparando.SuspendLayout();
             panelPronto.SuspendLayout();
@@ -149,12 +150,28 @@
             btnVoltar.UseVisualStyleBackColor = false;
             btnVoltar.Click += btnVoltar_Click;
             // 
+            // comboBoxMenu
+            // 
+            comboBoxMenu.BackColor = Color.FromArgb(202, 196, 183);
+            comboBoxMenu.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMenu.FlatStyle = FlatStyle.Flat;
+            comboBoxMenu.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBoxMenu.ForeColor = Color.FromArgb(17, 25, 12);
+            comboBoxMenu.FormattingEnabled = true;
+            comboBoxMenu.Location = new Point(706, 15);
+            comboBoxMenu.Name = "comboBoxMenu";
+            comboBoxMenu.Size = new Size(87, 30);
+            comboBoxMenu.TabIndex = 36;
+            comboBoxMenu.Tag = "";
+            comboBoxMenu.SelectedIndexChanged += comboBoxMenu_SelectedIndexChanged;
+            // 
             // formsTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(800, 550);
+            Controls.Add(comboBoxMenu);
             Controls.Add(btnVoltar);
             Controls.Add(labelPreparando);
             Controls.Add(labelPronto);
@@ -192,5 +209,6 @@
         private Panel panelPreparando;
         private Panel panelPronto;
         private Button btnVoltar;
+        private ComboBox comboBoxMenu;
     }
 }

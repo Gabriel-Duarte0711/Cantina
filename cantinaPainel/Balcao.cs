@@ -48,6 +48,8 @@ namespace cantinaPainel
             }
         }
 
+        private const int CB_SETCUEBANNER = 0x1703;
+
         [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
         private static extern int SendMessage(
             IntPtr hWnd,
@@ -74,25 +76,25 @@ namespace cantinaPainel
                 }
 
             }
-            loginAdm loginAdm = new loginAdm();
+
             if (loginAdm.adm == false)
             {
-                btnChamada.Visible = false;
+                comboBoxMenu.Visible = false;
             }
             if (loginAdm.adm == true)
             {
-                btnChamada.Visible = true;
+                comboBoxMenu.Visible = true;
             }
             numero = listBoxPedidos.Items.Count;
             lblContadorPedidos.Text = numero.ToString();
             lblContadorPedidos.Text.Equals(numero);
-
+            SendMessage(this.comboBoxMenu.Handle, CB_SETCUEBANNER, 0, "Menu");
             comboBoxMenu.Items.Add("Adm");
-            comboBoxMenu.Items.Add("Balcão");
+            comboBoxMenu.Items.Add("Pedido");
             comboBoxMenu.Items.Add("Cozinha");
             comboBoxMenu.Items.Add("Chamada");
             comboBoxMenu.Items.Add("Estoque");
-
+            comboBoxMenu.Items.Add("Login");
         }
 
 
@@ -130,8 +132,8 @@ namespace cantinaPainel
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
-            formsPedido formpedido = new formsPedido();
-            formpedido.Show();
+            formsLogin formsLogin = new formsLogin();
+            formsLogin.Show();
         }
 
 
@@ -168,32 +170,50 @@ namespace cantinaPainel
             {
                 formsAdm formsAdm = new formsAdm();
                 formsAdm.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 1)
             {
-                formsBalcao formsBalcao = new formsBalcao();
-                formsBalcao.Show();
+                formsPedido formsPedido = new formsPedido();
+                formsPedido.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 2)
             {
                 formsCozinha formsCozinha = new formsCozinha();
                 formsCozinha.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 3)
             {
                 formsTela formsTela = new formsTela();
                 formsTela.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 4)
             {
                 formsEstoque formsEstoque = new formsEstoque();
                 formsEstoque.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
+            else if (comboBoxMenu.SelectedIndex == 5)
+            {
+                formsLogin formsLogin = new formsLogin();
+                formsLogin.Show();
+                this.Close();
+                comboBoxMenu.SelectedIndex = -1;
+            }
+
+        }
+
+        private void panelButtons_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

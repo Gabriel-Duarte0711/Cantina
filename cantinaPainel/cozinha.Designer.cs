@@ -23,6 +23,7 @@
             lblTitulo = new Label();
             lblSubtitulo = new Label();
             panelHeader = new Panel();
+            comboBoxMenu = new ComboBox();
             panelActions = new Panel();
             listBoxChapa = new ListBox();
             panelMain = new Panel();
@@ -100,6 +101,7 @@
             // panelHeader
             // 
             panelHeader.BackColor = Color.FromArgb(17, 25, 12);
+            panelHeader.Controls.Add(comboBoxMenu);
             panelHeader.Controls.Add(btnVoltar);
             panelHeader.Controls.Add(pictureBox1);
             panelHeader.Controls.Add(lblTitulo);
@@ -111,6 +113,21 @@
             panelHeader.Size = new Size(1613, 120);
             panelHeader.TabIndex = 30;
             panelHeader.Paint += panelHeader_Paint;
+            // 
+            // comboBoxMenu
+            // 
+            comboBoxMenu.BackColor = Color.FromArgb(202, 196, 183);
+            comboBoxMenu.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMenu.FlatStyle = FlatStyle.Flat;
+            comboBoxMenu.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBoxMenu.ForeColor = Color.FromArgb(17, 25, 12);
+            comboBoxMenu.FormattingEnabled = true;
+            comboBoxMenu.Location = new Point(1494, 24);
+            comboBoxMenu.Name = "comboBoxMenu";
+            comboBoxMenu.Size = new Size(87, 30);
+            comboBoxMenu.TabIndex = 35;
+            comboBoxMenu.Tag = "";
+            comboBoxMenu.SelectedIndexChanged += comboBoxMenu_SelectedIndexChanged;
             // 
             // panelActions
             // 
@@ -186,5 +203,6 @@
         private static extern System.IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         private ListBox listBoxChapa;
         private Panel panelMain;
+        private ComboBox comboBoxMenu;
     }
 }

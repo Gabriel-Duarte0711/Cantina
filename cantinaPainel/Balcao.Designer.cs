@@ -25,7 +25,6 @@
             listBoxPedidos = new ListBox();
             listBoxHistorico = new ListBox();
             pictureBoxLogo = new PictureBox();
-            btnChamada = new Button();
             panelHeader = new Panel();
             lblSubtitle = new Label();
             panelMain = new Panel();
@@ -85,7 +84,7 @@
             btnEntregar.FlatStyle = FlatStyle.Flat;
             btnEntregar.Font = new Font("Inter", 16F, FontStyle.Bold);
             btnEntregar.ForeColor = Color.FromArgb(17, 25, 12);
-            btnEntregar.Location = new Point(3, 3);
+            btnEntregar.Location = new Point(9, 11);
             btnEntregar.Name = "btnEntregar";
             btnEntregar.Size = new Size(241, 45);
             btnEntregar.TabIndex = 5;
@@ -147,24 +146,6 @@
             pictureBoxLogo.TabIndex = 1;
             pictureBoxLogo.TabStop = false;
             // 
-            // btnChamada
-            // 
-            btnChamada.BackColor = Color.FromArgb(120, 118, 100);
-            btnChamada.FlatAppearance.BorderColor = Color.FromArgb(225, 255, 0);
-            btnChamada.FlatAppearance.BorderSize = 2;
-            btnChamada.FlatAppearance.MouseDownBackColor = Color.FromArgb(100, 98, 80);
-            btnChamada.FlatAppearance.MouseOverBackColor = Color.FromArgb(110, 108, 90);
-            btnChamada.FlatStyle = FlatStyle.Flat;
-            btnChamada.Font = new Font("Inter", 16F, FontStyle.Bold);
-            btnChamada.ForeColor = Color.FromArgb(243, 241, 238);
-            btnChamada.Location = new Point(906, 520);
-            btnChamada.Name = "btnChamada";
-            btnChamada.Size = new Size(194, 44);
-            btnChamada.TabIndex = 0;
-            btnChamada.Text = "Chamada";
-            btnChamada.UseVisualStyleBackColor = false;
-            btnChamada.Click += button1_Click;
-            // 
             // panelHeader
             // 
             panelHeader.BackColor = Color.FromArgb(17, 25, 12);
@@ -194,7 +175,6 @@
             panelMain.BackColor = Color.FromArgb(17, 25, 12);
             panelMain.Controls.Add(comboBoxMenu);
             panelMain.Controls.Add(panelPedidos);
-            panelMain.Controls.Add(btnChamada);
             panelMain.Controls.Add(panelHistorico);
             panelMain.Controls.Add(panelButtons);
             panelMain.Dock = DockStyle.Fill;
@@ -213,7 +193,7 @@
             comboBoxMenu.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxMenu.ForeColor = Color.FromArgb(17, 25, 12);
             comboBoxMenu.FormattingEnabled = true;
-            comboBoxMenu.Location = new Point(1024, 242);
+            comboBoxMenu.Location = new Point(1019, 20);
             comboBoxMenu.Name = "comboBoxMenu";
             comboBoxMenu.Size = new Size(87, 30);
             comboBoxMenu.TabIndex = 34;
@@ -261,10 +241,11 @@
             // 
             panelButtons.BackColor = Color.Transparent;
             panelButtons.Controls.Add(btnEntregar);
-            panelButtons.Location = new Point(856, 20);
+            panelButtons.Location = new Point(856, 330);
             panelButtons.Name = "panelButtons";
-            panelButtons.Size = new Size(255, 169);
+            panelButtons.Size = new Size(261, 86);
             panelButtons.TabIndex = 25;
+            panelButtons.Paint += panelButtons_Paint;
             // 
             // formsBalcao
             // 
@@ -303,7 +284,6 @@
         private ListBox listBoxPedidos;
         private ListBox listBoxHistorico;
         private PictureBox pictureBoxLogo;
-        private Button btnChamada;
         private Panel panelHeader;
         private Panel panelMain;
         private Panel panelPedidos;

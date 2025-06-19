@@ -89,7 +89,19 @@ namespace cantinaPainel
                     {
                         ExibirErroSenha();
                     }
-      
+                    break;
+                case "chamada":
+                    if(senha == "chamada")
+                    {
+                        formsTela formsTela = new formsTela();
+                        formsTela.Show();
+                        loginAdm.adm = false;
+                        this.Hide();
+                    }
+                    else 
+                    {
+                        ExibirErroSenha(); 
+                    }
                     break;
                 default:
                     MessageBox.Show("O nome do usuário está incorreto.\n\nTente novamente.");
@@ -112,7 +124,8 @@ namespace cantinaPainel
 
         private void formsLogin_Load(object sender, EventArgs e)
         {
-
+            loginAdm.adm = false;
+            txtBoxUsuario.Focus();
         }
     }
 }

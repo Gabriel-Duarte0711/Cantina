@@ -35,6 +35,7 @@
             lblTitulo = new Label();
             lblQuantidade = new Label();
             pictureBox1 = new PictureBox();
+            comboBoxMenu = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -133,12 +134,28 @@
             pictureBox1.TabIndex = 27;
             pictureBox1.TabStop = false;
             // 
+            // comboBoxMenu
+            // 
+            comboBoxMenu.BackColor = Color.FromArgb(202, 196, 183);
+            comboBoxMenu.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMenu.FlatStyle = FlatStyle.Flat;
+            comboBoxMenu.Font = new Font("Inter", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBoxMenu.ForeColor = Color.FromArgb(17, 25, 12);
+            comboBoxMenu.FormattingEnabled = true;
+            comboBoxMenu.Location = new Point(533, 15);
+            comboBoxMenu.Name = "comboBoxMenu";
+            comboBoxMenu.Size = new Size(87, 30);
+            comboBoxMenu.TabIndex = 37;
+            comboBoxMenu.Tag = "";
+            comboBoxMenu.SelectedIndexChanged += comboBoxMenu_SelectedIndexChanged;
+            // 
             // formsEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(700, 460);
+            Controls.Add(comboBoxMenu);
             Controls.Add(pictureBox1);
             Controls.Add(lblQuantidade);
             Controls.Add(lblTitulo);
@@ -166,5 +183,6 @@
         private Label lblTitulo;
         private Label lblQuantidade;
         private PictureBox pictureBox1;
+        private ComboBox comboBoxMenu;
     }
 }

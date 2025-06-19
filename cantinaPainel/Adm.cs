@@ -298,30 +298,35 @@ namespace cantinaPainel
             {
                 formsPedido formsPedido = new formsPedido();
                 formsPedido.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 1)
             {
                 formsBalcao formsBalcao = new formsBalcao();
                 formsBalcao.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 2)
             {
                 formsCozinha formsCozinha = new formsCozinha();
                 formsCozinha.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 3)
             {
                 formsTela formsTela = new formsTela();
                 formsTela.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
             else if (comboBoxMenu.SelectedIndex == 4)
             {
                 formsEstoque formsEstoque = new formsEstoque();
                 formsEstoque.Show();
+                this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
 
