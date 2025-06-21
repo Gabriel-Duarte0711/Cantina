@@ -265,9 +265,7 @@ namespace cantinaPainel
 
         private void btnVoltar_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            formsLogin formlogin = new formsLogin();
-            formlogin.Show();
+            Globais.VoltarLogin(this);
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -336,13 +334,6 @@ namespace cantinaPainel
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            formsBalcao formbalcao = new formsBalcao();
-            formbalcao.Show();
-            this.Hide();
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked == true)
@@ -353,20 +344,6 @@ namespace cantinaPainel
             {
                 check = "Local";
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            formsCozinha formsCozinha = new formsCozinha();
-            formsCozinha.Show();
-            this.Hide();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            formsTela formsTela = new formsTela();
-            formsTela.Show();
-            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)

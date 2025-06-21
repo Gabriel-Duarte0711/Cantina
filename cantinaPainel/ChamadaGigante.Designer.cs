@@ -48,7 +48,7 @@
             // timerAnimacao
             // 
             timerAnimacao.Enabled = true;
-            timerAnimacao.Interval = 10000;
+            timerAnimacao.Interval = 3000;
             timerAnimacao.Tick += timerAnimacao_Tick;
             // 
             // panelCentral
@@ -126,7 +126,7 @@
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(804, 182);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "SEU PRODUTO ESTÁ PRONTO!";
+            lblTitulo.Text = "SEU PEDIDO ESTÁ PRONTO!";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox1

@@ -23,10 +23,7 @@ namespace cantinaPainel
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            formsLogin formsLogin = new formsLogin();
-            this.Close();
-            formsLogin.Show();
+            Globais.VoltarLogin(this);
         }
 
 

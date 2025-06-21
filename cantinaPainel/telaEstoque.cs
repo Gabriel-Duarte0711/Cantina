@@ -188,9 +188,7 @@ namespace cantinaPainel
             }
             else if (comboBoxMenu.SelectedIndex == 5)
             {
-                formsLogin formsLogin = new formsLogin();
-                formsLogin.Show();
-                this.Close();
+                Globais.VoltarLogin(this);
                 comboBoxMenu.SelectedIndex = -1;
             }
         }

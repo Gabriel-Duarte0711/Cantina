@@ -45,6 +45,7 @@
             separator = new Panel();
             pictureBox1 = new PictureBox();
             comboBoxMenu = new ComboBox();
+            btnExcluirArquivo = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -269,12 +270,29 @@
             comboBoxMenu.Tag = "";
             comboBoxMenu.SelectedIndexChanged += comboBoxMenu_SelectedIndexChanged;
             // 
+            // btnExcluirArquivo
+            // 
+            btnExcluirArquivo.BackColor = Color.FromArgb(183, 28, 28);
+            btnExcluirArquivo.Cursor = Cursors.Hand;
+            btnExcluirArquivo.FlatAppearance.BorderSize = 0;
+            btnExcluirArquivo.FlatStyle = FlatStyle.Flat;
+            btnExcluirArquivo.Font = new Font("Inter", 9F);
+            btnExcluirArquivo.ForeColor = Color.White;
+            btnExcluirArquivo.Location = new Point(12, 522);
+            btnExcluirArquivo.Name = "btnExcluirArquivo";
+            btnExcluirArquivo.Size = new Size(104, 26);
+            btnExcluirArquivo.TabIndex = 33;
+            btnExcluirArquivo.Text = "excluir arquivo";
+            btnExcluirArquivo.UseVisualStyleBackColor = false;
+            btnExcluirArquivo.Click += btnExcluirArquivo_Click;
+            // 
             // formsAdm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(900, 550);
+            Controls.Add(btnExcluirArquivo);
             Controls.Add(comboBoxMenu);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBoxLogo);
@@ -324,5 +342,6 @@
         private Panel separator;
         private PictureBox pictureBox1;
         private ComboBox comboBoxMenu;
+        private Button btnExcluirArquivo;
     }
 }

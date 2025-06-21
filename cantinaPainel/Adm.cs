@@ -68,6 +68,7 @@ namespace cantinaPainel
             comboBoxMenu.Items.Add("Cozinha");
             comboBoxMenu.Items.Add("Chamada");
             comboBoxMenu.Items.Add("Estoque");
+            comboBoxMenu.Items.Add("Login");
 
             comboBoxMenu.SelectedIndex = -1;
         }
@@ -159,6 +160,7 @@ namespace cantinaPainel
                 produtoSelecionado.Preco = valor;
                 produtoSelecionado.IsChapa = checkBox1.Checked;
                 PersistenciaProduto.saveToFile();
+                PersistenciaEstoque.saveToFile();
 
                 AtualizarLista();
             }
@@ -186,15 +188,30 @@ namespace cantinaPainel
         private void btnNoAtivo_Click(object sender, EventArgs e)
         {
             Produto produtoSelecionado = (Produto)listBoxTest.SelectedItem;
-
-            if (produtoSelecionado != null)
+            DialogResult result = MessageBox.Show(
+            $"Deseja desativar esse produto? {produtoSelecionado.Item}",
+            "Confirmação",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+            );
+            if (result == DialogResult.Yes)
             {
-                produtoSelecionado.IsAtivo = false;
-                MessageBox.Show($"{produtoSelecionado.Item} desativado");
-                PersistenciaProduto.saveToFile();
+                if (produtoSelecionado != null)
+                {
+                    produtoSelecionado.IsAtivo = false;
+                    MessageBox.Show($"{produtoSelecionado.Item} desativado");
+                    PersistenciaProduto.saveToFile();
+                    PersistenciaEstoque.saveToFile();
 
-                AtualizarLista();
+                    AtualizarLista();
+                }
             }
+            else { }
+
+
+
+
+
         }
 
         private void btnAtivo_Click(object sender, EventArgs e)
@@ -206,6 +223,7 @@ namespace cantinaPainel
                 produtoSelecionado.IsAtivo = true;
                 MessageBox.Show($"{produtoSelecionado.Item} Ativado");
                 PersistenciaProduto.saveToFile();
+                PersistenciaEstoque.saveToFile();
 
                 AtualizarLista();
             }
@@ -255,8 +273,6 @@ namespace cantinaPainel
 
             Produto novoProduto = new Produto(codigo, novoItem, preco, isChapa, isAtivo);
             Estoque estoque = new Estoque(novoProduto, 0);
-            //estoque.Produto = novoProduto;
-            //estoque.Quantidade = 0;
 
             PersistenciaProduto.itemEstoque.Add(novoProduto);
             PersistenciaEstoque.estoqueGeral.Add(estoque);
@@ -329,7 +345,42 @@ namespace cantinaPainel
                 this.Close();
                 comboBoxMenu.SelectedIndex = -1;
             }
+            else if (comboBoxMenu.SelectedIndex == 5)
+            {
+                Globais.VoltarLogin(this);
+                comboBoxMenu.SelectedIndex = -1;
+            }
 
+        }
+
+        private void btnExcluirArquivo_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Realmente deseja excluir tudo salvo?",
+                "Confirmação",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+            if (result == DialogResult.Yes)
+            {
+                DialogResult result2 = MessageBox.Show(
+                    "ISSO VAI EXCLUIR TUDO JA SALVO, TEM CERTEZA?",
+                    "CONFIRMAÇÂO",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+                if (result2 == DialogResult.Yes)
+                {
+                    PersistenciaPedido.LimparArquivo();
+                    PersistenciaEstoque.LimparArquivoEstoque();
+                    PersistenciaProduto.LimparArquivo();
+                    AtualizarLista();
+                }
+                else { }
+
+            }
+            else { }
+            
         }
     }
 }

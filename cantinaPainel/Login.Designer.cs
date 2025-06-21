@@ -171,7 +171,7 @@
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(844, 480);
             Controls.Add(btnSair);
             Controls.Add(panelLogin);
             Controls.Add(lblSubtitulo);

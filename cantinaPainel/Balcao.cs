@@ -131,9 +131,7 @@ namespace cantinaPainel
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            formsLogin formsLogin = new formsLogin();
-            formsLogin.Show();
+            Globais.VoltarLogin(this);
         }
 
 

@@ -88,10 +88,7 @@ namespace cantinaPainel
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-           
-            formsLogin formlogin = new formsLogin();
-            this.Close();
-            formlogin.Show();
+            Globais.VoltarLogin(this);
         }
 
         private void comboBoxMenu_SelectedIndexChanged(object sender, EventArgs e)
