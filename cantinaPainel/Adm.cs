@@ -101,6 +101,7 @@ namespace cantinaPainel
                 txtBoxCodigo.Clear();
                 txtBoxProduto.Clear();
                 txtBoxPreco.Clear();
+                txtBoxProcurar.Clear();
                 checkBox1.Checked = false;
                 btnAtivo.Visible = false;
                 btnEditar.Visible = false;
@@ -108,6 +109,7 @@ namespace cantinaPainel
                 lblCodigo.Text = "Código do Produto";
                 lblProduto.Text = "Nome do Produto";
                 lblPreco.Text = "Preço (R$)";
+                AtualizarLista();
             }
         }
 
@@ -380,7 +382,47 @@ namespace cantinaPainel
 
             }
             else { }
-            
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxProcurar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int intValor=0;
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+
+                Int32.TryParse(txtBoxProcurar.Text, out intValor);
+
+                foreach (Produto item in PersistenciaProduto.itemEstoque)
+                {
+                    if (intValor == item.Codigo)
+                    {
+                        listBoxTest.DataSource = null;
+                        listBoxTest.Items.Clear();
+                        listBoxTest.Items.Add(item);
+                        listBoxTest.SelectedItem = item;
+                        break;
+                    }
+
+                }
+                if (listBoxTest.SelectedItem == null)
+                {
+                    MessageBox.Show("Digite um número válido");
+
+                }
+            }
+        }
+
+        
+
+        private void txtBoxProcurar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

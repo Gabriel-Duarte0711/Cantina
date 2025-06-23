@@ -40,13 +40,13 @@
             btnAtivo = new Button();
             btnNoAtivo = new Button();
             btnAdicionar = new Button();
-            pictureBoxLogo = new PictureBox();
             lblTitulo = new Label();
             separator = new Panel();
             pictureBox1 = new PictureBox();
             comboBoxMenu = new ComboBox();
             btnExcluirArquivo = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
+            txtBoxProcurar = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -122,7 +122,7 @@
             listBoxTest.ForeColor = Color.FromArgb(243, 241, 238);
             listBoxTest.FormattingEnabled = true;
             listBoxTest.ItemHeight = 18;
-            listBoxTest.Location = new Point(30, 80);
+            listBoxTest.Location = new Point(30, 102);
             listBoxTest.Name = "listBoxTest";
             listBoxTest.Size = new Size(260, 398);
             listBoxTest.TabIndex = 5;
@@ -214,23 +214,13 @@
             btnAdicionar.UseVisualStyleBackColor = false;
             btnAdicionar.Click += btnAdicionar_Click;
             // 
-            // pictureBoxLogo
-            // 
-            pictureBoxLogo.BackColor = Color.Transparent;
-            pictureBoxLogo.Location = new Point(30, 20);
-            pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(120, 40);
-            pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxLogo.TabIndex = 14;
-            pictureBoxLogo.TabStop = false;
-            // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             lblTitulo.ForeColor = Color.FromArgb(243, 241, 238);
-            lblTitulo.Location = new Point(160, 30);
+            lblTitulo.Location = new Point(364, 12);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(176, 20);
             lblTitulo.TabIndex = 13;
@@ -241,19 +231,20 @@
             separator.BackColor = Color.FromArgb(120, 118, 100);
             separator.Location = new Point(310, 70);
             separator.Name = "separator";
-            separator.Size = new Size(2, 420);
+            separator.Size = new Size(2, 430);
             separator.TabIndex = 15;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.imagem_2025_05_15_081300623;
-            pictureBox1.Location = new Point(30, 20);
+            pictureBox1.Location = new Point(30, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(120, 40);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 28;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // comboBoxMenu
             // 
@@ -286,16 +277,42 @@
             btnExcluirArquivo.UseVisualStyleBackColor = false;
             btnExcluirArquivo.Click += btnExcluirArquivo_Click;
             // 
+            // txtBoxProcurar
+            // 
+            txtBoxProcurar.BackColor = Color.FromArgb(120, 118, 100);
+            txtBoxProcurar.BorderStyle = BorderStyle.FixedSingle;
+            txtBoxProcurar.Font = new Font("Inter", 10F);
+            txtBoxProcurar.ForeColor = Color.FromArgb(243, 241, 238);
+            txtBoxProcurar.Location = new Point(30, 70);
+            txtBoxProcurar.Name = "txtBoxProcurar";
+            txtBoxProcurar.Size = new Size(260, 24);
+            txtBoxProcurar.TabIndex = 34;
+            txtBoxProcurar.TextChanged += txtBoxProcurar_TextChanged;
+            txtBoxProcurar.KeyPress += txtBoxProcurar_KeyPress;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(243, 241, 238);
+            label1.Location = new Point(30, 47);
+            label1.Name = "label1";
+            label1.Size = new Size(116, 20);
+            label1.TabIndex = 35;
+            label1.Text = "Procurar item";
+            // 
             // formsAdm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(900, 550);
+            Controls.Add(label1);
+            Controls.Add(txtBoxProcurar);
             Controls.Add(btnExcluirArquivo);
             Controls.Add(comboBoxMenu);
             Controls.Add(pictureBox1);
-            Controls.Add(pictureBoxLogo);
             Controls.Add(separator);
             Controls.Add(lblTitulo);
             Controls.Add(btnAdicionar);
@@ -317,7 +334,6 @@
             Text = "Cantina Painel - Administração";
             Activated += formsAdm_Activated;
             Load += formsAdm_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -337,11 +353,12 @@
         private Button btnAtivo;
         private Button btnNoAtivo;
         private Button btnAdicionar;
-        private PictureBox pictureBoxLogo;
         private Label lblTitulo;
         private Panel separator;
         private PictureBox pictureBox1;
         private ComboBox comboBoxMenu;
         private Button btnExcluirArquivo;
+        private TextBox txtBoxProcurar;
+        private Label label1;
     }
 }

@@ -70,9 +70,9 @@ namespace cantinaPainel
             if (quantidade > 0)
                 return$"{quantidade}x - {item} - R$ {preco * quantidade:f2}";
             else if (isAtivo == false)
-                return $"{item} - R$ {preco:f2} - item desativado";
+                return $"{codigo} - {item} - R$ {preco:f2} - item desativado";
             else
-                return $"{item} - R$ {preco:f2}";
+                return $"{codigo} - {item} - R$ {preco:f2}";
         }
     }
 }
